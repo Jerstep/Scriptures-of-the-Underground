@@ -42,7 +42,8 @@ public class ClimbSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentSort == Climbingsort.Walking && Input.GetAxis("Vertical") > 0)
+        
+        if (currentSort == Climbingsort.Walking && Input.GetAxis("Vertical") > 0)
         {
             StartClimbing();
         }
@@ -61,6 +62,7 @@ public class ClimbSystem : MonoBehaviour
 
         if(currentSort == Climbingsort.Jumping || currentSort == Climbingsort.Falling)
         {
+            print(" we jumping");
             Jumping();
         }
     }
@@ -79,16 +81,22 @@ public class ClimbSystem : MonoBehaviour
             currentSort = Climbingsort.Jumping;
         }
 
-        //CheckForClimbStart();
+        if(currentSort == Climbingsort.Walking && (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0))
+        {
+            CheckForClimbStart();
+        }
+
     }
 
     public void StartClimbing()
     {
+        
         if(Physics.Raycast(transform.position + transform.rotation * raycastPos, transform.forward, 0.4f) && Time.time - lastTime > coolDown && currentSort == Climbingsort.Walking)
         {//he says sometimes it adds double force thats why he checks 2 times but might be bull so may remove second walking check
             if(currentSort == Climbingsort.Walking)
             {
                 rigid.AddForce(transform.up * jumpForce);
+
             }
 
             lastTime = Time.time;
@@ -97,7 +105,8 @@ public class ClimbSystem : MonoBehaviour
 
     public void Jumping()
     {
-        if(rigid.velocity.y < 0 && currentSort != Climbingsort.Falling)
+        print(" we jumping function");
+        if (rigid.velocity.y < 0 && currentSort != Climbingsort.Falling)
         {
             currentSort = Climbingsort.Falling;
             oldRotation = transform.rotation;
@@ -112,6 +121,7 @@ public class ClimbSystem : MonoBehaviour
         if(currentSort == Climbingsort.Jumping)
         {
             CheckForSpots(handTrans.position + fallHandOffset, -transform.up, 0.1f,CheckingSort.Normal);
+            
         }
         if(currentSort == Climbingsort.Falling)
         {//                                                                              if you miss to much change the value   HERE
@@ -129,8 +139,12 @@ public class ClimbSystem : MonoBehaviour
             {
                 //upclimb
                 CheckForSpots(handTrans.position + transform.rotation * verticalHandOffset + transform.up * climbRange, -transform.up, climbRange,CheckingSort.Normal);
-
-                //CheckForPlatou();
+                
+                if(currentSort != Climbingsort.ClimbingTowardsPoint)
+                {
+                    CheckForPlateau();
+                }
+               
             }
 
             if (Input.GetAxis("Vertical") > 0)
@@ -189,15 +203,19 @@ public class ClimbSystem : MonoBehaviour
 
     public void CheckForSpots(Vector3 spotLocation,Vector3 dir,float range,CheckingSort sort)
     {
+        print(" checking spot");
         bool foundSpot = false;
-
-        if(Physics.Raycast(spotLocation - transform.right * smallestEdge/2, dir,out hit,range,spotLayer))
+        Debug.DrawRay(handTrans.position, dir * range, Color.green);
+        if (Physics.Raycast(spotLocation - transform.right * smallestEdge/2, dir,out hit,range,spotLayer))
         {
+           
+            print(hit.transform.name);
             if (Vector3.Distance(handTrans.position, hit.point) > minDistance)
             {
                 foundSpot = true;
                 //
                 FindSpot(hit, sort);
+                
             }
         }
 
@@ -246,7 +264,8 @@ public class ClimbSystem : MonoBehaviour
         if(Vector3.Angle(h.normal,Vector3.up) < maxAngle)
         {
             RayInfo ray = new RayInfo();
-            
+
+            print("found spot");
             if(sort == CheckingSort.Normal)
             {
                 ray = GetClosestPoint(h.transform, h.point + new Vector3(0, 0.01f, 0), transform.forward/2.5f);
@@ -363,6 +382,47 @@ public class ClimbSystem : MonoBehaviour
 
             rigid.isKinematic = false;
             tpuc.enabled = true;
+        }
+    }
+
+    public void CheckForClimbStart()
+    {
+        RaycastHit hit2;
+
+        Vector3 dir = transform.forward - transform.up / 0.8f;
+
+        if(Physics.Raycast(transform.position + transform.rotation * raycastPos, dir , 1.6f) && !Input.GetButton("Jump"))
+        {
+            currentSort = Climbingsort.CheckingForClimbStart;
+            if(Physics.Raycast(transform.position + new Vector3(0,1.1f,0) , -transform.up, out hit2, 1.6f, spotLayer))
+            {
+                FindSpot(hit2, CheckingSort.Faling);
+            }
+        }
+    }
+
+    public void CheckForPlateau()
+    {
+        RaycastHit hit2;
+        Vector3 dir = transform.up + transform.forward / 2;
+
+        if (!Physics.Raycast(handTrans.position + transform.rotation * verticalHandOffset, dir,out hit2,1.5f ,spotLayer))
+        {
+            currentSort = Climbingsort.ClimbingTowardsPlateau;
+
+            if(Physics.Raycast(handTrans.position + dir * 1.5f, -Vector3.up, out hit2 , 1.7f, spotLayer))
+            {
+                targetPoint = handTrans.position + dir * 1.5f;
+            }
+            else
+            {
+                targetPoint = handTrans.position + dir * 1.5f - transform.rotation * new Vector3(0, -0.2f, 0.25f);
+            }
+
+            targetNormal = -transform.forward;
+
+            animator.SetBool("Crouch", true);
+            animator.SetBool("Onground", true);
         }
     }
 }

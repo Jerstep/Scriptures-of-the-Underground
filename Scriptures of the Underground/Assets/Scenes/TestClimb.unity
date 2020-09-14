@@ -320,7 +320,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145083089}
-  m_LocalRotation: {x: 0.109177396, y: -0.000000004275881, z: 4.6963694e-10, w: 0.9940223}
+  m_LocalRotation: {x: 0.109177396, y: 0.0000000042758814, z: -4.69637e-10, w: 0.9940223}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 453732210}
   - component: {fileID: 453732209}
   - component: {fileID: 453732208}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: climbCubes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519868709
 GameObject:
@@ -646,7 +646,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18368
+  m_Name: pb_Mesh18378
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1952,7 +1952,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730858963
 GameObject:
@@ -2077,7 +2077,7 @@ GameObject:
   - component: {fileID: 1003429711}
   - component: {fileID: 1003429710}
   - component: {fileID: 1003429709}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: climbCubes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2156,7 +2156,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1068922549
 GameObject:
@@ -2170,7 +2170,7 @@ GameObject:
   - component: {fileID: 1068922552}
   - component: {fileID: 1068922551}
   - component: {fileID: 1068922550}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: climbCubes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2249,7 +2249,7 @@ Transform:
   m_LocalScale: {x: 4.62566, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1187593838
 GameObject:
@@ -2263,7 +2263,7 @@ GameObject:
   - component: {fileID: 1187593841}
   - component: {fileID: 1187593840}
   - component: {fileID: 1187593839}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: climbCubes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2342,7 +2342,7 @@ Transform:
   m_LocalScale: {x: 4.62566, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1545000058
 GameObject:
@@ -2448,7 +2448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560866035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.94, z: 0.553}
+  m_LocalPosition: {x: 0, y: 0.94, z: 0.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2075427123}
@@ -3012,7 +3012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988708998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.0039997, z: -15}
+  m_LocalPosition: {x: 0, y: 6.07, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2096925407}
@@ -3206,7 +3206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075427122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.504, z: 0}
+  m_LocalPosition: {x: 0, y: 1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1545000059}
@@ -3273,8 +3273,8 @@ MonoBehaviour:
   climbForce: 6
   smallestEdge: 0.24
   coolDown: 0.1
-  climbRange: 2.1
-  maxAngle: 30
+  climbRange: 20
+  maxAngle: 300
   jumpForce: 400
   currentSort: 0
   handTrans: {fileID: 1560866036}
@@ -3598,7 +3598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123066859}
   m_LocalRotation: {x: 0.12719242, y: 0, z: 0, w: 0.9918781}
-  m_LocalPosition: {x: 0, y: 6.0039997, z: -15}
+  m_LocalPosition: {x: 0, y: 6.07, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
