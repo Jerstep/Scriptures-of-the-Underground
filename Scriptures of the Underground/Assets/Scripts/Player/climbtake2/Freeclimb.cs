@@ -17,14 +17,17 @@ namespace SA
         Quaternion startRot;
         Quaternion targetRot;
         public float possitionOffset;
+
         public float offsetFromWall = 0.3f;
         public float speed_multiplier = 0.2f;
         public float climbSpeed = 3;
         public float rotateSpeed = 5;
-        public float inAngleDis = 1;
+        public float rayTowardsMoveDir = 0.5f;
+        public float rayForwardTowardsWall = 1;
 
         public float horizontal;
         public float vertical;
+        public bool isMid;
 
         public IKSnapshot baseIKsnapshot;
 
@@ -96,17 +99,30 @@ namespace SA
                 Vector3 v = helper.up * vertical;
                 Vector3 moveDir = (h + v).normalized;
 
-                bool canMove = CanMove(moveDir);
-                if (!canMove || moveDir == Vector3.zero)
-                    return;
+                if (isMid)
+                {
+                    if (moveDir == Vector3.zero)
+                        return;
+                }
+                else
+                {
+                    bool canMove = CanMove(moveDir);
+                    if (!canMove || moveDir == Vector3.zero)
+                        return;
+                }
+
+                isMid = !isMid;
 
                 t = 0;
                 isLerping = true;
                 startPos = transform.position;
-                // Vector3 tp = helper.position - transform.position;
-                targetPos = helper.position;
+                Vector3 tp = helper.position - transform.position;
+                float d = Vector3.Distance(helper.position, startPos) / 2;
+                tp *= possitionOffset;
+                tp += transform.position;
+                targetPos = (isMid) ? tp : helper.position; // tatgetpos = tp pnly when ismid
 
-                a_hook.CreatePosition(targetPos);
+                a_hook.CreatePositions(targetPos, moveDir, isMid);
 
             }
             else
@@ -127,21 +143,25 @@ namespace SA
         bool CanMove(Vector3 moveDir)
         {
             Vector3 origin = transform.position;
-            float dis = possitionOffset;
+            float dis = rayTowardsMoveDir;
             Vector3 dir = moveDir;
-            Debug.DrawRay(origin, dir * dis, Color.red);
+            DebugLine.singleton.SetLine(origin, origin + (dir * dis), 0);
+            
+            //raycast towards direction you want to move
             RaycastHit hit;
-
             if (Physics.Raycast(origin, dir, out hit, dis))
             {
+                //check if its corner
                 return false;
             }
 
             origin += moveDir * dis;
             dir = helper.forward;
-            float dis2 = inAngleDis;
+            float dis2 = rayForwardTowardsWall;
 
-            Debug.DrawRay(origin, dir * dis2, Color.blue);
+            //raycast forward towards the wall
+            DebugLine.singleton.SetLine(origin, origin + (dir * dis2), 1);
+            
             if (Physics.Raycast(origin, dir, out hit, dis))
             {
                 helper.position = PosWithOffset(origin, hit.point);
@@ -149,13 +169,26 @@ namespace SA
                 return true;
             }
 
+            origin = origin + (dir * dis2);
+            dir = -moveDir;
+            DebugLine.singleton.SetLine(origin, origin + dir, 1);
+            if (Physics.Raycast(origin,dir,out hit, rayForwardTowardsWall))
+            {
+                helper.position = PosWithOffset(origin, hit.point);
+                helper.rotation = Quaternion.LookRotation(-hit.normal);
+                return true;
+            }
+
+            //return false;
+
             origin += dir * dis2;
             dir = -Vector3.up;
 
-            Debug.DrawRay(origin, dir, Color.yellow);
+            DebugLine.singleton.SetLine(origin, origin + dir, 2);
+            //Debug.DrawRay(origin, dir, Color.yellow);
             if (Physics.Raycast(origin, dir, out hit, dis2))
             {
-                float angle = Vector3.Angle(helper.up, hit.normal);
+                float angle = Vector3.Angle(-helper.forward, hit.normal);
                 if (angle < 40)
                 {
                     helper.position = PosWithOffset(origin, hit.point);
@@ -175,9 +208,8 @@ namespace SA
             {
                 t = 1;
                 inPosition = true;
-
-                //enable the ik 
-                a_hook.CreatePosition(targetPos);
+                //enable ik
+                a_hook.CreatePositions(targetPos, Vector3.zero, false);
             }
 
             Vector3 tp = Vector3.Lerp(startPos, targetPos, t);
