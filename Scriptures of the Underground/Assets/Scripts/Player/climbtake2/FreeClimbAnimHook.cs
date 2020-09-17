@@ -86,9 +86,9 @@ namespace SA
                 }
 
                 goals.lh = isEnabled;
-                goals.rh = !isEnabled;
+                goals.rh = isEnabled;
                 goals.lf = isEnabled;
-                goals.rf = !isEnabled;
+                goals.rf = isEnabled;
             }
         }
 

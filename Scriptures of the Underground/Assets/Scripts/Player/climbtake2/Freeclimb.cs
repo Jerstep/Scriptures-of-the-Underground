@@ -32,13 +32,17 @@ namespace SA
         public IKSnapshot baseIKsnapshot;
 
         public FreeClimbAnimHook a_hook;
+        ThirdPersonController tpc;
 
         public Transform helper;
         float delta;
 
+        //gonna be important for restricting climbing
+        LayerMask ignoreLayers;
+
         void Start()
         {
-            CheckForClimb();
+            tpc = GetComponent<ThirdPersonController>();
             Init();
         }
 
@@ -47,26 +51,30 @@ namespace SA
             //helper = new GameObject().transform;
             //helper.name = "climb helper";
             a_hook.Init(this,helper);
-            CheckForClimb();
+            ignoreLayers = ~(1 << 11);
+            //CheckForClimb();
         }
 
-        public void CheckForClimb()
+        public bool CheckForClimb()
         {
             Vector3 origin = transform.position;
-            origin.y += 1.4f;
+            origin.y += 0.02f;
             Vector3 dir = transform.forward;
             RaycastHit hit;
-            if (Physics.Raycast(origin, dir, out hit, 5))
+            if (Physics.Raycast(origin, dir, out hit, 0.5f, ignoreLayers))
             {
                 helper.position = PosWithOffset(origin, hit.point);
                 InitForClimb(hit);
+                return true;
+
             }
+            return false;
         }
 
         void InitForClimb(RaycastHit hit)
         {
             isClimbing = true;
-
+            a_hook.enabled = true;
             helper.transform.rotation = Quaternion.LookRotation(-hit.normal);
             startPos = transform.position;
             targetPos = hit.point + (hit.normal * offsetFromWall);
@@ -75,14 +83,11 @@ namespace SA
             anim.CrossFade("climb_idle", 2);
         }
 
-        void Update()
-        {
-            delta = Time.deltaTime;
-            Tick(delta);
-        }
+       
 
-        public void Tick(float delta)
+        public void Tick(float d_time)
         {
+            this.delta = d_time;
             if (!inPosition)
             {
                 GetInPosition();
@@ -91,6 +96,12 @@ namespace SA
 
             if (!isLerping)
             {
+                bool cancel = Input.GetKeyUp(KeyCode.X);
+                if (cancel)
+                {
+                    CancelClimb();
+                    return;
+                }
                 horizontal = Input.GetAxis("Horizontal");
                 vertical = Input.GetAxis("Vertical");
                 float m = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
@@ -137,6 +148,8 @@ namespace SA
                 Vector3 cp = Vector3.Lerp(startPos, targetPos, t);
                 transform.position = cp;
                 transform.rotation = Quaternion.Slerp(transform.rotation, helper.rotation, delta * rotateSpeed);
+                LookForGround();
+
             }
         }
 
@@ -202,12 +215,14 @@ namespace SA
 
         void GetInPosition()
         {
-            t += delta;
+            t += delta * 3;
 
             if (t > 1)
             {
                 t = 1;
                 inPosition = true;
+                horizontal = 0;
+                vertical = 0;
                 //enable ik
                 a_hook.CreatePositions(targetPos, Vector3.zero, false);
             }
@@ -223,6 +238,25 @@ namespace SA
             direction.Normalize();
             Vector3 offset = direction * offsetFromWall;
             return target + offset;
+        }
+
+        void LookForGround()
+        {
+            Vector3 origin = transform.position;
+            Vector3 direction = -transform.up;
+            RaycastHit hit;
+            //                                          leght of feet
+            if(Physics.Raycast(origin,direction,out hit, rayTowardsMoveDir + 0.05f, ignoreLayers))
+            {
+                CancelClimb();
+            }
+        }
+
+        void CancelClimb()
+        {
+            isClimbing = false;
+            tpc.EnableController();
+            a_hook.enabled = false;
         }
 
     }
