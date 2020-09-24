@@ -29,15 +29,19 @@ public class InventorySecrets : MonoBehaviour
 
     public GameObject infoHolder;
     public GameObject infoTextBox;
+    public GameObject infoImageObject;
+    public Image infoImage;
 
     private void Start()
     {
         //infoHolder = GameObject.Find("information-Holder");
         //infoTextBox = GameObject.Find("information-Text");
+        infoImage = infoImageObject.GetComponent<Image>();
     }
 
     public bool Add(Item painting)
     {
+
         if (!painting.isDefaultItem)
         {
             if (secret.Count >= space)
@@ -60,8 +64,9 @@ public class InventorySecrets : MonoBehaviour
             OnItemChangedCallback.Invoke();
     }
 
-    public void ChangeInfoText(string info)
+    public void ChangeInfoText(string info, Sprite conceptArt)
     {
         infoTextBox.GetComponent<Text>().text = info;
+        infoImage.sprite = conceptArt;
     }
 }

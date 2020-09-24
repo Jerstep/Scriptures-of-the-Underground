@@ -7,7 +7,7 @@ public class Item : ScriptableObject
 {
 
     new public string name = "New item";
-    public Sprite icon = null;
+    public Sprite icon;
     public bool isDefaultItem = false;
     [TextArea]
     public string info;
@@ -18,6 +18,6 @@ public class Item : ScriptableObject
         //thing happens
         Debug.Log("Using" + name);
         InventorySecrets.instance.infoHolder.SetActive(true);
-        InventorySecrets.instance.ChangeInfoText(info);
+        InventorySecrets.instance.ChangeInfoText(info,icon);
     }
 }
