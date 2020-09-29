@@ -14,6 +14,8 @@ namespace SA
             singleton = this;
         }
 
+
+      
         /*void FixedUpdate()
         {
             if (target == null)

@@ -23,6 +23,7 @@ public class SecretPickup : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            other.GetComponent<PlayerStats>().StunItemUp();
             AddItems();
         }
     }

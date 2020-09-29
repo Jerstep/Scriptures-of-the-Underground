@@ -13,7 +13,7 @@ namespace SA
         float moveAmount;
         Vector3 camYforward;
 
-        Transform camHolder;
+        public Transform camHolder;
 
         Rigidbody rigid;
         Collider col;
@@ -33,6 +33,11 @@ namespace SA
 
         Freeclimb freeClimb;
 
+
+        public Camera cameraMain;
+        private Vector2 rotation = Vector2.zero;
+        public float lookSpeed = 3;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -42,7 +47,7 @@ namespace SA
 
             col = GetComponent<Collider>();
 
-            camHolder = CameraHolder.singleton.transform;
+            //camHolder = CameraHolder.singleton.transform;
             anim = GetComponentInChildren<Animator>();
             freeClimb = GetComponent<Freeclimb>();
         }
@@ -56,13 +61,14 @@ namespace SA
             }
             onGround = OnGround();
             Movement();
-        }
+        } 
 
         void Movement()
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
 
+           // Look();
             camYforward = camHolder.forward;
             Vector3 v = vertical * camHolder.forward;
             Vector3 h = horizontal * camHolder.right;
