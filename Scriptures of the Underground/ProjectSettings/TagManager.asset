@@ -15,9 +15,8 @@ TagManager:
   - 
   - PostProcessing
   - 
-  - 
+  - NotClimbable
   - CurrentCheckSpot
-  - 
   - 
   - 
   - 

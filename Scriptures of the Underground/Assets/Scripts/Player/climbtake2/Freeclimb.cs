@@ -38,7 +38,7 @@ namespace SA
         float delta;
 
         //gonna be important for restricting climbing
-        LayerMask ignoreLayers;
+        public LayerMask ignoreLayers;
 
         void Start()
         {
