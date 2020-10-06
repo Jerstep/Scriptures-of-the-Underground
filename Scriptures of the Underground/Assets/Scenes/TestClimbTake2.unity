@@ -943,7 +943,7 @@ GameObject:
   - component: {fileID: 272008276}
   - component: {fileID: 272008275}
   - component: {fileID: 272008274}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Wall-Chunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1734,7 +1734,7 @@ GameObject:
   - component: {fileID: 529717445}
   - component: {fileID: 529717444}
   - component: {fileID: 529717443}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2125,7 +2125,7 @@ MonoBehaviour:
     m_Bits: 2048
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   visibleTargets: []
   meshResolution: 1
   edgeResolveIterations: 4
@@ -2211,7 +2211,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730858963}
-  m_LocalRotation: {x: 0.08736062, y: 0.007404316, z: -0.0006493463, w: 0.99614906}
+  m_LocalRotation: {x: 0.08736062, y: 0.007404281, z: -0.0006493431, w: 0.99614906}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2324,7 +2324,7 @@ GameObject:
   - component: {fileID: 822592607}
   - component: {fileID: 822592606}
   - component: {fileID: 822592605}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Wall-Chunk (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3663,7 +3663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1389302874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3678,7 +3678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389302873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.84331894, y: 17.241913, z: 4.7804794}
+  m_LocalPosition: {x: 0.84331894, y: 17.241913, z: -12.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 529717446}
@@ -3835,9 +3835,9 @@ MonoBehaviour:
     rf: {x: 0.25, y: -0.3, z: 0.3}
   a_hook: {fileID: 116668762}
   helper: {fileID: 813611805}
-  ignoreLayers:
+  climbLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
 --- !u!136 &1400258952
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5056,7 +5056,7 @@ GameObject:
   - component: {fileID: 1756122745}
   - component: {fileID: 1756122744}
   - component: {fileID: 1756122743}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Wall-Chunk (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5229,7 +5229,7 @@ GameObject:
   - component: {fileID: 1856378706}
   - component: {fileID: 1856378705}
   - component: {fileID: 1856378704}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5863,7 +5863,7 @@ GameObject:
   - component: {fileID: 1990421039}
   - component: {fileID: 1990421038}
   - component: {fileID: 1990421037}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6631,7 +6631,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123066859}
-  m_LocalRotation: {x: 0.08736062, y: 0.0074043334, z: -0.0006493478, w: 0.99614906}
+  m_LocalRotation: {x: 0.08736062, y: 0.0074042627, z: -0.00064934156, w: 0.99614906}
   m_LocalPosition: {x: 0, y: 4.5, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
