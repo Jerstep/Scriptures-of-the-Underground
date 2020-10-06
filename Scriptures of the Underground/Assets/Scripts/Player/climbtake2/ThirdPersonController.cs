@@ -131,7 +131,7 @@ namespace SA
                 }
             }
 
-                anim.SetFloat("move", moveAmount);
+            anim.SetFloat("move", moveAmount);
             anim.SetBool("onAir", !onGround);
         }
 

@@ -38,7 +38,7 @@ namespace SA
         float delta;
 
         //gonna be important for restricting climbing
-        LayerMask ignoreLayers;
+        public LayerMask climbLayers;
 
         void Start()
         {
@@ -51,7 +51,7 @@ namespace SA
             //helper = new GameObject().transform;
             //helper.name = "climb helper";
             a_hook.Init(this,helper);
-            ignoreLayers = ~(1 << 11);
+           // climbLayers = 9;
             //CheckForClimb();
         }
 
@@ -61,7 +61,7 @@ namespace SA
             origin.y += 0.02f;
             Vector3 dir = transform.forward;
             RaycastHit hit;
-            if (Physics.Raycast(origin, dir, out hit, 0.5f, ignoreLayers))
+            if (Physics.Raycast(origin, dir, out hit, 0.5f, climbLayers))
             {
                 helper.position = PosWithOffset(origin, hit.point);
                 InitForClimb(hit);
@@ -246,7 +246,7 @@ namespace SA
             Vector3 direction = -transform.up;
             RaycastHit hit;
             //                                          leght of feet
-            if(Physics.Raycast(origin,direction,out hit, rayTowardsMoveDir + 0.05f, ignoreLayers))
+            if(Physics.Raycast(origin,direction,out hit, rayTowardsMoveDir + 0.05f, climbLayers))
             {
                 CancelClimb();
             }
