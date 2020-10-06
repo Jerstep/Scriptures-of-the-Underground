@@ -31,6 +31,10 @@ namespace SA
 
         public bool isClimbing;
 
+        public Transform groundCheck;
+        public float groundDistance = 0.4f;
+        public LayerMask groundMask;
+
         Freeclimb freeClimb;
 
 
@@ -155,14 +159,20 @@ namespace SA
         {
             if (keepOffGround)
                 return false;
-            Vector3 origin = transform.position;
+            /*Vector3 origin = transform.position;
             origin.y += 0.4f;
             Vector3 direction = -transform.up;
             RaycastHit hit;
             if(Physics.Raycast(origin,direction,out hit, 0.41f))
             {
                 return true;
+            }*/
+
+            if(Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
+            {
+                return true;
             }
+
             return false;
         }
 
