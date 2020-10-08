@@ -8,6 +8,8 @@ using Panda;
 public class Enemy : MonoBehaviour
 {
 
+    public NavMeshAgent agent;
+
     public float rotationSpeed = 90;
     public float speed = 5;
     public float waitTime = 0.3f;
@@ -29,10 +31,15 @@ public class Enemy : MonoBehaviour
 
     bool patrolling;
 
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+        agent = GetComponent<NavMeshAgent>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-
         Patrol();
     }
 
@@ -54,6 +61,7 @@ public class Enemy : MonoBehaviour
         {
             foundplayer = false;
             playerTargeted = false;
+            patrolling = false;
         }
 
         if(detectionMeter >= 100)
@@ -98,16 +106,19 @@ public class Enemy : MonoBehaviour
 
     IEnumerator FollowPath(Vector3[] waypoints)
     {
-        transform.position = waypoints[0];
+        //transform.position = waypoints[0];
         int targetWaypointIndex = 1;
         Vector3 targetWaypoint = waypoints[targetWaypointIndex];
         transform.LookAt(targetWaypoint);
 
         while (!foundplayer)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetWaypoint, speed * Time.deltaTime);
-            if(transform.position == targetWaypoint)
+            agent.SetDestination(targetWaypoint);
+            Vector3 distanceToWalkPoint = transform.position - targetWaypoint;
+            
+            if (distanceToWalkPoint.magnitude < 1f)//transform.position == targetWaypoint)
             {
+                Debug.Log("arrived");
                 targetWaypointIndex = (targetWaypointIndex + 1) % waypoints.Length;
                 targetWaypoint = waypoints[targetWaypointIndex];
                 yield return new WaitForSeconds(waitTime);
@@ -123,22 +134,31 @@ public class Enemy : MonoBehaviour
 
     IEnumerator FollowPlayer(Vector3 waypoints)
     {
-        transform.position = waypoints;
+        //transform.position = waypoints;
         int targetWaypointIndex = 1;
         Vector3 targetWaypoint = waypoints;
         transform.LookAt(targetWaypoint);
 
         while (playerTargeted)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetWaypoint, speed * Time.deltaTime);
-            if (transform.position == targetWaypoint)
+            targetWaypoint = player.transform.position;
+            agent.SetDestination(targetWaypoint);
+            Vector3 distanceToWalkPoint = transform.position - targetWaypoint;
+
+            if (distanceToWalkPoint.magnitude < 1f)
             {
+                
                 targetWaypointIndex = (targetWaypointIndex + 1);
                 targetWaypoint = waypoints;
                 yield return new WaitForSeconds(waitTime);
                 yield return StartCoroutine(TurnToFace(targetWaypoint));
             }
             yield return null;
+        }
+
+        if (!playerTargeted)
+        {
+            Patrol();
         }
     }
 
