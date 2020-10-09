@@ -41,6 +41,7 @@ namespace SA
         public Camera cameraMain;
         private Vector2 rotation = Vector2.zero;
         public float lookSpeed = 3;
+        bool croutching;
 
         // Start is called before the first frame update
         void Start()
@@ -114,6 +115,11 @@ namespace SA
             }
 
             Jump();
+
+            if (Input.GetButtonDown("Crouch"))
+            {
+                Crouch();
+            }
 
             if(!onGround && !keepOffGround)
             {
@@ -190,6 +196,21 @@ namespace SA
             climbOff = true;
             climbTimer = Time.realtimeSinceStartup;
             isClimbing = false;
+        }
+
+        public void Crouch()
+        {
+            Debug.Log("crouch bro,or not");
+            if (!croutching)
+            {
+                moveSpeed = (moveSpeed / 2);
+                croutching = true;
+            }
+            else
+            {
+                moveSpeed = (moveSpeed * 2);
+                croutching = false;
+            }
         }
     }
 }
