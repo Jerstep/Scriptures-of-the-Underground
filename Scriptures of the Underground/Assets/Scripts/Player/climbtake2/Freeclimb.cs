@@ -96,7 +96,7 @@ namespace SA
 
             if (!isLerping)
             {
-                bool cancel = Input.GetKeyUp(KeyCode.X);
+                bool cancel = Input.GetButtonUp("Cancel");
                 if (cancel)
                 {
                     CancelClimb();
