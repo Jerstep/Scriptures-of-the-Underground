@@ -121,7 +121,12 @@ namespace SA
                 Crouch();
             }
 
-            if(!onGround && !keepOffGround)
+            if (Input.GetButtonDown("Interaction"))
+            {
+                Interact();
+            }
+
+            if (!onGround && !keepOffGround)
             {
                 if (!climbOff)
                 {
@@ -212,6 +217,22 @@ namespace SA
                 moveSpeed = (moveSpeed * 2);
                 GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height * 2);
                 croutching = false;
+            }
+        }
+
+        public void Interact()
+        {
+            Vector3 origin = transform.position;
+            origin.y += 0.4f;
+            Vector3 direction = transform.forward;
+            RaycastHit hit;
+            if (Physics.Raycast(origin, direction, out hit, 3f))
+            {
+                if (hit.transform.tag == "InteractableButton")
+                {
+                    hit.transform.gameObject.GetComponent<OpenerButtonController>().openDoor();
+                    Debug.Log("yo broham show ham we interacted you see that shiii");
+                }
             }
         }
     }
