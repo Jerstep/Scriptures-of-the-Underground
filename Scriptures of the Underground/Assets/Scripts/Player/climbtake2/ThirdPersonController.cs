@@ -204,11 +204,13 @@ namespace SA
             if (!croutching)
             {
                 moveSpeed = (moveSpeed / 2);
+                GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height / 2);
                 croutching = true;
             }
             else
             {
                 moveSpeed = (moveSpeed * 2);
+                GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height * 2);
                 croutching = false;
             }
         }
