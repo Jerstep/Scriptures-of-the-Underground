@@ -43,6 +43,9 @@ namespace SA
         public float lookSpeed = 3;
         bool croutching;
 
+        [FMODUnity.EventRef]
+        public string inputsound;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -55,6 +58,9 @@ namespace SA
             //camHolder = CameraHolder.singleton.transform;
             anim = GetComponentInChildren<Animator>();
             freeClimb = GetComponent<Freeclimb>();
+
+            //fmod stuff
+            //InvokeRepeating("CallFootsteps", 0, moveSpeed);
         }
 
         // Update is called once per frame
@@ -95,6 +101,11 @@ namespace SA
             Vector3 dir = transform.forward * (moveSpeed * moveAmount);
             dir.y = rigid.velocity.y;
             rigid.velocity = dir;
+        }
+
+        void CallFootsteps()
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(inputsound);
         }
 
         // Update is called once per frame
