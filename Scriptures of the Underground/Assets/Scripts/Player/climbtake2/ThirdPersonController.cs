@@ -43,6 +43,9 @@ namespace SA
         public float lookSpeed = 3;
         bool croutching;
 
+        [FMODUnity.EventRef]
+        public string inputsound;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -55,6 +58,9 @@ namespace SA
             //camHolder = CameraHolder.singleton.transform;
             anim = GetComponentInChildren<Animator>();
             freeClimb = GetComponent<Freeclimb>();
+
+            //fmod stuff
+            //InvokeRepeating("CallFootsteps", 0, moveSpeed);
         }
 
         // Update is called once per frame
@@ -97,6 +103,11 @@ namespace SA
             rigid.velocity = dir;
         }
 
+        void CallFootsteps()
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(inputsound);
+        }
+
         // Update is called once per frame
         void Update()
         {
@@ -121,7 +132,12 @@ namespace SA
                 Crouch();
             }
 
-            if(!onGround && !keepOffGround)
+            if (Input.GetButtonDown("Interaction"))
+            {
+                Interact();
+            }
+
+            if (!onGround && !keepOffGround)
             {
                 if (!climbOff)
                 {
@@ -212,6 +228,22 @@ namespace SA
                 moveSpeed = (moveSpeed * 2);
                 GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height * 2);
                 croutching = false;
+            }
+        }
+
+        public void Interact()
+        {
+            Vector3 origin = transform.position;
+            origin.y += 0.4f;
+            Vector3 direction = transform.forward;
+            RaycastHit hit;
+            if (Physics.Raycast(origin, direction, out hit, 3f))
+            {
+                if (hit.transform.tag == "InteractableButton")
+                {
+                    hit.transform.gameObject.GetComponent<OpenerButtonController>().openDoor();
+                    Debug.Log("yo broham show ham we interacted you see that shiii");
+                }
             }
         }
     }
