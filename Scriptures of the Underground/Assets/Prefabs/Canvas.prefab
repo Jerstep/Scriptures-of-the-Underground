@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stunText: {fileID: 6638930800194719377}
   stunString: 
-  player: {fileID: 0}
+  player: {fileID: 3297527887776155358, guid: bfb5943a6ccee0e4b8bd862ec8eac00b, type: 3}
 --- !u!1 &6638930799595306807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,7 +1758,8 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 3297527888486247099, guid: bfb5943a6ccee0e4b8bd862ec8eac00b,
+    type: 3}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
