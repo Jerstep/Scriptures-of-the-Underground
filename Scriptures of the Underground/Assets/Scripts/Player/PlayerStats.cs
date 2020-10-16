@@ -12,6 +12,8 @@ public class PlayerStats : MonoBehaviour
     public GameplayUI UI;
     bool overhead;
 
+    bool masked;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,5 +45,11 @@ public class PlayerStats : MonoBehaviour
     {
         overhead = !overhead;
         camAnim.SetBool("Overhead", overhead);
+    }
+
+    public void MaskedFunction(bool _masked)
+    {
+        masked = _masked;
+        Debug.Log("masked =" + masked);
     }
 }
