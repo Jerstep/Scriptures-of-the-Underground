@@ -37,7 +37,6 @@ namespace SA
 
         Freeclimb freeClimb;
 
-
         public Camera cameraMain;
         private Vector2 rotation = Vector2.zero;
         public float lookSpeed = 3;
@@ -58,6 +57,9 @@ namespace SA
             //camHolder = CameraHolder.singleton.transform;
             anim = GetComponentInChildren<Animator>();
             freeClimb = GetComponent<Freeclimb>();
+
+            //identify gadget objects
+           // gadgetMask = GameObject.Find("Gadget-Mask");
 
             //fmod stuff
             //InvokeRepeating("CallFootsteps", 0, moveSpeed);
@@ -181,14 +183,7 @@ namespace SA
         {
             if (keepOffGround)
                 return false;
-            /*Vector3 origin = transform.position;
-            origin.y += 0.4f;
-            Vector3 direction = -transform.up;
-            RaycastHit hit;
-            if(Physics.Raycast(origin,direction,out hit, 0.41f))
-            {
-                return true;
-            }*/
+            
 
             if(Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
             {
@@ -246,6 +241,8 @@ namespace SA
                 }
             }
         }
+
+        
     }
 }
 
