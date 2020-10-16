@@ -56,7 +56,7 @@ public class FieldOfView : MonoBehaviour
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
                 
                 //i find tze target so i do a thing
-                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask) && target.gameObject.GetComponent<PlayerStats>().masked == false)
                 {
                     GetComponent<Enemy>().foundplayer = true;
                     visibleTargets.Add(target);

@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7492cd70ff916c9409625d8ba240e5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masked: 0
 --- !u!1 &905581789890492578
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +970,7 @@ MonoBehaviour:
   playerStunItem: 0
   keys: 0
   UI: {fileID: 0}
+  masked: 0
 --- !u!1 &905581791238553774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,7 +1219,7 @@ MonoBehaviour:
     m_MaxSpeed: 1
     m_AccelTime: 0.2
     m_DecelTime: 0.1
-    m_InputAxisName: Mouse Y
+    m_InputAxisName: Joystick Y
     m_InputAxisValue: 0
     m_InvertInput: 0
     m_MinValue: 0
@@ -1241,7 +1243,7 @@ MonoBehaviour:
     m_MaxSpeed: 100
     m_AccelTime: 0.1
     m_DecelTime: 0.1
-    m_InputAxisName: Mouse X
+    m_InputAxisName: Joystick X
     m_InputAxisValue: 0
     m_InvertInput: 1
     m_MinValue: -180

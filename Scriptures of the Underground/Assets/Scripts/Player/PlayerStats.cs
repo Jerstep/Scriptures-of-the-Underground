@@ -12,7 +12,7 @@ public class PlayerStats : MonoBehaviour
     public GameplayUI UI;
     bool overhead;
 
-    bool masked;
+    public bool masked;
 
     // Start is called before the first frame update
     void Start()
