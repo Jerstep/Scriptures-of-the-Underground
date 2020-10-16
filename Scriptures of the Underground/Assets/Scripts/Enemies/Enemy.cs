@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
         {
             foundplayer = false;
             playerTargeted = false;
-            patrolling = false;
+            Patrol();
         }
 
         if(detectionMeter >= 100)
@@ -77,17 +77,16 @@ public class Enemy : MonoBehaviour
     //[Task]
     public void Patrol()
     {
-        Debug.Log("we patrolling yo");
-        StopCoroutine(FollowPath(waypoints));
-        waypoints = new Vector3[pathHolder.childCount];
-        for (int i = 0; i < waypoints.Length; i++)
-        {
-            waypoints[i] = pathHolder.GetChild(i).position;
-            waypoints[i] = new Vector3(waypoints[i].x, transform.position.y, waypoints[i].z);
-        }
-
         if (!patrolling)
         {
+            Debug.Log("we patrolling yo");
+            StopCoroutine("FollowPath");
+            waypoints = new Vector3[pathHolder.childCount];
+            for (int i = 0; i < waypoints.Length; i++)
+            {
+                waypoints[i] = pathHolder.GetChild(i).position;
+                waypoints[i] = new Vector3(waypoints[i].x, transform.position.y, waypoints[i].z);
+            }
             StartCoroutine(FollowPath(waypoints));
             patrolling = true;
             //Task.current.Succeed();
@@ -111,7 +110,7 @@ public class Enemy : MonoBehaviour
         Vector3 targetWaypoint = waypoints[targetWaypointIndex];
         transform.LookAt(targetWaypoint);
 
-        while (!foundplayer)
+        while (!playerTargeted)
         {
             agent.SetDestination(targetWaypoint);
             Vector3 distanceToWalkPoint = transform.position - targetWaypoint;
@@ -126,8 +125,9 @@ public class Enemy : MonoBehaviour
             }
             yield return null;
         }
-        if (foundplayer)
+        if (playerTargeted)
         {
+            Debug.Log("player is targeted");
             StopCoroutine(FollowPath(waypoints));
         }
     }
