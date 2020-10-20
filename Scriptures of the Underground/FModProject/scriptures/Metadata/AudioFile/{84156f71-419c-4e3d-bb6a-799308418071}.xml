@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{175ad9ed-6a87-4ad1-a2f1-ef5782ab589c}">
+	<object class="AudioFile" id="{84156f71-419c-4e3d-bb6a-799308418071}">
 		<property name="assetPath">
-			<value>Music/Underworld Demo1.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>SFX/Movement SFX/FootstepDirt_6.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>65.454580498866207</value>
+			<value>0.29149999999999998</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{50b2a397-d1dc-4706-8124-4d0c75ed8362}</destination>
