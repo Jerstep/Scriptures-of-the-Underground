@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using Panda;
+using SA;
 
 public class Enemy : MonoBehaviour
 {
+    public States enemyStates = States.Patrol;
 
     public NavMeshAgent agent;
 
@@ -30,6 +32,9 @@ public class Enemy : MonoBehaviour
     public GameObject player;
 
     bool patrolling;
+
+    bool stunned;
+    float stunTime = 3;
 
     private void Awake()
     {
@@ -57,17 +62,57 @@ public class Enemy : MonoBehaviour
             detectionMeter--;
         }
 
-        if (detectionMeter <= 0)
+        switch (enemyStates)
         {
-            foundplayer = false;
-            playerTargeted = false;
-            patrolling = false;
-        }
-
-        if(detectionMeter >= 100)
-        {
-            playerTargeted = true;
-            TargetPlayer();
+            case States.Patrol:
+                Patrol();
+                if (foundplayer && detectionMeter < 100)
+                    enemyStates = States.PlayerTarget;
+                if (stunned)
+                {
+                    enemyStates = States.Stunned;
+                }
+                break;
+            case States.PlayerTarget:
+                PlayerTarget();
+                if (detectionMeter <= 0)
+                {
+                    foundplayer = false;
+                    playerTargeted = false;
+                    enemyStates = States.Patrol;
+                }
+                else if (detectionMeter >= 100)
+                {
+                    playerTargeted = true;
+                    enemyStates = States.PlayerAttack;
+                }
+                if (stunned)
+                {
+                    enemyStates = States.Stunned;
+                }
+                break;
+            case States.PlayerAttack:
+                TargetPlayer();
+                if (detectionMeter <= 0)
+                {
+                    foundplayer = false;
+                    playerTargeted = false;
+                    enemyStates = States.Patrol;
+                }
+                if (stunned)
+                {
+                    enemyStates = States.Stunned;
+                }
+                break;
+            case States.Distracted:
+                
+                break;
+            case States.Stunned:
+                StartCoroutine(Stunned());
+                break;
+            case States.CapturedPlayer:
+                Debug.Log("playercaptured");
+                break;
         }
 
         detectImage.fillAmount = detectionMeter / 100;
@@ -77,32 +122,28 @@ public class Enemy : MonoBehaviour
     //[Task]
     public void Patrol()
     {
-        Debug.Log("we patrolling yo");
-        StopCoroutine(FollowPath(waypoints));
-        waypoints = new Vector3[pathHolder.childCount];
-        for (int i = 0; i < waypoints.Length; i++)
+        if (!foundplayer && detectionMeter > 0)
         {
-            waypoints[i] = pathHolder.GetChild(i).position;
-            waypoints[i] = new Vector3(waypoints[i].x, transform.position.y, waypoints[i].z);
+            detectionMeter--;
         }
 
         if (!patrolling)
         {
+            Debug.Log("we patrolling yo");
+            StopCoroutine("FollowPath");
+            waypoints = new Vector3[pathHolder.childCount];
+            for (int i = 0; i < waypoints.Length; i++)
+            {
+                waypoints[i] = pathHolder.GetChild(i).position;
+                waypoints[i] = new Vector3(waypoints[i].x, transform.position.y, waypoints[i].z);
+            }
             StartCoroutine(FollowPath(waypoints));
             patrolling = true;
             //Task.current.Succeed();
         }
     }
 
-    //call when targeting player
-    //[Task]
-    public void TargetPlayer()
-    {
-        patrolling = false;
-        playerPos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
-        StartCoroutine(FollowPlayer(playerPos));
-        //Task.current.Succeed();
-    }
+   
 
     IEnumerator FollowPath(Vector3[] waypoints)
     {
@@ -111,7 +152,7 @@ public class Enemy : MonoBehaviour
         Vector3 targetWaypoint = waypoints[targetWaypointIndex];
         transform.LookAt(targetWaypoint);
 
-        while (!foundplayer)
+        while (!playerTargeted)
         {
             agent.SetDestination(targetWaypoint);
             Vector3 distanceToWalkPoint = transform.position - targetWaypoint;
@@ -126,10 +167,26 @@ public class Enemy : MonoBehaviour
             }
             yield return null;
         }
-        if (foundplayer)
+        if (playerTargeted)
         {
+            Debug.Log("player is targeted");
             StopCoroutine(FollowPath(waypoints));
         }
+    }
+
+    public void PlayerTarget()
+    {
+
+    }
+
+    //call when targeting player
+    //[Task]
+    public void TargetPlayer()
+    {
+        patrolling = false;
+        playerPos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+        StartCoroutine(FollowPlayer(playerPos));
+        //Task.current.Succeed();
     }
 
     IEnumerator FollowPlayer(Vector3 waypoints)
@@ -175,6 +232,35 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
+    IEnumerator Stunned()
+    {
+        Debug.Log("Stunned");
+        agent.velocity = Vector3.zero;
+        yield return new WaitForSeconds(stunTime);
+        stunned = false;
+        enemyStates = States.Patrol;
+    }
+
+    public void CapturedPlayer(ThirdPersonController player)
+    {
+        foundplayer = false;
+        playerTargeted = false;
+        patrolling = false;
+        StopAllCoroutines();
+        agent.velocity = Vector3.zero;
+        player.enabled = false;
+        enemyStates = States.CapturedPlayer;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            CapturedPlayer(other.GetComponent<ThirdPersonController>());
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Vector3 startPosition = pathHolder.GetChild(0).position;
@@ -188,6 +274,15 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawLine(previousPosition, startPosition);
     }
 
-    
+    public enum States
+    {
+        Patrol,
+        PlayerTarget,
+        PlayerAttack,
+        LostPlayer,
+        Distracted,
+        Stunned,
+        CapturedPlayer
+    }
     
 }
