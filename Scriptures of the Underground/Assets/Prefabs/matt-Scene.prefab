@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9203d636a1f8e741ae5f6b3421f9eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyStates: 0
   agent: {fileID: 3297527889226190847}
   rotationSpeed: 90
   speed: 5
@@ -1758,8 +1759,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3297527889336958025}
-  m_LocalRotation: {x: 0.015414305, y: 0.05985216, z: -0.000924347, w: 0.9980878}
-  m_LocalPosition: {x: 61.93226, y: 79.30633, z: -291.42673}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.72278833, y: 79.76598, z: -334.1553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8129174168387270758}
