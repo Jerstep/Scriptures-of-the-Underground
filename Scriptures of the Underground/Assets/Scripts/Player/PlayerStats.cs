@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     public int playerStunItem;
     public int keys;
+    public int bullets;
 
     Animator camAnim;
 
@@ -30,7 +31,7 @@ public class PlayerStats : MonoBehaviour
     {
         if(other.tag == "hallwayTrigger")
         {
-            CamToggle();
+            OverheadCamToggle();
         }
     }
 
@@ -41,10 +42,22 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    public void CamToggle()
+    public void OverheadCamToggle()
     {
         overhead = !overhead;
+        camAnim.SetBool("Aiming", false);
         camAnim.SetBool("Overhead", overhead);
+    }
+
+    public void AimCamTurnOn()
+    {
+        camAnim.SetBool("Overhead", false);
+        camAnim.SetBool("Aiming", true);
+    }
+
+    public void AimCamTurnOff()
+    {
+        camAnim.SetBool("Aiming", false);
     }
 
     public void MaskedFunction(bool _masked)
@@ -52,4 +65,5 @@ public class PlayerStats : MonoBehaviour
         masked = _masked;
         Debug.Log("masked =" + masked);
     }
+
 }
