@@ -118,6 +118,7 @@ namespace SA
                 freeClimb.Tick(Time.deltaTime);
                 return;
             }
+
             onGround = OnGround();
             if (keepOffGround)
             {

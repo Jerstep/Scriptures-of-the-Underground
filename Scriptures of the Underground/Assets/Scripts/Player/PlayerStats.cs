@@ -14,6 +14,9 @@ public class PlayerStats : MonoBehaviour
     bool overhead;
 
     public bool masked;
+    public float maskCharge = 100;
+    public float rechargeTimer;
+    public GameObject maskObject;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,21 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(maskCharge <= 0 && masked == true)
+        {
+            StartCoroutine(RechargeMask());
+        }
+    }
+
+    IEnumerator RechargeMask()
+    {
+        masked = false;
+        yield return new WaitForSeconds(rechargeTimer);
+        maskCharge = 100;
+        if (maskObject.activeSelf)
+        {
+            masked = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
