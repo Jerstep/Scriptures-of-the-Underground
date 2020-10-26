@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 131.16855, g: 162.52502, b: 215.10977, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -964,7 +964,7 @@ MonoBehaviour:
   - {fileID: 1419873566}
   - {fileID: 2138732255}
   - {fileID: 2085278141}
-  lvlToLoad: TestClimbTake2
+  lvlToLoad: DemoScene-matt
 --- !u!1 &564826329
 GameObject:
   m_ObjectHideFlags: 0

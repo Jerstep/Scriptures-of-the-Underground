@@ -100,7 +100,7 @@ namespace SA
             Quaternion targetRot = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime * rotSpeed);
             transform.rotation = targetRot;
 
-            Vector3 dir = transform.forward * (moveSpeed * moveAmount);
+            Vector3 dir = transform.forward * (Input.GetButton("Sprint") ? (moveSpeed * 2) * moveAmount : moveSpeed * moveAmount);
             dir.y = rigid.velocity.y;
             rigid.velocity = dir;
         }
@@ -118,6 +118,7 @@ namespace SA
                 freeClimb.Tick(Time.deltaTime);
                 return;
             }
+
             onGround = OnGround();
             if (keepOffGround)
             {

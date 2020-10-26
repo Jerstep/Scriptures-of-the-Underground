@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{c73c64b0-9fdb-4916-898b-8be3b3399f4d}">
+		<property name="assetPath">
+			<value>SFX/Movement SFX/JumpLandingDirt_2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.36783333333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50b2a397-d1dc-4706-8124-4d0c75ed8362}</destination>
+		</relationship>
+	</object>
+</objects>

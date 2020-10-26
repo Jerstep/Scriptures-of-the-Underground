@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{01ab781f-61f2-49c5-89de-affe800b1395}">
+		<property name="assetPath">
+			<value>Ambience/ShrineRobin_4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.2767499999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50b2a397-d1dc-4706-8124-4d0c75ed8362}</destination>
+		</relationship>
+	</object>
+</objects>

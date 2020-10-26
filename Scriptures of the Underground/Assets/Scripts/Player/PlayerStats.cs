@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     public int playerStunItem;
     public int keys;
+    public int bullets;
 
     Animator camAnim;
 
@@ -13,6 +14,9 @@ public class PlayerStats : MonoBehaviour
     bool overhead;
 
     public bool masked;
+    public float maskCharge = 100;
+    public float rechargeTimer;
+    public GameObject maskObject;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +27,28 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(maskCharge <= 0 && masked == true)
+        {
+            StartCoroutine(RechargeMask());
+        }
+    }
+
+    IEnumerator RechargeMask()
+    {
+        masked = false;
+        yield return new WaitForSeconds(rechargeTimer);
+        maskCharge = 100;
+        if (maskObject.activeSelf)
+        {
+            masked = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if(other.tag == "hallwayTrigger")
         {
-            CamToggle();
+            OverheadCamToggle();
         }
     }
 
@@ -41,10 +59,22 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    public void CamToggle()
+    public void OverheadCamToggle()
     {
         overhead = !overhead;
+        camAnim.SetBool("Aiming", false);
         camAnim.SetBool("Overhead", overhead);
+    }
+
+    public void AimCamTurnOn()
+    {
+        camAnim.SetBool("Overhead", false);
+        camAnim.SetBool("Aiming", true);
+    }
+
+    public void AimCamTurnOff()
+    {
+        camAnim.SetBool("Aiming", false);
     }
 
     public void MaskedFunction(bool _masked)
@@ -52,4 +82,5 @@ public class PlayerStats : MonoBehaviour
         masked = _masked;
         Debug.Log("masked =" + masked);
     }
+
 }

@@ -13,10 +13,15 @@ public class Mask : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
 
+
     private void OnEnable()
     {
-        masked = true;
-        player.MaskedFunction(masked);
+        if(player.maskCharge != 0)
+        {
+            masked = true;
+            player.MaskedFunction(masked);
+        }
+        
     }
 
     void OnDisable()

@@ -61,6 +61,10 @@ public class FieldOfView : MonoBehaviour
                     GetComponent<Enemy>().foundplayer = true;
                     visibleTargets.Add(target);
                 }
+                else if(!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask) && target.gameObject.GetComponent<PlayerStats>().masked == true)
+                {
+                    target.gameObject.GetComponent<PlayerStats>().maskCharge--;
+                }
                 
             }
         }
