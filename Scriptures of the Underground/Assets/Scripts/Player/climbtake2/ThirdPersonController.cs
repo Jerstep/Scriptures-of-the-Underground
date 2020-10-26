@@ -44,6 +44,9 @@ namespace SA
 
         [FMODUnity.EventRef]
         public string inputsound;
+        public float inputSpeed;
+        bool moving;
+
 
         // Start is called before the first frame update
         void Start()
@@ -62,7 +65,7 @@ namespace SA
            // gadgetMask = GameObject.Find("Gadget-Mask");
 
             //fmod stuff
-            //InvokeRepeating("CallFootsteps", 0, moveSpeed);
+            InvokeRepeating("CallFootsteps", 0, inputSpeed);
         }
 
         // Update is called once per frame
@@ -80,6 +83,8 @@ namespace SA
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
+
+            
 
            // Look();
             camYforward = camHolder.forward;
@@ -105,10 +110,7 @@ namespace SA
             rigid.velocity = dir;
         }
 
-        void CallFootsteps()
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(inputsound);
-        }
+        
 
         // Update is called once per frame
         void Update()
@@ -140,6 +142,16 @@ namespace SA
                 Interact();
             }
 
+            if (Input.GetAxis("Vertical") >= 0.01f || Input.GetAxis("Horizontal") >= 0.01f || Input.GetAxis("Vertical") <= -0.01f || Input.GetAxis("Horizontal") <= -0.01f)
+            {
+                moving = true;
+
+            }
+            else if(Input.GetAxis("Vertical") == 0 || Input.GetAxis("Horizontal") == 0)
+            {
+                moving = false;
+            }
+
             if (!onGround && !keepOffGround)
             {
                 if (!climbOff)
@@ -160,8 +172,19 @@ namespace SA
                 }
             }
 
+
+
             anim.SetFloat("move", moveAmount);
             anim.SetBool("onAir", !onGround);
+        }
+
+        void CallFootsteps()
+        {
+            if (moving && onGround)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(inputsound);
+            }
+
         }
 
         void Jump()
@@ -216,12 +239,14 @@ namespace SA
             if (!croutching)
             {
                 moveSpeed = (moveSpeed / 2);
+                inputSpeed = (inputSpeed * 2);
                 GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height / 2);
                 croutching = true;
             }
             else
             {
                 moveSpeed = (moveSpeed * 2);
+                inputSpeed = (inputSpeed / 2);
                 GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height * 2);
                 croutching = false;
             }
@@ -243,7 +268,16 @@ namespace SA
             }
         }
 
-        
+        public void Respawn()
+        {
+            transform.position = GetComponent<PlayerStats>().respawnLocation.transform.position;
+        }
+
+        private void OnDisable()
+        {
+            moving = false;
+        }
+
     }
 }
 

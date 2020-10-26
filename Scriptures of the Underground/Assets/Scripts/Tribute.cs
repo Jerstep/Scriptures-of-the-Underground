@@ -17,18 +17,24 @@ public class Tribute : MonoBehaviour
             if (Input.GetButtonUp("Interaction") && uses >= 1)
             {
                 player = other.GetComponent<PlayerStats>();
-                Replenish();
+                Replenish(player);
+                SetRespawn(player);
             }
             
         }
     }
 
-    public void Replenish()
+    public void Replenish(PlayerStats _player)
     {
         Debug.Log("you've gaint stuff back and triggered a checkpoint");
         //gain a recource 
         player.GetComponent<PlayerStats>().StunItemUp();
         //save a checkpoint location
         uses--;
+    }
+
+    public void SetRespawn(PlayerStats _player)
+    {
+        _player.respawnLocation = transform.gameObject;
     }
 }
