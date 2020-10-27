@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
     public float maskCharge = 100;
     public float rechargeTimer;
     public GameObject maskObject;
+    public GameObject respawnLocation;
 
     // Start is called before the first frame update
     void Start()
@@ -82,5 +83,7 @@ public class PlayerStats : MonoBehaviour
         masked = _masked;
         Debug.Log("masked =" + masked);
     }
+
+
 
 }

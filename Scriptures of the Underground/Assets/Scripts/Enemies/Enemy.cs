@@ -257,7 +257,8 @@ public class Enemy : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            CapturedPlayer(other.GetComponent<ThirdPersonController>());
+            //CapturedPlayer(other.GetComponent<ThirdPersonController>());
+            other.GetComponent<ThirdPersonController>().Respawn();
         }
     }
 
