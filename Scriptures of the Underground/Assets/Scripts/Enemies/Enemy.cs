@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 
     public Transform pathHolder;
    // [Task]
-    bool playerTargeted;
+    public bool playerTargeted;
 
     Vector3[] waypoints;
 
@@ -74,7 +74,6 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case States.PlayerTarget:
-                PlayerTarget();
                 if (detectionMeter <= 0)
                 {
                     foundplayer = false;
@@ -105,7 +104,11 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case States.Distracted:
-                
+                patrolling = false;
+                if (stunned)
+                {
+                    enemyStates = States.Stunned;
+                }
                 break;
             case States.Stunned:
                 StartCoroutine(Stunned());
@@ -174,9 +177,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void PlayerTarget()
+    public void Distracted(Vector3 _bulletPos)
     {
-
+        enemyStates = States.Distracted;
+        Debug.Log("enemy script distraction");
+        Vector3 bulletPos = new Vector3(_bulletPos.x, transform.position.y, _bulletPos.z);
+        StartCoroutine(FollowDistracion(bulletPos));
+        //StopAllCoroutines();
     }
 
     //call when targeting player
@@ -217,6 +224,39 @@ public class Enemy : MonoBehaviour
         {
             Patrol();
         }
+    }
+
+    IEnumerator FollowDistracion(Vector3 waypoints)
+    {
+        //transform.position = waypoints;
+        int targetWaypointIndex = 1;
+        Vector3 targetWaypoint = waypoints;
+        transform.LookAt(targetWaypoint);
+
+        while (enemyStates == States.Distracted)
+        {
+            targetWaypoint = player.transform.position;
+            agent.SetDestination(targetWaypoint);
+            Vector3 distanceToWalkPoint = transform.position - targetWaypoint;
+
+            if (distanceToWalkPoint.magnitude < 1f)
+            {
+
+                targetWaypointIndex = (targetWaypointIndex + 1);
+                targetWaypoint = waypoints;
+                yield return new WaitForSeconds(waitTime);
+                yield return StartCoroutine(TurnToFace(targetWaypoint));
+                //doesnt swtich yet
+                yield return new WaitForSeconds(10);
+                enemyStates = States.Patrol;
+
+            }
+            
+            yield return null;
+        }
+
+        
+
     }
 
     IEnumerator TurnToFace(Vector3 lookTarget)
