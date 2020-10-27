@@ -20,6 +20,7 @@ namespace SA
         Animator anim;
 
         public float moveSpeed = 4;
+        public float sprintMultyplyer = 1.2f;
         public float rotSpeed = 9;
         public float jumpSpeed = 15;
 
@@ -105,7 +106,7 @@ namespace SA
             Quaternion targetRot = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime * rotSpeed);
             transform.rotation = targetRot;
 
-            Vector3 dir = transform.forward * (Input.GetButton("Sprint") ? (moveSpeed * 2) * moveAmount : moveSpeed * moveAmount);
+            Vector3 dir = transform.forward * (Input.GetButton("Sprint") ? (moveSpeed * sprintMultyplyer) * moveAmount : moveSpeed * moveAmount);
             dir.y = rigid.velocity.y;
             rigid.velocity = dir;
         }
@@ -278,6 +279,11 @@ namespace SA
             moving = false;
         }
 
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere(groundCheck.position, groundDistance);
+        }
     }
 }
 
