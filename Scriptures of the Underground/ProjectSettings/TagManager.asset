@@ -9,6 +9,7 @@ TagManager:
   - CancelClimb
   - Distraction
   - Enemy
+  - Enviorment
   layers:
   - Default
   - TransparentFX

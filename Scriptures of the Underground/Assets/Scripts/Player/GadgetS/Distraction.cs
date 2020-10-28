@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Distraction : MonoBehaviour
 {
-    PlayerStats player;
+    public PlayerStats player;
     public GameObject bulletPrefab;
+
+    public float cooldowntimer = 1;
+    public float currentCooldown = 0;
     
 
     // Start is called before the first frame update
@@ -17,17 +20,27 @@ public class Distraction : MonoBehaviour
 
     private void OnEnable()
     {
-        player.AimCamTurnOn();
+        //player.AimCamTurnOn();
     }
 
     void OnDisable()
     {
-        player.AimCamTurnOff();
+        //player.AimCamTurnOff();
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Interaction") && player.bullets >= 1)
+        if(currentCooldown > 0)
+        {
+            currentCooldown -= Time.deltaTime;
+        }
+        else if (currentCooldown < 0)
+        {
+            currentCooldown = 0;
+        }
+       
+
+        if (Input.GetAxis("Shoot") == 1 && currentCooldown == 0 && player.bullets >= 1 || Input.GetButtonDown("Shoot2") && currentCooldown == 0 && player.bullets >= 1)
         {
             Shoot();
         }
@@ -37,5 +50,10 @@ public class Distraction : MonoBehaviour
     {
         //instantiate bullet based on this objects location and based on the amount of bullets player has left
         //Instantiate(bulletPrefab, gameObject.transform.position);
+        Debug.Log("shoot");
+        currentCooldown = cooldowntimer;
+        player.bullets--;
+        Instantiate(bulletPrefab, transform.position, transform.rotation);
+        
     }
 }

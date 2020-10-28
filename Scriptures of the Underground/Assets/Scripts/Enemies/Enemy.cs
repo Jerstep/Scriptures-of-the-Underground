@@ -235,7 +235,6 @@ public class Enemy : MonoBehaviour
 
         while (enemyStates == States.Distracted)
         {
-            targetWaypoint = player.transform.position;
             agent.SetDestination(targetWaypoint);
             Vector3 distanceToWalkPoint = transform.position - targetWaypoint;
 
@@ -245,10 +244,10 @@ public class Enemy : MonoBehaviour
                 targetWaypointIndex = (targetWaypointIndex + 1);
                 targetWaypoint = waypoints;
                 yield return new WaitForSeconds(waitTime);
+                StartCoroutine(ResetDistraction());
                 yield return StartCoroutine(TurnToFace(targetWaypoint));
                 //doesnt swtich yet
-                yield return new WaitForSeconds(10);
-                enemyStates = States.Patrol;
+                
 
             }
             
@@ -257,6 +256,14 @@ public class Enemy : MonoBehaviour
 
         
 
+    }
+
+    IEnumerator ResetDistraction()
+    {
+        Debug.Log("Reset");
+        yield return new WaitForSeconds(10);
+        enemyStates = States.Patrol;
+        StopAllCoroutines();
     }
 
     IEnumerator TurnToFace(Vector3 lookTarget)
