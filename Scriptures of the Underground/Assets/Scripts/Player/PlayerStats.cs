@@ -19,6 +19,8 @@ public class PlayerStats : MonoBehaviour
     public GameObject maskObject;
     public GameObject respawnLocation;
 
+    public GameObject LvlOstHolder;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -7,6 +7,9 @@ TagManager:
   - hallwayTrigger
   - InteractableButton
   - CancelClimb
+  - Distraction
+  - Enemy
+  - Enviorment
   layers:
   - Default
   - TransparentFX
