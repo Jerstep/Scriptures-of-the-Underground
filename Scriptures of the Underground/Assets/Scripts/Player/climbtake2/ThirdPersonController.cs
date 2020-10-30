@@ -30,6 +30,8 @@ namespace SA
         float climbTimer;
         float savedTime;
 
+        bool mouseVisibleUnlocked = true;
+
         public bool isClimbing;
 
         public Transform groundCheck;
@@ -52,6 +54,9 @@ namespace SA
         // Start is called before the first frame update
         void Start()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             rigid = GetComponent<Rigidbody>();
             rigid.angularDrag = 999;
             rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
@@ -78,14 +83,13 @@ namespace SA
             }
             onGround = OnGround();
             Movement();
+            LockAndHideCursorToggle();
         } 
 
         void Movement()
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
-
-            
 
            // Look();
             camYforward = camHolder.forward;
@@ -277,6 +281,25 @@ namespace SA
         private void OnDisable()
         {
             moving = false;
+        }
+
+        private void LockAndHideCursorToggle()
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                if (mouseVisibleUnlocked)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                    mouseVisibleUnlocked = true;
+                }
+                else
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    mouseVisibleUnlocked = false;
+                }
+            }
         }
 
         private void OnDrawGizmos()
