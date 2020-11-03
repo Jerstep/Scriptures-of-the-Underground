@@ -14,44 +14,76 @@ public class PopUpUI : MonoBehaviour
     public float FadeRate;
 
     public float waitTime;
-
+    public bool fadedIn;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         //StartCoroutine(FadeTextToFullAlpha(textbox, icon));
+        anim = GetComponent<Animator>();
     }
 
     public void StartFade(string title, Sprite iconSprite)
     {
         textbox.text = title;
         icon.sprite = iconSprite;
-        StartCoroutine(FadeText(textbox, icon));
+        fadedIn = !fadedIn;
+        anim.SetBool("fadedIn", fadedIn);
+        StartCoroutine(FadeFalse());
     }
+
+    public IEnumerator FadeFalse()
+    {
+        yield return new WaitForSeconds(waitTime);
+        fadedIn = false;
+        anim.SetBool("fadedIn", fadedIn);
+    }
+
 
     public IEnumerator FadeText(TMP_Text _titleText, Image _icon)
     {
         yield return new WaitForSeconds(waitTime);
-        Color curColor = icon.color;
-        while (icon.color.a < targetAlphaFadeIn)
+        Color curColor = _icon.color;
+        while (_icon.color.a < targetAlphaFadeIn && !fadedIn)
         {
 
             curColor.a = Mathf.Lerp(curColor.a, targetAlphaFadeIn, FadeRate * Time.deltaTime);
-            icon.color = curColor;
+            _icon.color = curColor;
             _titleText.color = curColor;
+
+            /*if (curColor.a >= targetAlphaFadeIn - 1)
+            {
+                fadedIn = true;
+                //StartCoroutine(FadeTextOut(_titleText, _icon));
+                //StopCoroutine(FadeText(_titleText, _icon));
+            }*/
             yield return null;
         }
 
-        yield return new WaitForSeconds(waitTime);
-        curColor = icon.color;
-
-        while (icon.color.a > targetAlphaFadeOut)
-        {
-
-             curColor.a = Mathf.Lerp(curColor.a, targetAlphaFadeOut, FadeRate / Time.deltaTime);
-             icon.color = curColor;
-             _titleText.color = curColor;
-             yield return null;
-        }
+       
     }
 
+    public IEnumerator FadeTextOut(TMP_Text _titleText, Image _icon)
+    {
+        Debug.Log("faded IN");
+        fadedIn = true;
+        yield return new WaitForSeconds(waitTime);
+        Color curColor = _icon.color;
+
+        while (_icon.color.a > targetAlphaFadeOut)
+        {
+
+            curColor.a = Mathf.Lerp(curColor.a, targetAlphaFadeOut, FadeRate / Time.deltaTime);
+            _icon.color = curColor;
+            _titleText.color = curColor;
+            if (curColor.a <= targetAlphaFadeOut)
+            {
+                fadedIn = false;
+                Debug.Log("faded OUT");
+                // StopAllCoroutines();
+            }
+            yield return null;
+        }
+    }
 }
+
