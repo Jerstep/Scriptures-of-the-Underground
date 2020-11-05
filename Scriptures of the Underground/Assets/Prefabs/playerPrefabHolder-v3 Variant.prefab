@@ -250,7 +250,7 @@ PrefabInstance:
     - target: {fileID: 905581790247571324, guid: 720e70f49b36c1a4b811093d8a9344b3,
         type: 3}
       propertyPath: m_Name
-      value: playerPrefabHolder-v3
+      value: playerPrefabHolder-v3 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 905581790247571324, guid: 720e70f49b36c1a4b811093d8a9344b3,
         type: 3}
