@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{82b59757-a9dc-4736-9a10-95674111349e}">
+		<property name="assetPath">
+			<value>SFX/Movement SFX/JumpLandingConcrete_3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.19179166666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50b2a397-d1dc-4706-8124-4d0c75ed8362}</destination>
+		</relationship>
+	</object>
+</objects>

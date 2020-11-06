@@ -9,15 +9,13 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: shader_water
   m_Shader: {fileID: 4800000, guid: 8f62d1348abb9774aa993faf18fb0e37, type: 3}
-  m_ShaderKeywords: _ADD_PRECOMPUTED_VELOCITY _BLENDMODE_ALPHA _ENABLE_FOG_ON_TRANSPARENT
-    _SURFACE_TYPE_TRANSPARENT
+  m_ShaderKeywords: _ADD_PRECOMPUTED_VELOCITY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2000
   stringTagMap:
     MotionVector: User
-    RenderType: Transparent
   disabledShaderPasses:
   - TransparentBackface
   m_SavedProperties:
@@ -40,7 +38,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _smoothness:
-        m_Texture: {fileID: 2800000, guid: e662268d1d00cdb4fb7926388d3d4ea9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 543daf67072309e47843eb601d0f0d2e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -52,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _waternormal:
-        m_Texture: {fileID: 2800000, guid: 4c940e628759c614ca24cd307026d245, type: 3}
+        m_Texture: {fileID: 2800000, guid: 543daf67072309e47843eb601d0f0d2e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _waternormal1:
@@ -64,26 +62,26 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _watertexture:
-        m_Texture: {fileID: 2800000, guid: e662268d1d00cdb4fb7926388d3d4ea9, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 8124108cd17e461479ab61d9314172fa, type: 3}
+        m_Scale: {x: 0.1, y: 0.1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AddPrecomputedVelocity: 1
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
-    - _AlphaDstBlend: 10
+    - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
     - _BlendMode: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EnableFogOnTransparent: 1
     - _Float1: -1
     - _Float2: -1
     - _ReceivesSSR: 1
-    - _RenderQueueType: 5
+    - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _SrcBlend: 1
     - _StencilRef: 0
@@ -96,29 +94,28 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _SurfaceType: 1
+    - _SurfaceType: 0
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentSortPriority: 0
     - _TransparentZWrite: 1
     - _UseShadowThreshold: 0
-    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
-    - _aopower: 0.35
-    - _metallic: 0.56
+    - _aopower: 0
     - _normalpower: 1
-    - _offsetstrength: 1.7
+    - _offsetstrength: 2
     - _smoothnesspower: 1
     - _speed1: 0.01
     - _speed2: 0.1
     - _waterscale: 5
     - _wavescale: 5
-    - _wavetile: 1
+    - _wavetile: 5
     - _wavetile1: 0.5
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _metallic: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 0}
-    - _watercolour: {r: 0.13519046, g: 0.5849056, b: 0.5387961, a: 0}
+    - _metallic: {r: 0, g: 0, b: 0, a: 0}
+    - _watercolour: {r: 1, g: 1, b: 1, a: 1}

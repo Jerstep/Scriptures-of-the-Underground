@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{e11ccda2-324a-423b-a74f-89fcfb1bb06a}">
+		<property name="assetPath">
+			<value>Ambience/ShrineWater2.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>24.000022675736961</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50b2a397-d1dc-4706-8124-4d0c75ed8362}</destination>
+		</relationship>
+	</object>
+</objects>
