@@ -158,7 +158,7 @@ namespace SA
             Vector3 origin = transform.position;
             float dis = rayTowardsMoveDir;
             Vector3 dir = moveDir;
-            DebugLine.singleton.SetLine(origin, origin + (dir * dis), 0);
+            //DebugLine.singleton.SetLine(origin, origin + (dir * dis), 0);
             
             //raycast towards direction you want to move
             RaycastHit hit;
@@ -173,7 +173,7 @@ namespace SA
             float dis2 = rayForwardTowardsWall;
 
             //raycast forward towards the wall
-            DebugLine.singleton.SetLine(origin, origin + (dir * dis2), 1);
+           // DebugLine.singleton.SetLine(origin, origin + (dir * dis2), 1);
             
             if (Physics.Raycast(origin, dir, out hit, dis))
             {

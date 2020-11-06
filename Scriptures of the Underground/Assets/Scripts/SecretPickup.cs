@@ -7,10 +7,12 @@ public class SecretPickup : MonoBehaviour
     public InventorySecrets inventorysystem;
     public Item SecretObject;
 
+    public PopUpUI popUi;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        popUi = GameObject.Find("TitleUi").GetComponent<PopUpUI>(); 
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class SecretPickup : MonoBehaviour
         if(other.tag == "Player")
         {
             other.GetComponent<PlayerStats>().StunItemUp();
+            popUi.StartFade(SecretObject.name, SecretObject.icon);
             AddItems();
         }
     }
