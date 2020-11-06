@@ -252,14 +252,18 @@ namespace SA
             }
         }
 
-        void CancelClimb()
+       
+
+        public void CancelClimb()
         {
             isClimbing = false;
             tpc.EnableController();
             a_hook.enabled = false;
         }
 
+
     }
+   
 
     //rh lh = right/left hand , lf,rf = left/right foot 
     [System.Serializable]

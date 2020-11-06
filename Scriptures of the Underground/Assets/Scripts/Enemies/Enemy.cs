@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 
     public Transform pathHolder;
    // [Task]
-    bool playerTargeted;
+    public bool playerTargeted;
 
     Vector3[] waypoints;
 
@@ -74,7 +74,6 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case States.PlayerTarget:
-                PlayerTarget();
                 if (detectionMeter <= 0)
                 {
                     foundplayer = false;
@@ -105,7 +104,11 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case States.Distracted:
-                
+                patrolling = false;
+                if (stunned)
+                {
+                    enemyStates = States.Stunned;
+                }
                 break;
             case States.Stunned:
                 StartCoroutine(Stunned());
@@ -174,9 +177,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void PlayerTarget()
+    public void Distracted(Vector3 _bulletPos)
     {
-
+        enemyStates = States.Distracted;
+        Debug.Log("enemy script distraction");
+        Vector3 bulletPos = new Vector3(_bulletPos.x, transform.position.y, _bulletPos.z);
+        StartCoroutine(FollowDistracion(bulletPos));
+        //StopAllCoroutines();
     }
 
     //call when targeting player
@@ -219,6 +226,46 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    IEnumerator FollowDistracion(Vector3 waypoints)
+    {
+        //transform.position = waypoints;
+        int targetWaypointIndex = 1;
+        Vector3 targetWaypoint = waypoints;
+        transform.LookAt(targetWaypoint);
+
+        while (enemyStates == States.Distracted)
+        {
+            agent.SetDestination(targetWaypoint);
+            Vector3 distanceToWalkPoint = transform.position - targetWaypoint;
+
+            if (distanceToWalkPoint.magnitude < 1f)
+            {
+
+                targetWaypointIndex = (targetWaypointIndex + 1);
+                targetWaypoint = waypoints;
+                yield return new WaitForSeconds(waitTime);
+                StartCoroutine(ResetDistraction());
+                yield return StartCoroutine(TurnToFace(targetWaypoint));
+                //doesnt swtich yet
+                
+
+            }
+            
+            yield return null;
+        }
+
+        
+
+    }
+
+    IEnumerator ResetDistraction()
+    {
+        Debug.Log("Reset");
+        yield return new WaitForSeconds(10);
+        enemyStates = States.Patrol;
+        StopAllCoroutines();
+    }
+
     IEnumerator TurnToFace(Vector3 lookTarget)
     {//trigonometry booooiiiiis
         Vector3 dirToLookTarget = (lookTarget - transform.position).normalized;
@@ -257,7 +304,8 @@ public class Enemy : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            CapturedPlayer(other.GetComponent<ThirdPersonController>());
+            //CapturedPlayer(other.GetComponent<ThirdPersonController>());
+            other.GetComponent<ThirdPersonController>().Respawn();
         }
     }
 

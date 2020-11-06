@@ -20,6 +20,7 @@ namespace SA
         Animator anim;
 
         public float moveSpeed = 4;
+        public float sprintMultyplyer = 1.2f;
         public float rotSpeed = 9;
         public float jumpSpeed = 15;
 
@@ -28,6 +29,8 @@ namespace SA
         bool climbOff;
         float climbTimer;
         float savedTime;
+
+        bool mouseVisibleUnlocked = true;
 
         public bool isClimbing;
 
@@ -44,10 +47,16 @@ namespace SA
 
         [FMODUnity.EventRef]
         public string inputsound;
+        public float inputSpeed;
+        bool moving;
+
 
         // Start is called before the first frame update
         void Start()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             rigid = GetComponent<Rigidbody>();
             rigid.angularDrag = 999;
             rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
@@ -62,7 +71,7 @@ namespace SA
            // gadgetMask = GameObject.Find("Gadget-Mask");
 
             //fmod stuff
-            //InvokeRepeating("CallFootsteps", 0, moveSpeed);
+            InvokeRepeating("CallFootsteps", 0, inputSpeed);
         }
 
         // Update is called once per frame
@@ -74,6 +83,7 @@ namespace SA
             }
             onGround = OnGround();
             Movement();
+            LockAndHideCursorToggle();
         } 
 
         void Movement()
@@ -100,15 +110,12 @@ namespace SA
             Quaternion targetRot = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime * rotSpeed);
             transform.rotation = targetRot;
 
-            Vector3 dir = transform.forward * (Input.GetButton("Sprint") ? (moveSpeed * 2) * moveAmount : moveSpeed * moveAmount);
+            Vector3 dir = transform.forward * (Input.GetButton("Sprint") ? (moveSpeed * sprintMultyplyer) * moveAmount : moveSpeed * moveAmount);
             dir.y = rigid.velocity.y;
             rigid.velocity = dir;
         }
 
-        void CallFootsteps()
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(inputsound);
-        }
+        
 
         // Update is called once per frame
         void Update()
@@ -118,6 +125,7 @@ namespace SA
                 freeClimb.Tick(Time.deltaTime);
                 return;
             }
+
             onGround = OnGround();
             if (keepOffGround)
             {
@@ -137,6 +145,16 @@ namespace SA
             if (Input.GetButtonDown("Interaction"))
             {
                 Interact();
+            }
+
+            if (Input.GetAxis("Vertical") >= 0.01f || Input.GetAxis("Horizontal") >= 0.01f || Input.GetAxis("Vertical") <= -0.01f || Input.GetAxis("Horizontal") <= -0.01f)
+            {
+                moving = true;
+
+            }
+            else if(Input.GetAxis("Vertical") == 0 || Input.GetAxis("Horizontal") == 0)
+            {
+                moving = false;
             }
 
             if (!onGround && !keepOffGround)
@@ -159,8 +177,19 @@ namespace SA
                 }
             }
 
+
+
             anim.SetFloat("move", moveAmount);
             anim.SetBool("onAir", !onGround);
+        }
+
+        void CallFootsteps()
+        {
+            if (moving && onGround)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(inputsound);
+            }
+
         }
 
         void Jump()
@@ -215,12 +244,14 @@ namespace SA
             if (!croutching)
             {
                 moveSpeed = (moveSpeed / 2);
+                inputSpeed = (inputSpeed * 2);
                 GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height / 2);
                 croutching = true;
             }
             else
             {
                 moveSpeed = (moveSpeed * 2);
+                inputSpeed = (inputSpeed / 2);
                 GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height * 2);
                 croutching = false;
             }
@@ -242,7 +273,40 @@ namespace SA
             }
         }
 
-        
+        public void Respawn()
+        {
+            transform.position = GetComponent<PlayerStats>().respawnLocation.transform.position;
+        }
+
+        private void OnDisable()
+        {
+            moving = false;
+        }
+
+        private void LockAndHideCursorToggle()
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                if (mouseVisibleUnlocked)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                    mouseVisibleUnlocked = true;
+                }
+                else
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    mouseVisibleUnlocked = false;
+                }
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere(groundCheck.position, groundDistance);
+        }
     }
 }
 
