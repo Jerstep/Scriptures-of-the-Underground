@@ -20,6 +20,7 @@ namespace SA
         Animator anim;
 
         public float moveSpeed = 4;
+        public float sprintMultyplyer = 1.2f;
         public float rotSpeed = 9;
         public float jumpSpeed = 15;
 
@@ -28,6 +29,8 @@ namespace SA
         bool climbOff;
         float climbTimer;
         float savedTime;
+
+        bool mouseVisibleUnlocked = true;
 
         public bool isClimbing;
 
@@ -51,6 +54,9 @@ namespace SA
         // Start is called before the first frame update
         void Start()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             rigid = GetComponent<Rigidbody>();
             rigid.angularDrag = 999;
             rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
@@ -77,14 +83,13 @@ namespace SA
             }
             onGround = OnGround();
             Movement();
+            LockAndHideCursorToggle();
         } 
 
         void Movement()
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
-
-            
 
            // Look();
             camYforward = camHolder.forward;
@@ -105,7 +110,7 @@ namespace SA
             Quaternion targetRot = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime * rotSpeed);
             transform.rotation = targetRot;
 
-            Vector3 dir = transform.forward * (Input.GetButton("Sprint") ? (moveSpeed * 2) * moveAmount : moveSpeed * moveAmount);
+            Vector3 dir = transform.forward * (Input.GetButton("Sprint") ? (moveSpeed * sprintMultyplyer) * moveAmount : moveSpeed * moveAmount);
             dir.y = rigid.velocity.y;
             rigid.velocity = dir;
         }
@@ -278,6 +283,30 @@ namespace SA
             moving = false;
         }
 
+        private void LockAndHideCursorToggle()
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                if (mouseVisibleUnlocked)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                    mouseVisibleUnlocked = true;
+                }
+                else
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    mouseVisibleUnlocked = false;
+                }
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere(groundCheck.position, groundDistance);
+        }
     }
 }
 
