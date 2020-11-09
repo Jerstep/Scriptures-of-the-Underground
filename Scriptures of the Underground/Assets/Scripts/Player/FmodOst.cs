@@ -22,15 +22,8 @@ public class FmodOst : MonoBehaviour
 
     public void LvlMainTheme()
     {
-        ost.SetParameter("Distance to Shrine", 100f);
+        ost.SetParameter("Distance to Shrine", 100);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            LvlMainTheme();
-        }
-    }
+    
 }
