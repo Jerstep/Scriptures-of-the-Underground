@@ -20,11 +20,18 @@ public class PlayerStats : MonoBehaviour
     public GameObject respawnLocation;
 
     public GameObject LvlOstHolder;
+    FmodOst ost;
+
+    public int collectiblesFound;
+
+    Gamemanager gameman;
 
     // Start is called before the first frame update
     void Start()
     {
         camAnim = GameObject.Find("CamAnimator").GetComponent<Animator>();
+        ost = GameObject.Find("fmod-ost").GetComponent<FmodOst>();
+        gameman = GameObject.Find("GameManager").GetComponent<Gamemanager>();
     }
 
     // Update is called once per frame
@@ -47,11 +54,19 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+       if(other.tag == "PersefShrine")
+        {
+            ost.PersefTheme();
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "hallwayTrigger")
+        if (other.tag == "PersefShrine")
         {
-            OverheadCamToggle();
+            ost.LvlMainTheme();
         }
     }
 
@@ -86,6 +101,10 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("masked =" + masked);
     }
 
+    public void EndingGame()
+    {
+        gameman.EndDemo(collectiblesFound);
+    }
 
 
 }
