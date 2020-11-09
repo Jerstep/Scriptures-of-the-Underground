@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - hallwayTrigger
+  - InteractableButton
+  - CancelClimb
+  - Distraction
+  - Enemy
+  - Enviorment
+  - PersefShrine
   layers:
   - Default
   - TransparentFX
@@ -14,10 +21,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - WaterInteraction
-  - CarvedInteraction
-  - sun
-  - 
+  - Enviorment
+  - Climbable
+  - CurrentCheckSpot
+  - IgnoreBake
   - 
   - 
   - 
