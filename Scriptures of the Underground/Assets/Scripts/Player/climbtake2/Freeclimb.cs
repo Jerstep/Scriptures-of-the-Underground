@@ -184,7 +184,7 @@ namespace SA
 
             origin = origin + (dir * dis2);
             dir = -moveDir;
-            DebugLine.singleton.SetLine(origin, origin + dir, 1);
+            //DebugLine.singleton.SetLine(origin, origin + dir, 1);
             if (Physics.Raycast(origin,dir,out hit, rayForwardTowardsWall))
             {
                 helper.position = PosWithOffset(origin, hit.point);
