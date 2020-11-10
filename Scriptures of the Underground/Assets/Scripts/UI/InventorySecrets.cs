@@ -32,6 +32,7 @@ public class InventorySecrets : MonoBehaviour
     public GameObject infoImageObject;
     public Image infoImage;
 
+
     private void Start()
     {
         //infoHolder = GameObject.Find("information-Holder");
@@ -69,4 +70,5 @@ public class InventorySecrets : MonoBehaviour
         infoTextBox.GetComponent<Text>().text = info;
         infoImage.sprite = conceptArt;
     }
+
 }
