@@ -47,9 +47,9 @@ namespace SA
 
         [FMODUnity.EventRef]
         public string inputsound;
+        FMOD.Studio.EventInstance footstepsEvent;
         public float inputSpeed;
         bool moving;
-
 
         // Start is called before the first frame update
         void Start()
@@ -68,10 +68,13 @@ namespace SA
             freeClimb = GetComponent<Freeclimb>();
 
             //identify gadget objects
-           // gadgetMask = GameObject.Find("Gadget-Mask");
+            // gadgetMask = GameObject.Find("Gadget-Mask");
 
             //fmod stuff
-            InvokeRepeating("CallFootsteps", 0, inputSpeed);
+            footstepsEvent = FMODUnity.RuntimeManager.CreateInstance(inputsound);
+
+
+            
         }
 
         // Update is called once per frame
@@ -181,15 +184,6 @@ namespace SA
 
             anim.SetFloat("move", moveAmount);
             anim.SetBool("onAir", !onGround);
-        }
-
-        void CallFootsteps()
-        {
-            if (moving && onGround)
-            {
-                FMODUnity.RuntimeManager.PlayOneShot(inputsound);
-            }
-
         }
 
         void Jump()
