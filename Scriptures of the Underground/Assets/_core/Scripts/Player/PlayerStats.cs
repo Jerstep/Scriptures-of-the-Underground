@@ -22,7 +22,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject LvlOstHolder;
     FmodOst ost;
 
-    public int collectiblesFound;
+    public int notesTaken;
 
     Gamemanager gameman;
 
@@ -103,7 +103,7 @@ public class PlayerStats : MonoBehaviour
 
     public void EndingGame()
     {
-        gameman.EndDemo(collectiblesFound);
+        gameman.EndDemo(notesTaken);
     }
 
 

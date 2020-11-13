@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class InventorySecrets : MonoBehaviour
 {
@@ -28,7 +30,7 @@ public class InventorySecrets : MonoBehaviour
     public List<Item> secret = new List<Item>();
 
     public GameObject infoHolder;
-    public GameObject infoTextBox;
+    public TMP_Text infoTextBox;
     public GameObject infoImageObject;
     public Image infoImage;
 
@@ -67,7 +69,7 @@ public class InventorySecrets : MonoBehaviour
 
     public void ChangeInfoText(string info, Sprite conceptArt)
     {
-        infoTextBox.GetComponent<Text>().text = info;
+        infoTextBox.text = info;
         infoImage.sprite = conceptArt;
     }
 

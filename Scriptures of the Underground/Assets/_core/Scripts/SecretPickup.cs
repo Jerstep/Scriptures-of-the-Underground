@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SA;
 
 public class SecretPickup : MonoBehaviour
 {
@@ -21,11 +22,12 @@ public class SecretPickup : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && Input.GetButtonDown("Interaction"))
         {
             other.GetComponent<PlayerStats>().StunItemUp();
+            other.GetComponent<ThirdPersonController>().TakeNote();
             popUi.StartFade(SecretObject.name, SecretObject.icon);
             AddItems();
         }

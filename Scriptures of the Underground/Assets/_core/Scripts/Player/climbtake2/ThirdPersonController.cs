@@ -272,6 +272,12 @@ namespace SA
             transform.position = GetComponent<PlayerStats>().respawnLocation.transform.position;
         }
 
+
+        public void TakeNote()
+        {
+            anim.SetBool("takingNote", true);
+        }
+
         private void OnDisable()
         {
             moving = false;

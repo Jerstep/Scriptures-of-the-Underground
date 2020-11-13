@@ -10,6 +10,8 @@ public class InventoryUI : MonoBehaviour
 
     InventorySlot[] slots;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class InventoryUI : MonoBehaviour
     {
 
         inventoryUI.SetActive(!inventoryUI.activeSelf);
+        anim.SetBool("journalActive", inventoryUI.activeSelf);
     }
 
     void UpdateUI()
