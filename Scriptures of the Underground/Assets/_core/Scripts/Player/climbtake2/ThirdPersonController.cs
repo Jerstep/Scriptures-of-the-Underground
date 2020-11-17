@@ -30,7 +30,7 @@ namespace SA
         float climbTimer;
         float savedTime;
 
-        bool mouseVisibleUnlocked = true;
+        bool mouseVisibleUnlocked = false;
 
         public bool isClimbing;
 
@@ -86,7 +86,7 @@ namespace SA
             }
             onGround = OnGround();
             Movement();
-            LockAndHideCursorToggle();
+            
         } 
 
         void Movement()
@@ -123,6 +123,7 @@ namespace SA
         // Update is called once per frame
         void Update()
         {
+            LockAndHideCursorToggle();
             if (isClimbing)//disable and branch to free climb
             {
                 freeClimb.Tick(Time.deltaTime);
@@ -140,6 +141,9 @@ namespace SA
 
             Jump();
 
+            
+
+
             if (Input.GetButtonDown("Crouch"))
             {
                 Crouch();
@@ -149,6 +153,7 @@ namespace SA
             {
                 Interact();
             }
+
 
             if (Input.GetAxis("Vertical") >= 0.01f || Input.GetAxis("Horizontal") >= 0.01f || Input.GetAxis("Vertical") <= -0.01f || Input.GetAxis("Horizontal") <= -0.01f)
             {
@@ -285,19 +290,22 @@ namespace SA
 
         private void LockAndHideCursorToggle()
         {
-            if (Input.GetKey(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Inventory"))
             {
+                Debug.Log("inventory pressed");
                 if (mouseVisibleUnlocked)
                 {
+                    Debug.Log("inventory pressed mouseVisibleUnlocked");
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
-                    mouseVisibleUnlocked = true;
+                    mouseVisibleUnlocked = false;
                 }
                 else
                 {
+                    Debug.Log("inventory pressed NOT mouseVisibleUnlocked");
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
-                    mouseVisibleUnlocked = false;
+                    mouseVisibleUnlocked = true;
                 }
             }
         }

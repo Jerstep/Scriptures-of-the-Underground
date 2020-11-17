@@ -24,10 +24,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Inventory"))
-        {
-            ToggleInventoryUi();
-        }
+        
     }
 
     public void ToggleInventoryUi()

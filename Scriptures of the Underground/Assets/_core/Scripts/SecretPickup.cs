@@ -9,11 +9,14 @@ public class SecretPickup : MonoBehaviour
     public Item SecretObject;
 
     public PopUpUI popUi;
+    public GameplayUI UIScript;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        popUi = GameObject.Find("TitleUi").GetComponent<PopUpUI>(); 
+        popUi = GameObject.Find("TitleUi").GetComponent<PopUpUI>();
+        UIScript = GameObject.Find("GameplayUi").GetComponent<GameplayUI>();
     }
 
     // Update is called once per frame
@@ -24,18 +27,28 @@ public class SecretPickup : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Player" && Input.GetButtonDown("Interaction"))
+        if(other.tag == "Player")
         {
-            other.GetComponent<PlayerStats>().StunItemUp();
-            other.GetComponent<ThirdPersonController>().TakeNote();
-            popUi.StartFade(SecretObject.name, SecretObject.icon);
-            AddItems();
+            if(UIScript.interactUI != UIScript.interactUI.activeInHierarchy)
+            {
+                UIScript.interactUI.SetActive(true);
+            }
+
+            if (Input.GetButtonDown("Interaction"))
+            {
+                other.GetComponent<PlayerStats>().StunItemUp();
+                other.GetComponent<ThirdPersonController>().TakeNote();
+                popUi.StartFade(SecretObject.name, SecretObject.icon);
+                AddItems();
+            }
         }
     }
 
     public void AddItems()
     {
+        UIScript.interactUI.SetActive(false);
         inventorysystem.Add(SecretObject);
         Destroy(gameObject);
+        
     }
 }

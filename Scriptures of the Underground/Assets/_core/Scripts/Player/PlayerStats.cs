@@ -26,12 +26,17 @@ public class PlayerStats : MonoBehaviour
 
     Gamemanager gameman;
 
+    bool journalActive;
+
+    public InventoryUI journalUI;
+
     // Start is called before the first frame update
     void Start()
     {
         camAnim = GameObject.Find("CamAnimator").GetComponent<Animator>();
         ost = GameObject.Find("fmod-ost").GetComponent<FmodOst>();
         gameman = GameObject.Find("GameManager").GetComponent<Gamemanager>();
+        //journalUI = GameObject.Find("Canvas").GetComponent<InventoryUI>();
     }
 
     // Update is called once per frame
@@ -40,6 +45,11 @@ public class PlayerStats : MonoBehaviour
         if(maskCharge <= 0 && masked == true)
         {
             StartCoroutine(RechargeMask());
+        }
+
+        if (Input.GetButtonDown("Inventory"))
+        {
+            JournalCamToggle();
         }
     }
 
@@ -93,6 +103,13 @@ public class PlayerStats : MonoBehaviour
     public void AimCamTurnOff()
     {
         camAnim.SetBool("Aiming", false);
+    }
+
+    public void JournalCamToggle()
+    {
+        journalActive = !journalActive;
+        camAnim.SetBool("Journal", journalActive);
+        journalUI.ToggleInventoryUi();
     }
 
     public void MaskedFunction(bool _masked)
