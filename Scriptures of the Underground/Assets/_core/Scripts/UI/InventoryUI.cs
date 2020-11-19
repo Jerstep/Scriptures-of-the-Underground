@@ -29,9 +29,17 @@ public class InventoryUI : MonoBehaviour
 
     public void ToggleInventoryUi()
     {
-
-        inventoryUI.SetActive(!inventoryUI.activeSelf);
-        anim.SetBool("journalActive", inventoryUI.activeSelf);
+        
+        if (inventory.infoHolder.activeInHierarchy)
+        {
+            inventory.infoHolder.SetActive(false);
+            anim.SetBool("journalActive", inventoryUI.activeSelf);
+        }
+        else
+        {
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            anim.SetBool("journalActive", inventoryUI.activeSelf);
+        }
     }
 
     void UpdateUI()
@@ -48,5 +56,10 @@ public class InventoryUI : MonoBehaviour
                 slots[i].ClearSlot();
             }
         }
+    }
+
+    public void CloseMainPage()
+    {
+        inventoryUI.SetActive(false);
     }
 }

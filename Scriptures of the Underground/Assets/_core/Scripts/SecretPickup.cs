@@ -36,10 +36,20 @@ public class SecretPickup : MonoBehaviour
 
             if (Input.GetButtonDown("Interaction"))
             {
-                other.GetComponent<PlayerStats>().StunItemUp();
                 other.GetComponent<ThirdPersonController>().TakeNote();
                 popUi.StartFade(SecretObject.name, SecretObject.icon);
                 AddItems();
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            if (UIScript.interactUI == UIScript.interactUI.activeInHierarchy)
+            {
+                UIScript.interactUI.SetActive(false);
             }
         }
     }

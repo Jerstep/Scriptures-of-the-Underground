@@ -52,7 +52,7 @@ public class FmodPlayerSounds : MonoBehaviour
         }
         else
         {
-            //PlayerTouchingGround = false;
+            PlayerTouchingGround = false;
         }
     }
 
