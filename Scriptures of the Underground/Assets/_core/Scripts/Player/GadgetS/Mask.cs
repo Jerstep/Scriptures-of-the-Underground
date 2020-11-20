@@ -10,7 +10,7 @@ public class Mask : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerStats>();
+        player = GameObject.Find("PlayerStatsHolder").GetComponent<PlayerStats>();
     }
 
 
