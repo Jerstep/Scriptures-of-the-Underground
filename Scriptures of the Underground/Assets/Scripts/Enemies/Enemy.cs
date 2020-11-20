@@ -18,8 +18,10 @@ public class Enemy : MonoBehaviour
     //[Task]
     public bool foundplayer;
 
-    [Range(0,100)]
+    [Range(0, 100)]
     public float detectionMeter;
+    [Range(1, 5)]
+    public float detectionMultiplier = 1;
     public Image detectImage;
 
     public Transform pathHolder;
@@ -55,7 +57,7 @@ public class Enemy : MonoBehaviour
         // transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         if (foundplayer && detectionMeter < 100)
         {
-            detectionMeter++;
+            detectionMeter += 1 * detectionMultiplier;
         }
         else if (detectionMeter > 0)
         {
