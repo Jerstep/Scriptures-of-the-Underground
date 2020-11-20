@@ -40,10 +40,30 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 7701412341673534998}
+  - {fileID: 7186870667615093152}
   MinDistance: 0
   MaxDistance: 0
   Length: 518
+--- !u!114 &-6917700044575945534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 'parameter:/Jump/Ground '
+  m_EditorClassIdentifier: 
+  Name: 'Ground '
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2956160354
+    data2: 553628319
+  Exists: 1
 --- !u!114 &-6027800091411849959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +84,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 1042060869083137427}
+  - {fileID: -864611658456738008}
   MinDistance: 0
   MaxDistance: 0
   Length: 582
@@ -91,6 +111,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 35428
+--- !u!114 &-864611658456738008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 'parameter:/Footsteps/Ground '
+  m_EditorClassIdentifier: 
+  Name: 'Ground '
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-186472244681734065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +221,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &1269929172469620530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience Workplace
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience Workplace
+  guid: 93479175525573448fbce8b18b2037a1
+  Banks:
+  - {fileID: 8429674869650196395}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 35428
 --- !u!114 &2653558052238638280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +263,26 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1044
+  Exists: 1
+--- !u!114 &5077801140318887744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level Music/Distance to Shrine
+  m_EditorClassIdentifier: 
+  Name: Distance to Shrine
+  Min: 0
+  Max: 100
+  Default: 100
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &5538899267438399773
 MonoBehaviour:
@@ -239,6 +322,46 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &7186870667615093152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 'parameter:/Jump/Ground '
+  m_EditorClassIdentifier: 
+  Name: 'Ground '
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &7426854823464487821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level Music/Distance to Shrine
+  m_EditorClassIdentifier: 
+  Name: Distance to Shrine
+  Min: 0
+  Max: 100
+  Default: 100
   ID:
     data1: 0
     data2: 0
@@ -324,7 +447,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -9003816253608439633}
+  - {fileID: 7426854823464487821}
   MinDistance: 1
   MaxDistance: 20
   Length: 65454

@@ -26,11 +26,11 @@ Material:
     m_TexEnvs: []
     m_Floats:
     - Vector1_150C64D3: 5
-    - Vector1_2E421AE2: 1382.6
-    - Vector1_530EA1D2: 0.05
+    - Vector1_2E421AE2: 865.5
+    - Vector1_530EA1D2: 0.08
     - Vector1_5ECFE1F3: 10.81
-    - Vector1_6A2DF763: 0.01
-    - Vector1_75AA76CD: 2.5
+    - Vector1_6A2DF763: 0.02
+    - Vector1_75AA76CD: 1
     - Vector1_7D120B91: -1
     - Vector1_A7F5D626: 0.01
     - Vector1_D25CCA1B: 300
@@ -38,7 +38,7 @@ Material:
     - Vector1_E3C25C33: 2
     - Vector1_F4939796: 11.69
     - Vector1_FA3B0215: 2
-    - Vector1_FF3674AA: 5.65
+    - Vector1_FF3674AA: 10
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
@@ -74,9 +74,9 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Color_56E6EE60: {r: 0, g: 0, b: 0, a: 0}
+    - Color_56E6EE60: {r: 0.10424524, g: 0, b: 0.16037738, a: 0}
     - Color_96750E70: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 0}
-    - Color_A7FE8744: {r: 0.19075167, g: 0.15138839, b: 0.254717, a: 0}
+    - Color_A7FE8744: {r: 0.15378462, g: 0.12239999, b: 0.204, a: 0}
     - Vector4_63AF3CF4: {r: 1, g: 0, b: 0, a: 90}
     - Vector4_C1536C64: {r: 0, g: 1, b: -0.3, a: 2.7}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}

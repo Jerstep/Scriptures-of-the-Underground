@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953beb541740ddc499d005ee80c9ff29, type: 3}
   m_Name: Fog
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   enabled:
     m_OverrideState: 1
@@ -129,7 +129,7 @@ MonoBehaviour:
     showEyeDropper: 1
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.417992, g: 0.38039216, b: 0.48235294, a: 1}
+    m_Value: {r: 0.089917034, g: 0.08125668, b: 0.103773594, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -164,7 +164,7 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 91.1
+    m_Value: 127
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1
@@ -231,22 +231,22 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1.74
+    m_Value: 0.37
     min: 0
     max: 4
   directLightingStrength:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.271
     min: 0
     max: 1
   radius:
     m_OverrideState: 1
-    m_Value: 2.2
+    m_Value: 0.64
     min: 0.25
     max: 5
   temporalAccumulation:
-    m_OverrideState: 1
-    m_Value: 1
+    m_OverrideState: 0
+    m_Value: 0
   ghostingReduction:
     m_OverrideState: 1
     m_Value: 0.67
@@ -321,11 +321,11 @@ MonoBehaviour:
     min: 0
     max: 360
   skyIntensityMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   exposure:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 2
   multiplier:
     m_OverrideState: 1
     m_Value: 1

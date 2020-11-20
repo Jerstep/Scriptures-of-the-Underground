@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - Enviorment
   - PersefShrine
+  - Material:Concrete
+  - Material:Dirt
   layers:
   - Default
   - TransparentFX
@@ -25,7 +27,7 @@ TagManager:
   - Climbable
   - CurrentCheckSpot
   - IgnoreBake
-  - 
+  - Player
   - 
   - 
   - 
