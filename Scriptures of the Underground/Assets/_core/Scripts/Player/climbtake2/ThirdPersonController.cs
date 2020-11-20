@@ -7,6 +7,8 @@ namespace SA
 {
     public class ThirdPersonController : MonoBehaviour
     {
+
+        float rayGroundDistance = 0.2f;
         float horizontal;
         float vertical;
         Vector3 moveDirection;
@@ -38,6 +40,7 @@ namespace SA
         public float groundDistance = 0.4f;
         public LayerMask groundMask;
 
+        public PlayerStats playerstats;
         Freeclimb freeClimb;
 
         public Camera cameraMain;
@@ -84,7 +87,8 @@ namespace SA
             {
                 return;
             }
-            onGround = OnGround();
+            //onGround = OnGround();
+            GroundCheck();
             Movement();
             
         } 
@@ -129,8 +133,6 @@ namespace SA
                 freeClimb.Tick(Time.deltaTime);
                 return;
             }
-
-            onGround = OnGround();
             if (keepOffGround)
             {
                 if(Time.realtimeSinceStartup - savedTime > 0.5)
@@ -207,18 +209,43 @@ namespace SA
             }
         }
 
-        bool OnGround()
+        /*bool OnGround()
         {
             if (keepOffGround)
                 return false;
-            
 
-            if(Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
+            RaycastHit hit;
+
+            Physics.Raycast(groundCheck.position, Vector3.down, out hit, rayGroundDistance, groundMask);
+            if (hit.collider)
             {
                 return true;
             }
+            else
+            {
+                return false;
+            }
+                /*if(Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
+                {
+                    return true;
+                }
+                
+                return false;
+        }*/
 
-            return false;
+        public void GroundCheck()
+        {
+            RaycastHit hit;
+            Debug.DrawRay(transform.position, Vector3.down * rayGroundDistance, Color.green);
+            Physics.Raycast(groundCheck.position, Vector3.down, out hit, rayGroundDistance, groundMask);
+            if (hit.collider)
+            {
+                onGround = true;
+            }
+            else
+            {
+                onGround = false;
+            }
         }
 
         public void DisableController()
@@ -274,13 +301,14 @@ namespace SA
 
         public void Respawn()
         {
-            transform.position = GetComponent<PlayerStats>().respawnLocation.transform.position;
+            transform.position = playerstats.respawnLocation.transform.position;
         }
 
 
         public void TakeNote()
         {
             anim.SetBool("takingNote", true);
+            playerstats.StunItemUp();
         }
 
         private void OnDisable()
@@ -313,7 +341,7 @@ namespace SA
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(groundCheck.position, groundDistance);
+            //Gizmos.DrawSphere(groundCheck.position, groundDistance);
         }
     }
 }
