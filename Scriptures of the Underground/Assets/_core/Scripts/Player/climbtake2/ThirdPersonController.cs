@@ -209,29 +209,6 @@ namespace SA
             }
         }
 
-        /*bool OnGround()
-        {
-            if (keepOffGround)
-                return false;
-
-            RaycastHit hit;
-
-            Physics.Raycast(groundCheck.position, Vector3.down, out hit, rayGroundDistance, groundMask);
-            if (hit.collider)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-                /*if(Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
-                {
-                    return true;
-                }
-                
-                return false;
-        }*/
 
         public void GroundCheck()
         {
@@ -273,6 +250,7 @@ namespace SA
                 inputSpeed = (inputSpeed * 2);
                 GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height / 2);
                 croutching = true;
+                anim.SetBool("Crouch", croutching);
             }
             else
             {
@@ -280,6 +258,7 @@ namespace SA
                 inputSpeed = (inputSpeed / 2);
                 GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height * 2);
                 croutching = false;
+                anim.SetBool("Crouch", croutching);
             }
         }
 
