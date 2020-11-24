@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3462004006755765492}
   - component: {fileID: 550663840835502929}
   - component: {fileID: 2324049348028528539}
+  - component: {fileID: -3209023193921509322}
   m_Layer: 0
   m_Name: Blockout_pCube12
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &-3209023193921509322
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4269503575804630606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.491207, y: 3.3674505, z: 0.77613705}
+  m_Center: {x: -1.0877985, y: 1.6859103, z: 0.0041671693}
