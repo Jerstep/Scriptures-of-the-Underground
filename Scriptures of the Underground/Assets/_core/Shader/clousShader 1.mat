@@ -10,10 +10,10 @@ Material:
   m_Name: clousShader 1
   m_Shader: {fileID: -6465566751694194690, guid: 3b89c65f9c5ae354d84442763645e005,
     type: 3}
-  m_ShaderKeywords: _BLENDMODE_ALPHA _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
+  m_ShaderKeywords: _BLENDMODE_ALPHA _DOUBLESIDED_ON _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 3000
   stringTagMap:
     MotionVector: User
@@ -25,27 +25,27 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Vector1_150C64D3: 10
+    - Vector1_150C64D3: 5
     - Vector1_2E421AE2: -1
-    - Vector1_530EA1D2: 0.01
-    - Vector1_5ECFE1F3: 23
-    - Vector1_6A2DF763: 0.001
-    - Vector1_75AA76CD: 5
+    - Vector1_530EA1D2: 0.08
+    - Vector1_5ECFE1F3: 10.81
+    - Vector1_6A2DF763: 0.02
+    - Vector1_75AA76CD: 1
     - Vector1_7D120B91: -1
-    - Vector1_A7F5D626: 0
+    - Vector1_A7F5D626: 0.01
     - Vector1_D25CCA1B: 300
     - Vector1_DFAEE88D: 2
     - Vector1_E3C25C33: 2
-    - Vector1_F4939796: 14.95
+    - Vector1_F4939796: 11.69
     - Vector1_FA3B0215: 2
-    - Vector1_FF3674AA: 108.6
+    - Vector1_FF3674AA: 200
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
     - _BlendMode: 0
-    - _CullMode: 2
-    - _CullModeForward: 2
-    - _DoubleSidedEnable: 0
+    - _CullMode: 0
+    - _CullModeForward: 0
+    - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
     - _EnableFogOnTransparent: 1
@@ -74,9 +74,9 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Color_56E6EE60: {r: 0, g: 0, b: 0, a: 0}
+    - Color_56E6EE60: {r: 0.13042569, g: 0.054467775, b: 0.16981131, a: 0}
     - Color_96750E70: {r: 0, g: 0, b: 0, a: 0}
-    - Color_A7FE8744: {r: 0.17941476, g: 0.15761836, b: 0.21698111, a: 0}
+    - Color_A7FE8744: {r: 0.16652274, g: 0.11258454, b: 0.21698111, a: 0}
     - Vector4_63AF3CF4: {r: 1, g: 0, b: 0, a: 90}
     - Vector4_C1536C64: {r: 0, g: 1, b: -0.3, a: 2.7}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
