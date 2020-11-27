@@ -209,6 +209,7 @@ namespace SA
             to.rf = from.rf;
         }
 
+        //puts limbs in the right positiones
         void SetIKPosition(bool isMid, bool isTrue, Vector3 pos, AvatarIKGoal goal)
         {
             if (isMid)

@@ -15,12 +15,12 @@ public class FmodPlayerSounds : MonoBehaviour
     bool PreviosulyTouchingGround;
 
     private void Update()
-    {
+    {//calling the sound
         if (PlayerTouchingGround && Input.GetButtonDown("Jump"))
         {
             //CallJump();
         }
-        if (!PreviosulyTouchingGround && PlayerTouchingGround)
+        else if (!PreviosulyTouchingGround && PlayerTouchingGround)
         {
             //CallJump();
         }
@@ -33,6 +33,7 @@ public class FmodPlayerSounds : MonoBehaviour
         Debug.DrawRay(transform.position, Vector3.down * distance, Color.blue);
     }
 
+    //checking where we stand/land on to play the right sound
     void MaterialCheck()
     {
         RaycastHit hit;
@@ -56,6 +57,7 @@ public class FmodPlayerSounds : MonoBehaviour
         }
     }
 
+    //playing footstep sounds
     void CallFootsteps(string footstepsPath)
     {
         FMOD.Studio.EventInstance Footsteps = FMODUnity.RuntimeManager.CreateInstance(footstepsPath);
@@ -64,6 +66,7 @@ public class FmodPlayerSounds : MonoBehaviour
         Footsteps.release();
     }
 
+    //playing jumping sounds
     void CallJump()
     {
         FMOD.Studio.EventInstance Jump = FMODUnity.RuntimeManager.CreateInstance(jumpPath);

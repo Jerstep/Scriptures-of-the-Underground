@@ -56,12 +56,6 @@ public class GameplayUI : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateUIStun(int stun)
     {
         stunText.text = stun.ToString();

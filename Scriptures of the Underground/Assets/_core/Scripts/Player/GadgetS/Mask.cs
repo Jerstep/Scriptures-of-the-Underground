@@ -13,7 +13,7 @@ public class Mask : MonoBehaviour
         player = GameObject.Find("PlayerStatsHolder").GetComponent<PlayerStats>();
     }
 
-
+    //turning the mask on and off
     private void OnEnable()
     {
         if(player.maskCharge != 0)

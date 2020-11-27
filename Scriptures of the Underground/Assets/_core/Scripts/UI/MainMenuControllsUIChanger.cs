@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class MainMenuControllsUIChanger : MonoBehaviour
 {
+    //values for the controllers
     private int Xbox_One_Controller = 0;
     private int PS4_Controller = 0;
+
+    //images to change and to be changed to
     public Image[] imageToChange;
     public Image[] xboxImage, pcImage;
 
     // Start is called before the first frame update
     void Start()
     {
+        //find controller name and add the number to it
         string[] names = Input.GetJoystickNames();
         for (int x = 0; x < names.Length; x++)
         {
@@ -33,9 +37,10 @@ public class MainMenuControllsUIChanger : MonoBehaviour
             }
         }
 
+        //changes sprites based on the number 
         if (Xbox_One_Controller == 1)
         {
-            //do something
+            
             for (int i = 0; i < imageToChange.Length; i++)
             {
                 imageToChange[i].sprite = xboxImage[i].sprite;
@@ -53,11 +58,5 @@ public class MainMenuControllsUIChanger : MonoBehaviour
             }
 
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

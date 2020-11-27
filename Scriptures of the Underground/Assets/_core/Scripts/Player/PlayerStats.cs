@@ -64,11 +64,16 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
        if(other.tag == "PersefShrine")
         {
             ost.PersefTheme();
+        }
+
+        if (other.tag == "Enemy")
+        {
+            ost.EnemyClose();
         }
     }
 
@@ -77,6 +82,11 @@ public class PlayerStats : MonoBehaviour
         if (other.tag == "PersefShrine")
         {
             ost.LvlMainTheme();
+        }
+
+        if (other.tag == "Enemy")
+        {
+            ost.EnemyFar();
         }
     }
 
