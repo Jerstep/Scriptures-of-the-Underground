@@ -1337,9 +1337,10 @@ GameObject:
   - component: {fileID: 3905264924310549980}
   - component: {fileID: 3905264924310549983}
   - component: {fileID: 3905264924310549982}
+  - component: {fileID: 1836036132649850967}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1456,6 +1457,19 @@ MonoBehaviour:
   playerTargeted: 0
   playerPos: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+--- !u!135 &1836036132649850967
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247774128098671405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!1 &4266985203402946145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,7 +2585,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7843815190744689117}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 47.5, y: -16.63, z: -40.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2622,7 +2636,7 @@ GameObject:
   - component: {fileID: 7843815191554241645}
   m_Layer: 0
   m_Name: EnemyZone-Fmod
-  m_TagString: Enemy
+  m_TagString: EnemyZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

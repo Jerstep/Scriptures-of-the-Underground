@@ -71,10 +71,11 @@ public class PlayerStats : MonoBehaviour
             ost.PersefTheme();
         }
 
-        if (other.tag == "Enemy")
+        if (other.tag == "EnemyZone")
         {
             ost.EnemyClose();
         }
+        
     }
 
     private void OnTriggerExit(Collider other)
@@ -84,16 +85,16 @@ public class PlayerStats : MonoBehaviour
             ost.LvlMainTheme();
         }
 
-        if (other.tag == "Enemy")
+        if (other.tag == "EnemyZone")
         {
             ost.EnemyFar();
         }
     }
 
-    public void StunItemUp()
+    public void BulletsItemUp()
     {
-        playerStunItem++;
-        UI.UpdateUIStun(playerStunItem);
+        bullets++;
+        UI.UpdateUIStun(bullets);
 
     }
 

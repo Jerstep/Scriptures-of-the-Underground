@@ -291,7 +291,7 @@ namespace SA
         public void TakeNote()
         {
             anim.SetBool("takingNote", true);
-            playerstats.StunItemUp();
+            playerstats.BulletsItemUp();
         }
 
         private void OnDisable()
@@ -301,7 +301,7 @@ namespace SA
 
         private void LockAndHideCursorToggle()
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Inventory"))
+            if (Input.GetButtonDown("Inventory"))
             {
                 Debug.Log("inventory pressed");
                 if (mouseVisibleUnlocked)
@@ -318,6 +318,14 @@ namespace SA
                     Cursor.visible = true;
                     mouseVisibleUnlocked = true;
                 }
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "Enemy")
+            {
+                Respawn();
             }
         }
 
