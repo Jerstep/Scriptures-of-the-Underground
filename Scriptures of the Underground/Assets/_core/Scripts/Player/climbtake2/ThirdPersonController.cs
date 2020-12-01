@@ -125,10 +125,6 @@ namespace SA
                 Crouch();
             }
 
-            if (Input.GetButtonDown("Interaction"))
-            {
-                Interact();
-            }
 
 
             if (Input.GetAxis("Vertical") >= 0.01f || Input.GetAxis("Horizontal") >= 0.01f || Input.GetAxis("Vertical") <= -0.01f || Input.GetAxis("Horizontal") <= -0.01f)
@@ -266,7 +262,7 @@ namespace SA
             }
         }
 
-        public void Interact()
+       /* public void Interact()
         {
             Vector3 origin = transform.position;
             origin.y += 0.4f;
@@ -280,7 +276,7 @@ namespace SA
                     Debug.Log("yo broham show ham we interacted you see that shiii");
                 }
             }
-        }
+        }*/
 
         public void Respawn()
         {
