@@ -40,7 +40,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 9144427994683928207}
+  - {fileID: -4805901295182472850}
   MinDistance: 0
   MaxDistance: 0
   Length: 518
@@ -84,11 +84,54 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -2318675277139080736}
+  - {fileID: 3917041616368146250}
   MinDistance: 0
   MaxDistance: 0
   Length: 582
 --- !u!114 &-5082851846057446526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience Workplace
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience Workplace
+  guid: 93479175525573448fbce8b18b2037a1
+  Banks:
+  - {fileID: 8429674869650196395}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 35428
+--- !u!114 &-4805901295182472850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 'parameter:/Jump/Ground '
+  m_EditorClassIdentifier: 
+  Name: 'Ground '
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-2576265721045229956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,6 +240,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 102452
+--- !u!114 &-65442384976395438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level Music/Distance to Shrine
+  m_EditorClassIdentifier: 
+  Name: Distance to Shrine
+  Min: 0
+  Max: 100
+  Default: 100
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,12 +280,13 @@ MonoBehaviour:
   - {fileID: -6027800091411849959}
   - {fileID: -8237535143724260280}
   - {fileID: 8739273877062167761}
+  - {fileID: -2576265721045229956}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8429674869650196395}
   StringsBanks:
   - {fileID: 2653558052238638280}
-  stringsBankWriteTime: 637419824920691153
+  stringsBankWriteTime: 637395632435160758
   cacheVersion: 5
 --- !u!114 &128524691575732088
 MonoBehaviour:
@@ -318,11 +382,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FModProject/scriptures/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637419824920691153
+  lastModified: 637395632435160758
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1092
+    Value: 1044
+  Exists: 1
+--- !u!114 &3917041616368146250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 'parameter:/Footsteps/Ground '
+  m_EditorClassIdentifier: 
+  Name: 'Ground '
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &5077801140318887744
 MonoBehaviour:
@@ -483,7 +567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FModProject/scriptures/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637419824920203057
+  lastModified: 637395632434970868
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -507,11 +591,10 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 2044388553471569641}
-  - {fileID: 1118271196816933932}
+  - {fileID: -65442384976395438}
   MinDistance: 1
   MaxDistance: 20
-  Length: 133103
+  Length: 65454
 --- !u!114 &9144427994683928207
 MonoBehaviour:
   m_ObjectHideFlags: 0
