@@ -42,9 +42,14 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(maskCharge <= 0 && masked == true)
+        if(maskCharge <= 0 )
         {
-            StartCoroutine(RechargeMask());
+            masked = false;
+            
+        }
+        else if (masked)
+        {
+            maskCharge -= 5 * Time.deltaTime;
         }
 
         if (Input.GetButtonDown("Inventory"))
@@ -55,7 +60,6 @@ public class PlayerStats : MonoBehaviour
 
     IEnumerator RechargeMask()
     {
-        masked = false;
         yield return new WaitForSeconds(rechargeTimer);
         maskCharge = 100;
         if (maskObject.activeSelf)
@@ -126,6 +130,10 @@ public class PlayerStats : MonoBehaviour
     public void MaskedFunction(bool _masked)
     {
         masked = _masked;
+        if (maskCharge <= 0 && masked == false)
+        {
+            StartCoroutine(RechargeMask());
+        }
         Debug.Log("masked =" + masked);
     }
 
