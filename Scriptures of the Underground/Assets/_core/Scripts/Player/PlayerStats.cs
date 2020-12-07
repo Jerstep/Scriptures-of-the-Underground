@@ -109,15 +109,15 @@ public class PlayerStats : MonoBehaviour
         camAnim.SetBool("Overhead", overhead);
     }
 
-    public void AimCamTurnOn()
+    public void CutsceneCamTurnOn()
     {
         camAnim.SetBool("Overhead", false);
-        camAnim.SetBool("Aiming", true);
+        camAnim.SetBool("Cutscene", true);
     }
 
-    public void AimCamTurnOff()
+    public void CutsceneCamTurnOff()
     {
-        camAnim.SetBool("Aiming", false);
+        camAnim.SetBool("Cutscene", false);
     }
 
     public void JournalCamToggle()
