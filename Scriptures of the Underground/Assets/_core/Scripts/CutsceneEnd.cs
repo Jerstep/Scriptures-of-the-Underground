@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CutsceneEnd : MonoBehaviour
+namespace SA
 {
-    public PlayerStats player;
-
-    public void EndScene()
+    public class CutsceneEnd : MonoBehaviour
     {
-        player.CutsceneCamTurnOff();
+        public PlayerStats player;
+        public ThirdPersonController tpc;
+
+        public void EndScene()
+        {
+            player.CutsceneCamTurnOff();
+            tpc.MoveToggle();
+        }
     }
 }
+

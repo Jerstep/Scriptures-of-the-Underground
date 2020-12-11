@@ -27,6 +27,7 @@ namespace SA
 
         //speeds of the character
         public float moveSpeed = 4;
+        float ogMoveSpeed;
         public float sprintMultyplyer = 1.2f;
         public float rotSpeed = 9;
         public float jumpSpeed = 15;
@@ -59,10 +60,12 @@ namespace SA
         FMOD.Studio.EventInstance footstepsEvent;
         public float inputSpeed;
         bool moving;
+        public bool canMove;
 
         // Start is called before the first frame update
         void Start()
         {
+            ogMoveSpeed = moveSpeed;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -92,8 +95,9 @@ namespace SA
             }
 
             GroundCheck();
+
             Movement();
-            
+    
         } 
 
         
@@ -175,6 +179,15 @@ namespace SA
 
             moveDirection = (v + h).normalized;
             moveAmount = Mathf.Clamp01((Mathf.Abs(horizontal) + Mathf.Abs(vertical)));
+
+            if (!canMove)
+            {
+                moveSpeed = 0;
+            }
+            else
+            {
+                moveSpeed = ogMoveSpeed;
+            }
 
             Vector3 targetDir = moveDirection;
             targetDir.y = 0;
@@ -315,6 +328,12 @@ namespace SA
                     mouseVisibleUnlocked = true;
                 }
             }
+        }
+
+        public void MoveToggle()
+        {
+            canMove = !canMove;
+            moving = !moving;
         }
 
         private void OnTriggerEnter(Collider other)

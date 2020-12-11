@@ -28,13 +28,13 @@ namespace SA
         float delta;
         public float lerpSpeed = 5;
 
-
+        
         public void Init(Freeclimb c, Transform helper)
         {
             anim = c.anim;
             ikBase = c.baseIKsnapshot;
             h = helper;
-
+            
         }
 
         public void CreatePositions(Vector3 origin, Vector3 moveDir, bool isMid)

@@ -3,46 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using Cinemachine.Editor;
-
-public class CutsceneTrigger : MonoBehaviour
+namespace SA
 {
-
-    public PlayerStats player;
-    public CinemachineVirtualCamera cutscenecam;
-    public GameObject focusTarget,campos;
-    public Animator anim;
-
-    // Start is called before the first frame update
-    void Start()
+    public class CutsceneTrigger : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        public PlayerStats player;
+        public CinemachineVirtualCamera cutscenecam;
+        public GameObject focusTarget, campos;
+        public Animator anim;
+        public ThirdPersonController tpc;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
+        // Start is called before the first frame update
+        void Start()
         {
-            cutscenecam.LookAt = focusTarget.transform;
-            //cutscenecam.Follow = campos.transform;
-            cutscenecam.ForceCameraPosition(campos.transform.position, cutscenecam.LookAt.rotation);
-            player.CutsceneCamTurnOn();
-            StartCoroutine(StartScene());
-            GetComponent<BoxCollider>().enabled = false;
-            
+
         }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "Player")
+            {
+                cutscenecam.LookAt = focusTarget.transform;
+                //cutscenecam.Follow = campos.transform;
+                cutscenecam.ForceCameraPosition(campos.transform.position, cutscenecam.LookAt.rotation);
+                player.CutsceneCamTurnOn();
+                tpc.MoveToggle();
+                StartCoroutine(StartScene());
+                GetComponent<BoxCollider>().enabled = false;
+
+            }
+        }
+
+        IEnumerator StartScene()
+        {
+            yield return new WaitForSeconds(1);
+            anim.SetBool("Active", true);
+        }
+
+
     }
 
-    IEnumerator StartScene()
-    {
-        yield return new WaitForSeconds(1);
-        anim.SetBool("Active", true);
-    }
-
-    
 }
