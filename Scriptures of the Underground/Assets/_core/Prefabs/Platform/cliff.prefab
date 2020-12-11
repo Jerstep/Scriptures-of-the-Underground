@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7705811535312938064}
   - component: {fileID: 6728185801921817589}
   - component: {fileID: 8843844945487896383}
-  - component: {fileID: 7888674592100844453}
+  - component: {fileID: 4684320245440607447}
   m_Layer: 0
   m_Name: cliff
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7042321876166590186}
-  m_LocalRotation: {x: -0, y: 0.38338163, z: -0, w: 0.92359006}
+  m_LocalRotation: {x: 0, y: 0.38338473, z: 0, w: 0.92358875}
   m_LocalPosition: {x: 169.71, y: 11.22, z: 34.57}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
@@ -80,8 +80,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7888674592100844453
-BoxCollider:
+--- !u!64 &4684320245440607447
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,6 +90,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1306.6875, y: 1868.7026, z: 1090.7427}
-  m_Center: {x: 0, y: -5.5350037, z: 0}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6587386208616022100, guid: dd897039a4193f64c97b08ccf809b3d8, type: 3}
