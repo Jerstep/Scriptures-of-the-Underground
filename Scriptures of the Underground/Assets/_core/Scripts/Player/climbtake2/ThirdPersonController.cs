@@ -27,6 +27,7 @@ namespace SA
 
         //speeds of the character
         public float moveSpeed = 4;
+        float ogMoveSpeed;
         public float sprintMultyplyer = 1.2f;
         public float rotSpeed = 9;
         public float jumpSpeed = 15;
@@ -59,10 +60,12 @@ namespace SA
         FMOD.Studio.EventInstance footstepsEvent;
         public float inputSpeed;
         bool moving;
+        public bool canMove;
 
         // Start is called before the first frame update
         void Start()
         {
+            ogMoveSpeed = moveSpeed;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -92,8 +95,9 @@ namespace SA
             }
 
             GroundCheck();
+
             Movement();
-            
+    
         } 
 
         
@@ -125,10 +129,6 @@ namespace SA
                 Crouch();
             }
 
-            if (Input.GetButtonDown("Interaction"))
-            {
-                Interact();
-            }
 
 
             if (Input.GetAxis("Vertical") >= 0.01f || Input.GetAxis("Horizontal") >= 0.01f || Input.GetAxis("Vertical") <= -0.01f || Input.GetAxis("Horizontal") <= -0.01f)
@@ -179,6 +179,15 @@ namespace SA
 
             moveDirection = (v + h).normalized;
             moveAmount = Mathf.Clamp01((Mathf.Abs(horizontal) + Mathf.Abs(vertical)));
+
+            if (!canMove)
+            {
+                moveSpeed = 0;
+            }
+            else
+            {
+                moveSpeed = ogMoveSpeed;
+            }
 
             Vector3 targetDir = moveDirection;
             targetDir.y = 0;
@@ -266,7 +275,7 @@ namespace SA
             }
         }
 
-        public void Interact()
+       /* public void Interact()
         {
             Vector3 origin = transform.position;
             origin.y += 0.4f;
@@ -280,7 +289,7 @@ namespace SA
                     Debug.Log("yo broham show ham we interacted you see that shiii");
                 }
             }
-        }
+        }*/
 
         public void Respawn()
         {
@@ -291,7 +300,7 @@ namespace SA
         public void TakeNote()
         {
             anim.SetBool("takingNote", true);
-            playerstats.StunItemUp();
+            playerstats.BulletsItemUp();
         }
 
         private void OnDisable()
@@ -301,7 +310,7 @@ namespace SA
 
         private void LockAndHideCursorToggle()
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Inventory"))
+            if (Input.GetButtonDown("Inventory"))
             {
                 Debug.Log("inventory pressed");
                 if (mouseVisibleUnlocked)
@@ -318,6 +327,20 @@ namespace SA
                     Cursor.visible = true;
                     mouseVisibleUnlocked = true;
                 }
+            }
+        }
+
+        public void MoveToggle()
+        {
+            canMove = !canMove;
+            moving = !moving;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "Enemy")
+            {
+                Respawn();
             }
         }
 

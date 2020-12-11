@@ -13,6 +13,7 @@ TagManager:
   - PersefShrine
   - Material:Concrete
   - Material:Dirt
+  - EnemyZone
   layers:
   - Default
   - TransparentFX

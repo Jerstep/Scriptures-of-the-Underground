@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameplayUI : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameplayUI : MonoBehaviour
     public PlayerStats player;
 
     public GameObject interactUI;
+    public TMP_Text InteractText;
     public Image interactImage;
 
     private int Xbox_One_Controller = 0;
@@ -53,6 +55,18 @@ public class GameplayUI : MonoBehaviour
         {
             // there is no controllers
             interactImage.sprite = pcImage.sprite;
+        }
+    }
+
+    public void ChangeUIText(bool isNote)
+    {
+        if (isNote)
+        {
+            InteractText.text = "Note Down:";
+        }
+        else
+        {
+            InteractText.text = "Use:";
         }
     }
 

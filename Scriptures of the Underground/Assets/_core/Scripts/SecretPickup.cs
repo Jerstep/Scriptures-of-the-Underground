@@ -31,6 +31,7 @@ public class SecretPickup : MonoBehaviour
         {
             if(UIScript.interactUI != UIScript.interactUI.activeInHierarchy)
             {
+                UIScript.ChangeUIText(true);
                 UIScript.interactUI.SetActive(true);
             }
 

@@ -9,11 +9,12 @@ public class OpenerButtonController : MonoBehaviour
 
     public GameObject movePosition;
     public bool isTriggered;
+    public GameplayUI UIScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        UIScript = GameObject.Find("GameplayUi").GetComponent<GameplayUI>();
     }
 
     // Update is called once per frame
@@ -25,11 +26,43 @@ public class OpenerButtonController : MonoBehaviour
         }
     }
 
-    public void openDoor()
+    public void OpenDoor()
     {
         if (!isTriggered)
         {
             isTriggered = true;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player" && !isTriggered)
+        {
+            if (UIScript.interactUI != UIScript.interactUI.activeInHierarchy)
+            {
+                UIScript.ChangeUIText(false);
+                UIScript.interactUI.SetActive(true);
+            }
+
+            if (Input.GetButtonDown("Interaction"))
+            {
+                OpenDoor();
+            }
+        }
+        else if(other.tag == "Player" && isTriggered)
+        {
+            UIScript.interactUI.SetActive(false);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            if (UIScript.interactUI == UIScript.interactUI.activeInHierarchy)
+            {
+                UIScript.interactUI.SetActive(false);
+            }
         }
     }
 
