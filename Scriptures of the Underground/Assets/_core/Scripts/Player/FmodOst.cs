@@ -25,5 +25,16 @@ public class FmodOst : MonoBehaviour
         ost.SetParameter("Distance to Shrine", 100);
     }
 
-    
+
+    public void EnemyClose()
+    {
+        Debug.Log("enemyclose");
+        ost.SetParameter("Danger", 1);
+    }
+
+    public void EnemyFar()
+    {
+        ost.SetParameter("Danger", 0);
+    }
+
 }

@@ -8,19 +8,42 @@ public class Tribute : MonoBehaviour
     int uses = 1;
 
     public PlayerStats player;
+    public GameplayUI UIScript;
+
+    void Start()
+    {
+        UIScript = GameObject.Find("GameplayUi").GetComponent<GameplayUI>();
+    }
 
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")
         {
+            if (UIScript.interactUI != UIScript.interactUI.activeInHierarchy)
+            {
+                UIScript.interactUI.SetActive(true);
+            }
+
             Debug.Log("player is in the tribute zone");
             if (Input.GetButtonUp("Interaction") && uses >= 1)
             {
-                player = other.GetComponent<PlayerStats>();
+                player = other.GetComponentInChildren<PlayerStats>();
                 Replenish(player);
                 SetRespawn(player);
             }
+
             
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            if (UIScript.interactUI == UIScript.interactUI.activeInHierarchy)
+            {
+                UIScript.interactUI.SetActive(false);
+            }
         }
     }
 
@@ -28,7 +51,7 @@ public class Tribute : MonoBehaviour
     {
         Debug.Log("you've gaint stuff back and triggered a checkpoint");
         //gain a recource 
-        player.GetComponent<PlayerStats>().StunItemUp();
+        player.GetComponent<PlayerStats>().BulletsItemUp();
         //save a checkpoint location
         uses--;
     }

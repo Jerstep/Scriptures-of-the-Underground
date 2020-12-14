@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameplayUI : MonoBehaviour
 {
@@ -9,31 +10,64 @@ public class GameplayUI : MonoBehaviour
     public string stunString;
     public PlayerStats player;
 
-    Gamemanager gameMan;
-
     public GameObject interactUI;
-    public GameObject interactImage;
+    public TMP_Text InteractText;
+    public Image interactImage;
 
-    public Image pcIcon, conIcon;
+    private int Xbox_One_Controller = 0;
+    private int PS4_Controller = 0;
+    public Image xboxImage, pcImage;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameMan = GameObject.Find("GameManager").GetComponent<Gamemanager>();
-        /*if (gameMan.pcMode)
+        string[] names = Input.GetJoystickNames();
+        for (int x = 0; x < names.Length; x++)
         {
-            interactUI.GetComponent<Image>().sprite = pcIcon.sprite;
+            print(names[x].Length);
+            if (names[x].Length == 19)
+            {
+                print("PS4 CONTROLLER IS CONNECTED");
+                PS4_Controller = 1;
+                Xbox_One_Controller = 0;
+            }
+            if (names[x].Length == 33)
+            {
+                print("XBOX ONE CONTROLLER IS CONNECTED");
+                //set a controller bool to true
+                PS4_Controller = 0;
+                Xbox_One_Controller = 1;
+
+            }
+        }
+
+        if (Xbox_One_Controller == 1)
+        {
+            //do something
+            interactImage.sprite = xboxImage.sprite;
+
+        }
+        else if (PS4_Controller == 1)
+        {
+            //do something
         }
         else
         {
-            interactUI.GetComponent<Image>().sprite = conIcon.sprite;
-        }*/
+            // there is no controllers
+            interactImage.sprite = pcImage.sprite;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeUIText(bool isNote)
     {
-        
+        if (isNote)
+        {
+            InteractText.text = "Note Down:";
+        }
+        else
+        {
+            InteractText.text = "Use:";
+        }
     }
 
     public void UpdateUIStun(int stun)

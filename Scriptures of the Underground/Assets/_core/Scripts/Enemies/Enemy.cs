@@ -124,7 +124,6 @@ public class Enemy : MonoBehaviour
     }
 
     //call when patrolling
-    //[Task]
     public void Patrol()
     {
         if (!foundplayer && detectionMeter > 0)
@@ -144,7 +143,6 @@ public class Enemy : MonoBehaviour
             }
             StartCoroutine(FollowPath(waypoints));
             patrolling = true;
-            //Task.current.Succeed();
         }
     }
 
@@ -189,13 +187,11 @@ public class Enemy : MonoBehaviour
     }
 
     //call when targeting player
-    //[Task]
     public void TargetPlayer()
     {
         patrolling = false;
         playerPos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
         StartCoroutine(FollowPlayer(playerPos));
-        //Task.current.Succeed();
     }
 
     IEnumerator FollowPlayer(Vector3 waypoints)

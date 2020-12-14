@@ -28,13 +28,13 @@ namespace SA
         float delta;
         public float lerpSpeed = 5;
 
-
+        
         public void Init(Freeclimb c, Transform helper)
         {
             anim = c.anim;
             ikBase = c.baseIKsnapshot;
             h = helper;
-
+            
         }
 
         public void CreatePositions(Vector3 origin, Vector3 moveDir, bool isMid)
@@ -209,6 +209,7 @@ namespace SA
             to.rf = from.rf;
         }
 
+        //puts limbs in the right positiones
         void SetIKPosition(bool isMid, bool isTrue, Vector3 pos, AvatarIKGoal goal)
         {
             if (isMid)

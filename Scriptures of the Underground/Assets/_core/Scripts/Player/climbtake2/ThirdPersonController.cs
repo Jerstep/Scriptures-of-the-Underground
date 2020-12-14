@@ -15,31 +15,37 @@ namespace SA
         float moveAmount;
         Vector3 camYforward;
 
-        public Transform camHolder;
-
+        //character components
         Rigidbody rigid;
         Collider col;
         Animator anim;
 
+        bool mouseVisibleUnlocked = false;
+
+        //camera position
+        public Transform camHolder;
+
+        //speeds of the character
         public float moveSpeed = 4;
+        float ogMoveSpeed;
         public float sprintMultyplyer = 1.2f;
         public float rotSpeed = 9;
         public float jumpSpeed = 15;
 
+
+        //ground checks and climbing checks
         bool onGround;
         bool keepOffGround;
         bool climbOff;
         float climbTimer;
         float savedTime;
-
-        bool mouseVisibleUnlocked = false;
-
         public bool isClimbing;
 
         public Transform groundCheck;
         public float groundDistance = 0.4f;
         public LayerMask groundMask;
 
+        //scripts we refrence
         public PlayerStats playerstats;
         Freeclimb freeClimb;
 
@@ -48,15 +54,18 @@ namespace SA
         public float lookSpeed = 3;
         bool croutching;
 
+        //Fmod stuffs
         [FMODUnity.EventRef]
         public string inputsound;
         FMOD.Studio.EventInstance footstepsEvent;
         public float inputSpeed;
         bool moving;
+        public bool canMove;
 
         // Start is called before the first frame update
         void Start()
         {
+            ogMoveSpeed = moveSpeed;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -64,16 +73,12 @@ namespace SA
             rigid.angularDrag = 999;
             rigid.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
+            //setting the difrent components
             col = GetComponent<Collider>();
-
-            //camHolder = CameraHolder.singleton.transform;
             anim = GetComponentInChildren<Animator>();
             freeClimb = GetComponent<Freeclimb>();
 
-            //identify gadget objects
-            // gadgetMask = GameObject.Find("Gadget-Mask");
-
-            //fmod stuff
+            //fmod creating the instance for sound
             footstepsEvent = FMODUnity.RuntimeManager.CreateInstance(inputsound);
 
 
@@ -83,51 +88,26 @@ namespace SA
         // Update is called once per frame
         void FixedUpdate()
         {
+            //if its climbing don't execute movement or check functions
             if (isClimbing)
             {
                 return;
             }
-            //onGround = OnGround();
+
             GroundCheck();
+
             Movement();
-            
+    
         } 
-
-        void Movement()
-        {
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
-
-           // Look();
-            camYforward = camHolder.forward;
-            Vector3 v = vertical * camHolder.forward;
-            Vector3 h = horizontal * camHolder.right;
-
-            moveDirection = (v + h).normalized;
-            moveAmount = Mathf.Clamp01((Mathf.Abs(horizontal) + Mathf.Abs(vertical)));
-
-            Vector3 targetDir = moveDirection;
-            targetDir.y = 0;
-            if (targetDir == Vector3.zero)
-            {
-                targetDir = transform.forward;
-            }
-
-            Quaternion lookDir = Quaternion.LookRotation(targetDir);
-            Quaternion targetRot = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime * rotSpeed);
-            transform.rotation = targetRot;
-
-            Vector3 dir = transform.forward * (Input.GetButton("Sprint") ? (moveSpeed * sprintMultyplyer) * moveAmount : moveSpeed * moveAmount);
-            dir.y = rigid.velocity.y;
-            rigid.velocity = dir;
-        }
 
         
 
         // Update is called once per frame
         void Update()
         {
+            //lock the cursor or not
             LockAndHideCursorToggle();
+
             if (isClimbing)//disable and branch to free climb
             {
                 freeClimb.Tick(Time.deltaTime);
@@ -140,10 +120,8 @@ namespace SA
                     keepOffGround = false;
                 }
             }
-
+            //jump trigger
             Jump();
-
-            
 
 
             if (Input.GetButtonDown("Crouch"))
@@ -151,10 +129,6 @@ namespace SA
                 Crouch();
             }
 
-            if (Input.GetButtonDown("Interaction"))
-            {
-                Interact();
-            }
 
 
             if (Input.GetAxis("Vertical") >= 0.01f || Input.GetAxis("Horizontal") >= 0.01f || Input.GetAxis("Vertical") <= -0.01f || Input.GetAxis("Horizontal") <= -0.01f)
@@ -167,6 +141,7 @@ namespace SA
                 moving = false;
             }
 
+            //climbing checks 
             if (!onGround && !keepOffGround)
             {
                 if (!climbOff)
@@ -187,11 +162,49 @@ namespace SA
                 }
             }
 
-
-
+            //set animations parameters
             anim.SetFloat("move", moveAmount);
             anim.SetBool("onAir", !onGround);
         }
+
+        void Movement()
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+
+            // Look();
+            camYforward = camHolder.forward;
+            Vector3 v = vertical * camHolder.forward;
+            Vector3 h = horizontal * camHolder.right;
+
+            moveDirection = (v + h).normalized;
+            moveAmount = Mathf.Clamp01((Mathf.Abs(horizontal) + Mathf.Abs(vertical)));
+
+            if (!canMove)
+            {
+                moveSpeed = 0;
+            }
+            else
+            {
+                moveSpeed = ogMoveSpeed;
+            }
+
+            Vector3 targetDir = moveDirection;
+            targetDir.y = 0;
+            if (targetDir == Vector3.zero)
+            {
+                targetDir = transform.forward;
+            }
+
+            Quaternion lookDir = Quaternion.LookRotation(targetDir);
+            Quaternion targetRot = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime * rotSpeed);
+            transform.rotation = targetRot;
+
+            Vector3 dir = transform.forward * (Input.GetButton("Sprint") ? (moveSpeed * sprintMultyplyer) * moveAmount : moveSpeed * moveAmount);
+            dir.y = rigid.velocity.y;
+            rigid.velocity = dir;
+        }
+
 
         void Jump()
         {
@@ -209,29 +222,6 @@ namespace SA
             }
         }
 
-        /*bool OnGround()
-        {
-            if (keepOffGround)
-                return false;
-
-            RaycastHit hit;
-
-            Physics.Raycast(groundCheck.position, Vector3.down, out hit, rayGroundDistance, groundMask);
-            if (hit.collider)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-                /*if(Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
-                {
-                    return true;
-                }
-                
-                return false;
-        }*/
 
         public void GroundCheck()
         {
@@ -273,6 +263,7 @@ namespace SA
                 inputSpeed = (inputSpeed * 2);
                 GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height / 2);
                 croutching = true;
+                anim.SetBool("Crouch", croutching);
             }
             else
             {
@@ -280,10 +271,11 @@ namespace SA
                 inputSpeed = (inputSpeed / 2);
                 GetComponent<CapsuleCollider>().height = (GetComponent<CapsuleCollider>().height * 2);
                 croutching = false;
+                anim.SetBool("Crouch", croutching);
             }
         }
 
-        public void Interact()
+       /* public void Interact()
         {
             Vector3 origin = transform.position;
             origin.y += 0.4f;
@@ -297,7 +289,7 @@ namespace SA
                     Debug.Log("yo broham show ham we interacted you see that shiii");
                 }
             }
-        }
+        }*/
 
         public void Respawn()
         {
@@ -308,7 +300,7 @@ namespace SA
         public void TakeNote()
         {
             anim.SetBool("takingNote", true);
-            playerstats.StunItemUp();
+            playerstats.BulletsItemUp();
         }
 
         private void OnDisable()
@@ -318,7 +310,7 @@ namespace SA
 
         private void LockAndHideCursorToggle()
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Inventory"))
+            if (Input.GetButtonDown("Inventory"))
             {
                 Debug.Log("inventory pressed");
                 if (mouseVisibleUnlocked)
@@ -335,6 +327,20 @@ namespace SA
                     Cursor.visible = true;
                     mouseVisibleUnlocked = true;
                 }
+            }
+        }
+
+        public void MoveToggle()
+        {
+            canMove = !canMove;
+            moving = !moving;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "Enemy")
+            {
+                Respawn();
             }
         }
 

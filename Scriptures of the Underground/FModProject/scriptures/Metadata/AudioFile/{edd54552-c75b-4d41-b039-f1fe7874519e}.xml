@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{edd54552-c75b-4d41-b039-f1fe7874519e}">
 		<property name="assetPath">
-			<value>Hades' Theme.wav</value>
+			<value>Music/Hades' Theme.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

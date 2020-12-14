@@ -44,6 +44,7 @@ namespace SA
         {
             tpc = GetComponent<ThirdPersonController>();
             Init();
+
         }
 
         public void Init()
@@ -51,8 +52,8 @@ namespace SA
             //helper = new GameObject().transform;
             //helper.name = "climb helper";
             a_hook.Init(this,helper);
-           // climbLayers = 9;
-            //CheckForClimb();
+            // climbLayers = 9;
+            CheckForClimb();
         }
 
         public bool CheckForClimb()
@@ -81,6 +82,7 @@ namespace SA
             t = 0;
             inPosition = false;
             anim.CrossFade("climb_idle", 2);
+            GetInPosition();
         }
 
        
@@ -173,7 +175,7 @@ namespace SA
             float dis2 = rayForwardTowardsWall;
 
             //raycast forward towards the wall
-           // DebugLine.singleton.SetLine(origin, origin + (dir * dis2), 1);
+           //DebugLine.singleton.SetLine(origin, origin + (dir * dis2), 1);
             
             if (Physics.Raycast(origin, dir, out hit, dis))
             {
@@ -197,7 +199,7 @@ namespace SA
             origin += dir * dis2;
             dir = -Vector3.up;
 
-            DebugLine.singleton.SetLine(origin, origin + dir, 2);
+
             //Debug.DrawRay(origin, dir, Color.yellow);
             if (Physics.Raycast(origin, dir, out hit, dis2))
             {
