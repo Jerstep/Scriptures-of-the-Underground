@@ -8,7 +8,7 @@ public class Tribute : MonoBehaviour
     int uses = 1;
 
     public PlayerStats player;
-    public GameplayUI UIScript;
+     GameplayUI UIScript;
 
     void Start()
     {

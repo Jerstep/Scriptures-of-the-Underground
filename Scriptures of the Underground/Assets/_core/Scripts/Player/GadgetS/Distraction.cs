@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Distraction : MonoBehaviour
 {
-    public PlayerStats player;
+    PlayerStats player;
     public GameObject bulletPrefab;
 
     public float cooldowntimer = 1;
@@ -14,7 +14,7 @@ public class Distraction : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerStats>();
+        player = GameObject.Find("PlayerStatsHolder").GetComponent<PlayerStats>();
     }
 
 

@@ -300,7 +300,6 @@ namespace SA
         public void TakeNote()
         {
             anim.SetBool("takingNote", true);
-            playerstats.BulletsItemUp();
         }
 
         private void OnDisable()

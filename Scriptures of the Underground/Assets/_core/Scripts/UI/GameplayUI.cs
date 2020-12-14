@@ -6,9 +6,8 @@ using TMPro;
 
 public class GameplayUI : MonoBehaviour
 {
-    public Text stunText;
-    public string stunString;
-    public PlayerStats player;
+    public Text bulletUIText;
+    PlayerStats player;
 
     public GameObject interactUI;
     public TMP_Text InteractText;
@@ -21,6 +20,7 @@ public class GameplayUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("PlayerStatsHolder").GetComponent<PlayerStats>();
         string[] names = Input.GetJoystickNames();
         for (int x = 0; x < names.Length; x++)
         {
@@ -70,8 +70,8 @@ public class GameplayUI : MonoBehaviour
         }
     }
 
-    public void UpdateUIStun(int stun)
+    public void UpdateUIBullet(int bullet)
     {
-        stunText.text = stun.ToString();
+        bulletUIText.text = bullet.ToString();
     }
 }

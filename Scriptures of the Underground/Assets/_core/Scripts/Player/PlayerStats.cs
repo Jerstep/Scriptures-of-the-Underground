@@ -99,8 +99,8 @@ using UnityEngine;
 
         public void BulletsItemUp()
         {
-            bullets++;
-            UI.UpdateUIStun(bullets);
+            bullets += 1;
+            UI.UpdateUIBullet(bullets);
 
         }
 
