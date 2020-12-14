@@ -6,6 +6,13 @@ TagManager:
   tags:
   - hallwayTrigger
   - InteractableButton
+  - CancelClimb
+  - Distraction
+  - Enemy
+  - Enviorment
+  - PersefShrine
+  - Material:Concrete
+  - Material:Dirt
   layers:
   - Default
   - TransparentFX
@@ -20,7 +27,7 @@ TagManager:
   - Climbable
   - CurrentCheckSpot
   - IgnoreBake
-  - 
+  - Player
   - 
   - 
   - 
