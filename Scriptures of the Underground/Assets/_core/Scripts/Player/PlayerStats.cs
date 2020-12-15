@@ -22,6 +22,7 @@ using UnityEngine;
 
         public GameObject LvlOstHolder;
         FmodOst ost;
+        FmodPlayerSounds playerSounds;
 
         public int notesTaken;
 
