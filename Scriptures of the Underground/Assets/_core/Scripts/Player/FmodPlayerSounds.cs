@@ -105,7 +105,7 @@ public class FmodPlayerSounds : MonoBehaviour
         SketchPath.release();
     }
 
-    void CallFire()
+    public void CallFire()
     {
         FMOD.Studio.EventInstance GadetFirePath = FMODUnity.RuntimeManager.CreateInstance(gadetFirePath);
         GadetFirePath.start();

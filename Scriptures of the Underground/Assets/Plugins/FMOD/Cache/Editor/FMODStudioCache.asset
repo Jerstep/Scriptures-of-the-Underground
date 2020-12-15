@@ -260,7 +260,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 7252838344438821983}
+  - {fileID: -2831567778473467328}
   MinDistance: 0
   MaxDistance: 0
   Length: 582
@@ -307,6 +307,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 551
+--- !u!114 &-2831567778473467328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Ground Footsteps
+  m_EditorClassIdentifier: 
+  Name: Ground Footsteps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-2576265721045229956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +406,26 @@ MonoBehaviour:
   m_Name: parameter:/Level Music/Danger
   m_EditorClassIdentifier: 
   Name: Danger
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-1658042735308338240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/Ground Jump
+  m_EditorClassIdentifier: 
+  Name: Ground Jump
   Min: 0
   Max: 1
   Default: 0
@@ -508,7 +548,7 @@ MonoBehaviour:
   - {fileID: 8429674869650196395}
   StringsBanks:
   - {fileID: 2653558052238638280}
-  stringsBankWriteTime: 637436323330450295
+  stringsBankWriteTime: 637436380258219907
   cacheVersion: 5
 --- !u!114 &128524691575732088
 MonoBehaviour:
@@ -624,7 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FModProject/scriptures/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637436323330450295
+  lastModified: 637436380258219907
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -673,7 +713,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 2197443993720712150}
+  - {fileID: -1658042735308338240}
   MinDistance: 0
   MaxDistance: 0
   Length: 518
@@ -736,6 +776,26 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &5265587887748389054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level Music/Danger
+  m_EditorClassIdentifier: 
+  Name: Danger
+  Min: 0
+  Max: 1
+  Default: 0
   ID:
     data1: 0
     data2: 0
@@ -905,6 +965,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &8149713340749388874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level Music/Distance to Shrine
+  m_EditorClassIdentifier: 
+  Name: Distance to Shrine
+  Min: 0
+  Max: 100
+  Default: 100
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &8223073868530715113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,7 +1022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FModProject/scriptures/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637436323330420380
+  lastModified: 637436380258190175
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -966,8 +1046,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -1814682062343777255}
-  - {fileID: -9012431558938300605}
+  - {fileID: 5265587887748389054}
+  - {fileID: 8149713340749388874}
   MinDistance: 1
   MaxDistance: 20
   Length: 178723

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Distraction : MonoBehaviour
 {
     PlayerStats player;
+    FmodPlayerSounds playerSounds;
     public GameObject bulletPrefab;
 
     public float cooldowntimer = 1;
@@ -15,6 +16,7 @@ public class Distraction : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("PlayerStatsHolder").GetComponent<PlayerStats>();
+        playerSounds = GameObject.Find("PlayerCharacter_V2").GetComponent<FmodPlayerSounds>();
     }
 
 
@@ -51,6 +53,7 @@ public class Distraction : MonoBehaviour
         //instantiate bullet based on this objects location and based on the amount of bullets player has left
         //Instantiate(bulletPrefab, gameObject.transform.position);
         Debug.Log("shoot");
+        playerSounds.CallFire();
         currentCooldown = cooldowntimer;
         player.bullets--;
         Instantiate(bulletPrefab, transform.position, transform.rotation);
