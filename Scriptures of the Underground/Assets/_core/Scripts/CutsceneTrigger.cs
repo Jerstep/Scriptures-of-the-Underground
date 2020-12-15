@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using Cinemachine.Editor;
 namespace SA
 {
     public class CutsceneTrigger : MonoBehaviour

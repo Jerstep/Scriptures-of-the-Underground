@@ -54,7 +54,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243631860884732820}
-  m_LocalRotation: {x: 0.13138053, y: 0.04283587, z: -0.0056824074, w: 0.9903898}
+  m_LocalRotation: {x: 0.13138057, y: 0.042831074, z: -0.005681772, w: 0.99039006}
   m_LocalPosition: {x: -66.63563, y: 44.003242, z: -93.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -291,7 +291,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6065908407047423724}
-  m_LocalRotation: {x: 0.37873733, y: -0.3132686, z: 0.13798141, w: 0.85987324}
+  m_LocalRotation: {x: 0.37873664, y: -0.31327283, z: 0.13798323, w: 0.85987175}
   m_LocalPosition: {x: -66.079994, y: 44.272934, z: -91.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -752,7 +752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e89e8533bbdd37459ef6555d78c0373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   bulletPrefab: {fileID: 9009140728582741048, guid: aabec52e411936348b57eb0d934c328c,
     type: 3}
   cooldowntimer: 1
@@ -1349,7 +1348,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6953140780082722157}
-  m_LocalRotation: {x: 0.04912044, y: 0.05542673, z: -0.0027300932, w: 0.99725}
+  m_LocalRotation: {x: 0.04912044, y: 0.055426743, z: -0.002730094, w: 0.99725}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1585,7 +1584,7 @@ MonoBehaviour:
   playerstats: {fileID: 6065908407238764347}
   cameraMain: {fileID: 6953140780836298064}
   lookSpeed: 3
-  inputsound: event:/Footsteps
+  inputsound: event:/SFX/Footsteps
   inputSpeed: 0.4
   canMove: 1
 --- !u!1 &6953140780425509999
@@ -2145,7 +2144,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6953140780836298069}
-  m_LocalRotation: {x: 0.04912044, y: 0.055426728, z: -0.0027300927, w: 0.99725}
+  m_LocalRotation: {x: 0.04912044, y: 0.055426747, z: -0.002730094, w: 0.99725}
   m_LocalPosition: {x: -0.0000036358833, y: 2.1859286, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2571,7 +2570,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 1537
-  jumpPath: event:/Jump
+  jumpPath: event:/SFX/Jump
   PlayerTouchingGround: 0
 --- !u!114 &4994613895533240532
 MonoBehaviour:
