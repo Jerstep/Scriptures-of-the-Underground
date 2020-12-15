@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4321950906591604773}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Climeble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2446188313127473749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 186.39, y: 21.06, z: 16.81}
-  m_LocalScale: {x: 3.240929, y: 4.1764975, z: 0.8434552}
+  m_LocalScale: {x: 3.5457854, y: 4.1764975, z: 0.8434552}
   m_Children:
   - {fileID: 2308814496354390641}
   - {fileID: 3208133297675257037}
@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 7269515812692221127}
   - component: {fileID: 4052847812536934266}
   - component: {fileID: 2520077705805529390}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ClimbCancle
-  m_TagString: Untagged
+  m_TagString: CancelClimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

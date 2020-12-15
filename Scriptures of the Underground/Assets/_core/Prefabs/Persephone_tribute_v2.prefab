@@ -9574,7 +9574,7 @@ MonoBehaviour:
   priority: 1
   blendDistance: 2
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: a257c8c3e5e2f9944b96150693b9c0dd, type: 2}
+  sharedProfile: {fileID: 11400000, guid: c7aa734c01d9d724e856383d60a98563, type: 2}
 --- !u!135 &6252778325906492972
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27118,7 +27118,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6638660475748315212}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.1823626, y: 5, z: 48.753967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -27358,7 +27358,7 @@ MonoBehaviour:
   priority: 1
   blendDistance: 2
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: d03649f26fac0a847a01a3f25a40bc7b, type: 2}
+  sharedProfile: {fileID: 11400000, guid: c16c1cb20b9b3a14e8d9799ba9acaf5d, type: 2}
 --- !u!135 &3949499741744924880
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27846,6 +27846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  UIScript: {fileID: 0}
 --- !u!1 &9071296694042156316
 GameObject:
   m_ObjectHideFlags: 0

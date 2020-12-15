@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Value: 418.6
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 1702.3
+    m_Value: 1938
   albedo:
     m_OverrideState: 1
     m_Value: {r: 0.47357145, g: 0.45754716, b: 0.5, a: 1}
@@ -63,7 +63,7 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 124
+    m_Value: 236.4
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1
@@ -291,7 +291,7 @@ MonoBehaviour:
     min: 0
   aerosolDensity:
     m_OverrideState: 1
-    m_Value: 0.622
+    m_Value: 0.807
     min: 0
     max: 1
   aerosolTint:
@@ -335,7 +335,7 @@ MonoBehaviour:
     m_Value: {x: 4.89, y: 0, z: 0}
   spaceEmissionTexture:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 6e645c54e700ba448994993c4f8751ea, type: 3}
+    m_Value: {fileID: 8900000, guid: 54a3a0570aebe8949bec4966f1376581, type: 3}
   spaceEmissionMultiplier:
     m_OverrideState: 1
     m_Value: 5000
