@@ -5,7 +5,7 @@
 			<value>Book Open</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{61e4d7f9-7e52-475d-9e4b-1699da96b60c}</destination>
@@ -117,7 +117,6 @@
 	<object class="MixerBusEffectChain" id="{88e4fe29-5f99-45e1-a930-1814d13cde29}">
 		<relationship name="effects">
 			<destination>{05d991bc-773f-4379-88c2-e59db2416648}</destination>
-			<destination>{92011bcc-6690-44db-8709-b1bb831ec0b4}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{0b424d36-172c-4f2f-ac86-6db37016eb6b}" />
@@ -154,6 +153,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{aa6d2b09-a199-4d45-9daa-c7d49aca1866}" />
 	<object class="MixerBusFader" id="{05d991bc-773f-4379-88c2-e59db2416648}" />
-	<object class="SpatialiserEffect" id="{92011bcc-6690-44db-8709-b1bb831ec0b4}" />
 	<object class="MixerBusFader" id="{0715cf94-1ba1-4f06-bb7a-edcc955692f3}" />
 </objects>

@@ -5,7 +5,7 @@
 			<value>Book Sketch</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{61e4d7f9-7e52-475d-9e4b-1699da96b60c}</destination>
@@ -117,7 +117,6 @@
 	<object class="MixerBusEffectChain" id="{c5e8b171-eb45-45ae-bc2d-22307b8961b7}">
 		<relationship name="effects">
 			<destination>{e836f38c-1bd6-4b51-98e9-1b4ed5e32a4a}</destination>
-			<destination>{41f04684-c31f-4048-b744-f5a097d2110f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d15f2b62-6b0c-49ab-b2b0-1261e9dd7569}" />
@@ -154,6 +153,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{64de7bcb-f6bd-4265-b36b-2cb79ce655e3}" />
 	<object class="MixerBusFader" id="{e836f38c-1bd6-4b51-98e9-1b4ed5e32a4a}" />
-	<object class="SpatialiserEffect" id="{41f04684-c31f-4048-b744-f5a097d2110f}" />
 	<object class="MixerBusFader" id="{6c920e5c-4c49-4fcb-86fd-15f0a97a3a88}" />
 </objects>
