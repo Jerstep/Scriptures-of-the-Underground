@@ -150,6 +150,29 @@ MonoBehaviour:
     data1: 2956160354
     data2: 553628319
   Exists: 1
+--- !u!114 &-6091326278179877611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Weapon Fire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Weapon Fire
+  guid: f574ed580f636a47b6a2a367ba58cf0d
+  Banks:
+  - {fileID: 8429674869650196395}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 551
 --- !u!114 &-6027800091411849959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +373,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 35428
+--- !u!114 &-2371969285036925936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level Music/Distance to Shrine
+  m_EditorClassIdentifier: 
+  Name: Distance to Shrine
+  Min: 0
+  Max: 100
+  Default: 100
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-2318675277139080736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +609,26 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &778265656495852986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/Ground Jump
+  m_EditorClassIdentifier: 
+  Name: Ground Jump
+  Min: 0
+  Max: 1
+  Default: 0
   ID:
     data1: 0
     data2: 0
