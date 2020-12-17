@@ -5,7 +5,7 @@
 			<value>Book Turn Page</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{61e4d7f9-7e52-475d-9e4b-1699da96b60c}</destination>
@@ -122,7 +122,6 @@
 	<object class="MixerBusEffectChain" id="{69d181a6-4175-4740-9b7e-62bf1be37950}">
 		<relationship name="effects">
 			<destination>{00f8b078-2958-4288-8b70-0f5bfbe7d5da}</destination>
-			<destination>{1b42a5ac-9961-47a2-b9e6-5b372d1c7453}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{81f46170-acfe-4d86-939e-69199f8c0a36}" />
@@ -184,6 +183,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{e565123b-f5d0-42f3-9f5b-32734ff3ea4e}" />
 	<object class="MixerBusFader" id="{00f8b078-2958-4288-8b70-0f5bfbe7d5da}" />
-	<object class="SpatialiserEffect" id="{1b42a5ac-9961-47a2-b9e6-5b372d1c7453}" />
 	<object class="MixerBusFader" id="{c10c7e6c-e90d-46f1-a9f6-423d2fb192f3}" />
 </objects>
