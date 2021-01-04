@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_core/Scenes/DemoScene-matt-V2.unity
     guid: 13f23415fb7a2c74ab73528612c41ad2
+  - enabled: 1
+    path: Assets/_core/Scenes/EndScreen.unity
+    guid: 0d63b5a1ba104e14c89d7315372d5267
   m_configObjects: {}

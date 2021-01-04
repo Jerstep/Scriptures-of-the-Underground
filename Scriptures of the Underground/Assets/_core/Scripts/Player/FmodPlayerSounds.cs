@@ -84,21 +84,21 @@ public class FmodPlayerSounds : MonoBehaviour
         JournalOpen.release();
     }
 
-    void CallJournalClose()
+    public void CallJournalClose()
     {
         FMOD.Studio.EventInstance JournalClose = FMODUnity.RuntimeManager.CreateInstance(journalClosePath);
         JournalClose.start();
         JournalClose.release();
     }
 
-    void CallJournalPageflip()
+    public void CallJournalPageflip()
     {
         FMOD.Studio.EventInstance JournalPageflip = FMODUnity.RuntimeManager.CreateInstance(journalPageflipPath);
         JournalPageflip.start();
         JournalPageflip.release();
     }
 
-    void CallSkech()
+    public void CallSkech()
     {
         FMOD.Studio.EventInstance SketchPath = FMODUnity.RuntimeManager.CreateInstance(sketchPath);
         SketchPath.start();

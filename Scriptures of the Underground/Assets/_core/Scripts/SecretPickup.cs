@@ -10,7 +10,8 @@ public class SecretPickup : MonoBehaviour
 
     public PopUpUI popUi;
     public GameplayUI UIScript;
-    
+    public FmodPlayerSounds playerSounds;
+
 
     // Start is called before the first frame update
     void Start()

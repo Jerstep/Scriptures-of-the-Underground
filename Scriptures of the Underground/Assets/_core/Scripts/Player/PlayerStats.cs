@@ -8,6 +8,7 @@ using UnityEngine;
         public int playerStunItem;
         public int keys;
         public int bullets;
+        public int storiesCollected;
 
         Animator camAnim;
 
