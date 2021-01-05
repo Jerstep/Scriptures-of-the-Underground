@@ -2,13 +2,12 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20105 (112138), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 3760 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002AAD960D788 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001A8C32BB418 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,95 +16,303 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A7A00588D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JumpLandingDirt_1', format=5, channels=1, frequency=48000, lengthbytes=3424, lengthpcm=19092, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.150998.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A7A00588D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JumpLandingConcrete_3', format=5, channels=1, frequency=48000, lengthbytes=1824, lengthpcm=9206, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.316807.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A7A00588D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JumpLandingDirt_3', format=5, channels=1, frequency=48000, lengthbytes=3200, lengthpcm=17305, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.079874.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A7A00588D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JumpLandingConcrete_1', format=5, channels=1, frequency=48000, lengthbytes=2592, lengthpcm=14187, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.545255.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A7A00588D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JumpLandingDirt_4', format=5, channels=1, frequency=48000, lengthbytes=4480, lengthpcm=24896, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.078338.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A7A00588D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JumpLandingDirt_2', format=5, channels=1, frequency=48000, lengthbytes=3200, lengthpcm=17656, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.176110.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A7A00588D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JumpLandingConcrete_2', format=5, channels=1, frequency=48000, lengthbytes=2176, lengthpcm=10989, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.625008.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A7A00588D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JumpLandingDirt_5', format=5, channels=1, frequency=48000, lengthbytes=2144, lengthpcm=10069, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.101535.
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A8C6DB2B88
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A8C6DB2B88
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A7A1837A88
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A7A1837A88
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A79D29BA08
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Book_Sketch_5', format=5, channels=1, frequency=48000, lengthbytes=16128, lengthpcm=89660, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.062254.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A79D29BA08
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Book_Sketch_2', format=5, channels=1, frequency=48000, lengthbytes=30560, lengthpcm=167366, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.040147.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A79D29BA08
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Book_Sketch_1', format=5, channels=1, frequency=48000, lengthbytes=24512, lengthpcm=135985, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.038896.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A79D29BA08
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Book_Sketch_3', format=5, channels=1, frequency=48000, lengthbytes=23552, lengthpcm=130008, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.033515.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 9188736
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 34592
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000880762F2D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8E97F7E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8E97F7E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8E97F7F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8E97F7FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A79D29BA08
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Book_Sketch_4', format=5, channels=1, frequency=48000, lengthbytes=25152, lengthpcm=138974, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.032270.
+[LOG] SoundI::release                          : Underworld_Enemies Stem (000001A79A04F268)
+[LOG] SoundI::release                          :     Underworld_Enemies Stem (000001A8C71EA468)
+[LOG] SoundI::release                          :     Underworld_Enemies Stem (000001A8C6DB2B88)
+[LOG] SoundI::release                          : Underworld_Base (000001A79A04E9F8)
+[LOG] SoundI::release                          :     Underworld_Base (000001A8C71EA128)
+[LOG] SoundI::release                          :     Underworld_Base (000001A8C6DB3C68)
+[LOG] SoundI::release                          : Underworld_Piano (000001A79A04DE28)
+[LOG] SoundI::release                          :     Underworld_Piano (000001A8C71E9908)
+[LOG] SoundI::release                          :     Underworld_Piano (000001A7A1837A88)
+[LOG] SoundI::release                          :  (000001A7FFB405C8)
+[LOG] SoundI::release                          :     Book_Sketch_1 (000001A7A01AB9F8)
+[LOG] SoundI::release                          :  (000001A7FFB41B58)
+[LOG] SoundI::release                          :     Book_Sketch_2 (000001A7A01AB6B8)
+[LOG] SoundI::release                          :  (000001A7FFB3FD28)
+[LOG] SoundI::release                          :     Book_Sketch_3 (000001A7A01ABB98)
+[LOG] SoundI::release                          :  (000001A7FFB419E8)
+[LOG] SoundI::release                          :     Book_Sketch_4 (000001A7A01ABD38)
+[LOG] SoundI::release                          :  (000001A7FFB3CC48)
+[LOG] SoundI::release                          :     Book_Sketch_5 (000001A7A01AB378)
+[LOG] SoundI::release                          :  (000001A7FFC97218)
+[LOG] SoundI::release                          :     JumpLandingConcrete_1 (000001A7A01B0CD8)
+[LOG] SoundI::release                          :  (000001A7FFC987A8)
+[LOG] SoundI::release                          :     JumpLandingConcrete_2 (000001A7A01B14F8)
+[LOG] SoundI::release                          :  (000001A8C702A088)
+[LOG] SoundI::release                          :     JumpLandingConcrete_3 (000001A7A01B0658)
+[LOG] SoundI::release                          :  (000001A8C702D5B8)
+[LOG] SoundI::release                          :     JumpLandingDirt_1 (000001A7A01B0318)
+[LOG] SoundI::release                          :  (000001A7FFC956C8)
+[LOG] SoundI::release                          :     JumpLandingDirt_2 (000001A7A01B1358)
+[LOG] SoundI::release                          :  (000001A7FFC981E8)
+[LOG] SoundI::release                          :     JumpLandingDirt_3 (000001A7A01B07F8)
+[LOG] SoundI::release                          :  (000001A7FFC95558)
+[LOG] SoundI::release                          :     JumpLandingDirt_4 (000001A7A01B0E78)
+[LOG] SoundI::release                          :  (000001A7FFC9A188)
+[LOG] SoundI::release                          :     JumpLandingDirt_5 (000001A7A01B1698)
+[LOG] SoundI::release                          :  (000001A7FFB3F1A8)
+[LOG] SoundI::release                          :     FootstepConcrete_3 (000001A8C71EED88)
+[LOG] SoundI::release                          :  (000001A801F7C168)
+[LOG] SoundI::release                          :     FootstepConcrete_7 (000001A8C71E7A28)
+[LOG] SoundI::release                          :  (000001A7FFB3C238)
+[LOG] SoundI::release                          :     FootstepConcrete_8 (000001A8C71EE8A8)
+[LOG] SoundI::release                          :  (000001A801F7A618)
+[LOG] SoundI::release                          :     FootstepConcrete_5 (000001A8C71E9288)
+[LOG] SoundI::release                          :  (000001A7FFB40458)
+[LOG] SoundI::release                          :     FootstepConcrete_2 (000001A8C71EEBE8)
+[LOG] SoundI::release                          :  (000001A8B1E7C6C8)
+[LOG] SoundI::release                          :     FootstepConcrete_1 (000001A8C71EA2C8)
+[LOG] SoundI::release                          :  (000001A8B1E808E8)
+[LOG] SoundI::release                          :     FootstepConcrete_4 (000001A8C71E8588)
+[LOG] SoundI::release                          :  (000001A801F7CFC8)
+[LOG] SoundI::release                          :     FootstepConcrete_6 (000001A8C71E7BC8)
+[LOG] SoundI::release                          :  (000001A8B1E81468)
+[LOG] SoundI::release                          :     FootstepDirt_2 (000001A8C71E80A8)
+[LOG] SoundI::release                          :  (000001A8B1E81188)
+[LOG] SoundI::release                          :     FootstepDirt_6 (000001A8C71E7F08)
+[LOG] SoundI::release                          :  (000001A7FFB3E1D8)
+[LOG] SoundI::release                          :     FootstepDirt_3 (000001A8C71EEA48)
+[LOG] SoundI::release                          :  (000001A8B1E7D978)
+[LOG] SoundI::release                          :     FootstepDirt_1 (000001A8C71E8C08)
+[LOG] SoundI::release                          :  (000001A8B1E7D0D8)
+[LOG] SoundI::release                          :     FootstepDirt_5 (000001A8C71E7D68)
+[LOG] SoundI::release                          :  (000001A8B1E7DAE8)
+[LOG] SoundI::release                          :     FootstepDirt_4 (000001A8C71E8DA8)
+[LOG] SoundI::release                          :  (000001A801F7B308)
+[LOG] SoundI::release                          :     FootstepDirt_8 (000001A8C71EA7A8)
+[LOG] SoundI::release                          :  (000001A8B1E7DC58)
+[LOG] SoundI::release                          :     FootstepDirt_9 (000001A8C71E8248)
+[LOG] SoundI::release                          :  (000001A8B1E7FD68)
+[LOG] SoundI::release                          :     FootstepDirt_7 (000001A8C71E8A68)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 3760 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[WRN] SystemI::startDriver                     : Output requires a sample rate of 44100Hz, resampling will occur.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 3760 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[WRN] SystemI::startDriver                     : Output requires a sample rate of 44100Hz, resampling will occur.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 3760 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[WRN] SystemI::startDriver                     : Output requires a sample rate of 44100Hz, resampling will occur.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 3760 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[WRN] SystemI::startDriver                     : Output requires a sample rate of 44100Hz, resampling will occur.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 3760 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[WRN] SystemI::startDriver                     : Output requires a sample rate of 44100Hz, resampling will occur.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 3760 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[WRN] SystemI::startDriver                     : Output requires a sample rate of 44100Hz, resampling will occur.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 3760 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[WRN] SystemI::startDriver                     : Output requires a sample rate of 44100Hz, resampling will occur.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
