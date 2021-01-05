@@ -25,7 +25,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 8.1
+    m_Value: 7.29
   compensation:
     m_OverrideState: 0
     m_Value: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: 42
+    m_Value: 62
     min: -100
     max: 100
   tint:
