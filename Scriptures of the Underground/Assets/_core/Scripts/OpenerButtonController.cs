@@ -5,9 +5,9 @@ using UnityEngine;
 public class OpenerButtonController : MonoBehaviour
 {
     public bool isSecret;
-    public GameObject Door;
+    public GameObject[] Door;
 
-    public GameObject movePosition;
+    public GameObject[] movePosition;
     public bool isTriggered;
     public GameplayUI UIScript;
 
@@ -22,7 +22,11 @@ public class OpenerButtonController : MonoBehaviour
     {
         if (isTriggered)
         {
-            Door.transform.position = Vector3.MoveTowards(Door.transform.position, movePosition.transform.position, 3 * Time.deltaTime);
+            for(int i = 0; i < Door.Length; i++)
+            {
+                Door[i].transform.position = Vector3.MoveTowards(Door[i].transform.position, movePosition[i].transform.position, 3 * Time.deltaTime);
+            }
+            
         }
     }
 
