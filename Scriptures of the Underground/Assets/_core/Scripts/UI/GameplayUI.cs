@@ -17,10 +17,17 @@ public class GameplayUI : MonoBehaviour
     private int PS4_Controller = 0;
     public Image xboxImage, pcImage;
 
+    public GadgetSwitching gadgetUI, gadgetPlayer;
+    public PopUpUI popUi;
+    string maskGetText;
+    public Sprite maskImage;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("PlayerStatsHolder").GetComponent<PlayerStats>();
+        gadgetUI = GameObject.Find("Backdrop-gadgetuiHolder").GetComponent<GadgetSwitching>();
+        gadgetPlayer = GameObject.Find("GadgetHolder").GetComponent<GadgetSwitching>();
         string[] names = Input.GetJoystickNames();
         for (int x = 0; x < names.Length; x++)
         {
@@ -73,5 +80,13 @@ public class GameplayUI : MonoBehaviour
     public void UpdateUIBullet(int bullet)
     {
         bulletUIText.text = bullet.ToString();
+    }
+
+    public void SetMask()
+    {
+        gadgetUI.maskUnlocked = true;
+        gadgetPlayer.maskUnlocked = true;
+        maskGetText = ".Unlocked mask gadget.";
+        popUi.StartFade(maskGetText, maskImage);
     }
 }

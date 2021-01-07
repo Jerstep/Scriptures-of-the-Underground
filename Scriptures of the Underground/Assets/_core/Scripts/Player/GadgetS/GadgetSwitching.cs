@@ -4,6 +4,7 @@ public class GadgetSwitching : MonoBehaviour
 {
 
     public int selectedGadget = 0;
+    public bool maskUnlocked;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class GadgetSwitching : MonoBehaviour
     {
         int previousSelectedGadget = selectedGadget;
 
-        if(Input.GetButtonUp("RightBumper"))
+        if(Input.GetButtonUp("RightBumper") && maskUnlocked)
         {
             if(selectedGadget >= transform.childCount - 1)
             {
@@ -27,8 +28,19 @@ public class GadgetSwitching : MonoBehaviour
                 selectedGadget++;
             } 
         }
+        else if(Input.GetButtonUp("RightBumper") && !maskUnlocked)
+        {
+            if (selectedGadget >= transform.childCount - 2)
+            {
+                selectedGadget = 0;
+            }
+            else
+            {
+                selectedGadget++;
+            }
+        }
 
-        if (Input.GetButtonUp("LeftBumper"))
+        if (Input.GetButtonUp("LeftBumper") && maskUnlocked)
         {
             if (selectedGadget <= 0 )
             {
@@ -39,8 +51,19 @@ public class GadgetSwitching : MonoBehaviour
                 selectedGadget--;
             }
         }
+        else if (Input.GetButtonUp("LeftBumper") && !maskUnlocked)
+        {
+            if (selectedGadget <= 0)
+            {
+                selectedGadget = transform.childCount - 2;
+            }
+            else
+            {
+                selectedGadget--;
+            }
+        }
 
-        if(previousSelectedGadget != selectedGadget)
+        if (previousSelectedGadget != selectedGadget)
         {
             SelectGadget();
         }
