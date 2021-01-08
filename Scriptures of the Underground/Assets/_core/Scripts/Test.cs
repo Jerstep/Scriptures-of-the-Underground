@@ -5,7 +5,16 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
 
-    private static bool created = false;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            Debug.Log("Player IS COLLIDING!!!!");
+        }
+    }
+
+    /*private static bool created = false;
 
     void Awake()
     {
@@ -15,5 +24,5 @@ public class Test : MonoBehaviour
             created = true;
             Debug.Log("Awake: " + this.gameObject);
         }
-    }
+    }*/
 }

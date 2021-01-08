@@ -5,6 +5,9 @@ public class GadgetSwitching : MonoBehaviour
 
     public int selectedGadget = 0;
     public bool maskUnlocked;
+    int previousSelectedGadget = 0;
+    public bool playerObject;
+    public FmodPlayerSounds sfx;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +18,7 @@ public class GadgetSwitching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int previousSelectedGadget = selectedGadget;
+        previousSelectedGadget = selectedGadget;
 
         if(Input.GetButtonUp("RightBumper") && maskUnlocked)
         {
@@ -63,6 +66,11 @@ public class GadgetSwitching : MonoBehaviour
             }
         }
 
+        if(playerObject && Input.GetButtonUp("LeftBumper")|| playerObject && Input.GetButtonUp("RightBumper"))
+        {
+            sfx.CallGadgetSwitch();
+        }
+
         if (previousSelectedGadget != selectedGadget)
         {
             SelectGadget();
@@ -71,6 +79,7 @@ public class GadgetSwitching : MonoBehaviour
 
     public void SelectGadget()
     {
+        Debug.Log("TESTTTTTTTTT");
         int i = 0;
         foreach(Transform gadget in transform)
         {

@@ -9,7 +9,7 @@ public class FmodPlayerSounds : MonoBehaviour
     float distance = 0.1f;
     float Material;
     public LayerMask groundMask;
-    public string jumpPath,journalOpenPath, journalClosePath, journalPageflipPath, sketchPath, gadetFirePath;
+    public string jumpPath,journalOpenPath, journalClosePath, journalPageflipPath, sketchPath,gadgetSwitchPath, gadetFirePath;
 
     public bool PlayerTouchingGround;
     bool PreviosulyTouchingGround;
@@ -103,6 +103,13 @@ public class FmodPlayerSounds : MonoBehaviour
         FMOD.Studio.EventInstance SketchPath = FMODUnity.RuntimeManager.CreateInstance(sketchPath);
         SketchPath.start();
         SketchPath.release();
+    }
+
+    public void CallGadgetSwitch()
+    {
+        FMOD.Studio.EventInstance GadgetSwitch = FMODUnity.RuntimeManager.CreateInstance(gadgetSwitchPath);
+        GadgetSwitch.start();
+        GadgetSwitch.release();
     }
 
     public void CallFire()
