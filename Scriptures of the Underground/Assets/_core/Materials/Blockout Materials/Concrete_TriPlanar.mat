@@ -163,10 +163,11 @@ Material:
     - Boolean_39A2B341: 1
     - Vector1_3924C6EA: 1
     - Vector1_726E5DF1: 2.11
+    - Vector1_7C059E24: 0
     - Vector1_7FF88A64: 0.05
     - Vector1_8A195832: 0.1
     - Vector1_986DFF8C: 0.57
-    - Vector1_CE008C82: 0.19
+    - Vector1_CE008C82: 0
     - _AORemapMax: 0.98
     - _AORemapMin: 0
     - _ATDistance: 1
