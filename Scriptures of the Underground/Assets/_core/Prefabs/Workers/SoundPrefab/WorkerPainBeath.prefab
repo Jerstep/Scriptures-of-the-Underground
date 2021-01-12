@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4521834177894614817}
-  m_LocalRotation: {x: 0.18111083, y: 0.6835196, z: 0.6835194, w: -0.1811107}
+  m_LocalRotation: {x: 0.18111065, y: 0.68351954, z: 0.68351954, w: -0.18111065}
   m_LocalPosition: {x: 186.81, y: -8.01, z: 14.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: Player
+  CollisionTag: PlayerStatsCol
   Event: event:/Workers Voices/PainfulBreathing
   PlayEvent: 3
   StopEvent: 0

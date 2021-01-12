@@ -14,6 +14,7 @@ TagManager:
   - Material:Concrete
   - Material:Dirt
   - EnemyZone
+  - PlayerStatsCol
   layers:
   - Default
   - TransparentFX
