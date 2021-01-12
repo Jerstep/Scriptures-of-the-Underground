@@ -5231,14 +5231,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &226292318034423216
 GameObject:
@@ -5761,14 +5761,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &446344006926011543
 GameObject:
@@ -6079,14 +6079,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &729927836069376020
 GameObject:
@@ -11637,14 +11637,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &1412441750247270317
 GameObject:
@@ -12750,14 +12750,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &1999712133582498459
 GameObject:
@@ -12803,14 +12803,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &2003075228818946003
 GameObject:
@@ -13121,14 +13121,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &2131654091455374306
 GameObject:
@@ -14503,14 +14503,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &2567760742780752034
 GameObject:
@@ -14740,7 +14740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9088341734722839960
 Transform:
   m_ObjectHideFlags: 0
@@ -14768,14 +14768,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &2685551708585159951
 GameObject:
@@ -15245,14 +15245,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &2904552772239284749
 GameObject:
@@ -15775,14 +15775,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &3172668703068268528
 GameObject:
@@ -15828,14 +15828,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &3179318725482588349
 GameObject:
@@ -16824,14 +16824,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &3678743650689396612
 GameObject:
@@ -17368,14 +17368,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &3955642406702745365
 GameObject:
@@ -17474,14 +17474,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &3983466005409313662
 GameObject:
@@ -17580,14 +17580,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &4175307362384871740
 GameObject:
@@ -17686,14 +17686,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &4220539655116094262
 GameObject:
@@ -22549,14 +22549,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &4317340176316899458
 GameObject:
@@ -22602,14 +22602,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &4422135435796440773
 GameObject:
@@ -27297,14 +27297,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &4645373950187418810
 GameObject:
@@ -27615,14 +27615,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &4962166782702344330
 GameObject:
@@ -28230,14 +28230,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &5423341303104695834
 GameObject:
@@ -28442,14 +28442,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &5553189549953478359
 GameObject:
@@ -28654,14 +28654,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &5636075080025441945
 GameObject:
@@ -28813,14 +28813,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &5900501902941906411
 GameObject:
@@ -38379,14 +38379,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &6370051897107431395
 GameObject:
@@ -39251,14 +39251,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &6702064189957808174
 GameObject:
@@ -39622,14 +39622,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &6914331458887880281
 GameObject:
@@ -39834,14 +39834,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &6945308426395704210
 GameObject:
@@ -40585,14 +40585,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &7302719468679766182
 GameObject:
@@ -41725,14 +41725,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &7597718751259273599
 GameObject:
@@ -43050,14 +43050,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &8311651931002450749
 GameObject:
@@ -43156,14 +43156,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &8395513815522820773
 GameObject:
@@ -43315,14 +43315,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &8509424931239932372
 GameObject:
@@ -43692,14 +43692,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &8598614918254644513
 GameObject:
@@ -43745,14 +43745,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1 &8606367647997564181
 GameObject:
@@ -53954,14 +53954,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 2
-  m_Material: {fileID: 2100000, guid: 10add94a19ee28f4eb44158f180efb39, type: 2}
+  m_Material: {fileID: 2100000, guid: f898b168afd54a940b862ea01ab16f16, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
+  m_AffectsTransparency: 1
   m_Offset: {x: 0, y: 0, z: 0.14593667}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.3}
   m_FadeFactor: 1
 --- !u!1001 &86413014823810682
 PrefabInstance:
