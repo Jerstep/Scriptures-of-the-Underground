@@ -6,13 +6,16 @@ public class Tribute : MonoBehaviour
 {
     bool inside;
     int uses = 1;
+    public bool firstTribute;
 
     public PlayerStats player;
-     GameplayUI UIScript;
+    GameplayUI UIScript;
+    SphereCollider spherecol;
 
     void Start()
     {
         UIScript = GameObject.Find("GameplayUi").GetComponent<GameplayUI>();
+        spherecol = GetComponent<SphereCollider>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -30,6 +33,12 @@ public class Tribute : MonoBehaviour
                 player = other.GetComponentInChildren<PlayerStats>();
                 Replenish(player);
                 SetRespawn(player);
+                spherecol.enabled = false;
+                UIScript.interactUI.SetActive(false);
+                if (firstTribute)
+                {
+                    Getmask();
+                }
             }
 
             
@@ -59,5 +68,10 @@ public class Tribute : MonoBehaviour
     public void SetRespawn(PlayerStats _player)
     {
         _player.respawnLocation = transform.gameObject;
+    }
+
+    public void Getmask()
+    {
+        UIScript.SetMask();
     }
 }

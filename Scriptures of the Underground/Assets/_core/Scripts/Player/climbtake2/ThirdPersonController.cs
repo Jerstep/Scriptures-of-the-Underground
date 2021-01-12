@@ -48,6 +48,8 @@ namespace SA
         //scripts we refrence
         public PlayerStats playerstats;
         Freeclimb freeClimb;
+        public FmodPlayerSounds playerSounds;
+        public Gamemanager gman;
 
         public Camera cameraMain;
         private Vector2 rotation = Vector2.zero;
@@ -275,31 +277,18 @@ namespace SA
             }
         }
 
-       /* public void Interact()
-        {
-            Vector3 origin = transform.position;
-            origin.y += 0.4f;
-            Vector3 direction = transform.forward;
-            RaycastHit hit;
-            if (Physics.Raycast(origin, direction, out hit, 3f))
-            {
-                if (hit.transform.tag == "InteractableButton")
-                {
-                    hit.transform.gameObject.GetComponent<OpenerButtonController>().openDoor();
-                    Debug.Log("yo broham show ham we interacted you see that shiii");
-                }
-            }
-        }*/
-
         public void Respawn()
         {
             transform.position = playerstats.respawnLocation.transform.position;
+            gman.deaths += 1;
         }
 
 
         public void TakeNote()
         {
             anim.SetBool("takingNote", true);
+            playerSounds.CallSkech();
+            playerstats.storiesCollected += 1;
         }
 
         private void OnDisable()
@@ -318,6 +307,7 @@ namespace SA
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
                     mouseVisibleUnlocked = false;
+                    playerSounds.CallJournalClose();
                 }
                 else
                 {

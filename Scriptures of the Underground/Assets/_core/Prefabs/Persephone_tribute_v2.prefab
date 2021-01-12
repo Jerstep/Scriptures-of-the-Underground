@@ -9539,7 +9539,7 @@ GameObject:
   - component: {fileID: 6252778325906492972}
   m_Layer: 0
   m_Name: Sky and Fog Volume
-  m_TagString: Untagged
+  m_TagString: PersefShrine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9574,7 +9574,7 @@ MonoBehaviour:
   priority: 1
   blendDistance: 2
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: a257c8c3e5e2f9944b96150693b9c0dd, type: 2}
+  sharedProfile: {fileID: 11400000, guid: d781e1612401c3f409229487cf7d5648, type: 2}
 --- !u!135 &6252778325906492972
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27118,7 +27118,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6638660475748315212}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.1823626, y: 5, z: 48.753967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -27845,6 +27845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaccbacbbba8a4840a8772c2186e6e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstTribute: 0
   player: {fileID: 0}
 --- !u!1 &9071296694042156316
 GameObject:
@@ -39189,6 +39190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CherryBlossomVines (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 450917eabfc7204408f1b09c98b82df1,
+        type: 3}
+      propertyPath: m_FadeMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 450917eabfc7204408f1b09c98b82df1, type: 3}
 --- !u!4 &5132420516493331253 stripped
@@ -39623,6 +39629,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CherryBlossomVines (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 450917eabfc7204408f1b09c98b82df1,
+        type: 3}
+      propertyPath: m_FadeMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 450917eabfc7204408f1b09c98b82df1, type: 3}
@@ -53064,6 +53075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CherryBlossomVines
       objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 450917eabfc7204408f1b09c98b82df1,
+        type: 3}
+      propertyPath: m_FadeMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 450917eabfc7204408f1b09c98b82df1, type: 3}
 --- !u!4 &7316229657488505921 stripped
@@ -53459,6 +53475,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: statue_vegetation_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: ba3735805cebb3d498a658acbc5aa722,
+        type: 3}
+      propertyPath: m_FadeMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3735805cebb3d498a658acbc5aa722, type: 3}

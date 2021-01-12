@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class LoadNextLevel : MonoBehaviour
 {
     public string levelToLoad;
+    Gamemanager gman;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gman = GameObject.Find("GameManager").GetComponent<Gamemanager>(); 
     }
 
     // Update is called once per frame
@@ -23,7 +24,9 @@ public class LoadNextLevel : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            SceneManager.LoadScene(levelToLoad);
+            gman.EndDemo(other.GetComponentInChildren<PlayerStats>().storiesCollected);
         }
     }
+
+   
 }

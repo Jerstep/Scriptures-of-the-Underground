@@ -10,19 +10,35 @@ public class MenuManager : MonoBehaviour
     [SerializeField] Menu[] menus;
     public string lvlToLoad;
 
-    public void StartGame()
+    public MenuSounds sfx;
+
+    public void StartGame(string soundToCall)
     {
-        SceneManager.LoadScene(lvlToLoad);
+        StartCoroutine(StartGameRoutine(soundToCall));
     }
 
-    public void ExitGame()
+    public void ExitGame(string soundToCall)
     {
-        Application.Quit();
+        StartCoroutine(ExitGameRoutine(soundToCall));
     }
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    IEnumerator StartGameRoutine(string soundToCall)
+    {
+        sfx.CallSound(soundToCall);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(lvlToLoad);
+    }
+
+    IEnumerator ExitGameRoutine(string soundToCall)
+    {
+        sfx.CallSound(soundToCall);
+        yield return new WaitForSeconds(2);
+        Application.Quit();
     }
 
     public void OpenMenu(string menuName)
