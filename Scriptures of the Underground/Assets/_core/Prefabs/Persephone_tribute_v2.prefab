@@ -9562,7 +9562,7 @@ Transform:
   - {fileID: 1068610879535032734}
   - {fileID: 8958159939627324389}
   m_Father: {fileID: 6638660475748315213}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3425894217695108624
 GameObject:
@@ -9696,7 +9696,7 @@ Transform:
   - {fileID: 4895256937542566633}
   - {fileID: 8710882767305260992}
   m_Father: {fileID: 6638660475748315213}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4294096422198492748
 GameObject:
@@ -27253,7 +27253,6 @@ Transform:
   m_Children:
   - {fileID: 2771259171763386428}
   - {fileID: 1815038705162218792}
-  - {fileID: 2905162901440923315}
   - {fileID: 6638660476989571886}
   - {fileID: 4325113324078097246}
   - {fileID: 2927554076281419186}
@@ -27302,7 +27301,7 @@ Transform:
   - {fileID: 8687282505456748611}
   - {fileID: 165245667092131226}
   m_Father: {fileID: 6638660475748315213}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6638660477253083811
 GameObject:
@@ -27728,74 +27727,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!1 &7619061993539256564
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2905162901440923315}
-  - component: {fileID: 5257026847101279770}
-  - component: {fileID: 2696314555078153165}
-  m_Layer: 12
-  m_Name: fmod
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &2905162901440923315
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7619061993539256564}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.83873, y: 5.088973, z: -1.2310219}
-  m_LocalScale: {x: 2.2006, y: 1, z: 4.2455}
-  m_Children: []
-  m_Father: {fileID: 6638660475748315213}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5257026847101279770
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7619061993539256564}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 47.3, y: 26.3, z: 26.09}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2696314555078153165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7619061993539256564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  Event: event:/Theme_of_Persephone_DEMO
-  PlayEvent: 3
-  StopEvent: 4
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &7928764624084769010
 GameObject:
   m_ObjectHideFlags: 0
@@ -27867,7 +27798,7 @@ Transform:
   - {fileID: 7092180662603525689}
   - {fileID: 1558838655085175924}
   m_Father: {fileID: 6638660475748315213}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8542097465718947792
 GameObject:
