@@ -315,7 +315,7 @@ ScriptedImporter:
       - name: _TessellationBackFaceCullEpsilon
         float: -0.25
       - name: _TessellationFactor
-        float: 4
+        float: 2
       - name: _TessellationFactorMaxDistance
         float: 50
       - name: _TessellationFactorMinDistance

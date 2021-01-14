@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953beb541740ddc499d005ee80c9ff29, type: 3}
   m_Name: Fog
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   enabled:
     m_OverrideState: 1
     m_Value: 1
   colorMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   color:
     m_OverrideState: 0
@@ -53,11 +53,11 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 397.04
   maximumHeight:
-    m_OverrideState: 0
-    m_Value: 3290.6
+    m_OverrideState: 1
+    m_Value: 1708
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.13056771, g: 0.07102172, b: 0.1792453, a: 1}
+    m_Value: {r: 0.3510476, g: 0.29405484, b: 0.5566038, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
     m_Value: 1
   anisotropy:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.02
     min: -1
     max: 1
   globalLightProbeDimmer:
@@ -107,7 +107,7 @@ MonoBehaviour:
   - {fileID: -1735483697270413081}
   - {fileID: 4399493152872026046}
   - {fileID: 2674572331625238941}
-  - {fileID: 6885189589716220944}
+  - {fileID: 5884707937319967090}
 --- !u!114 &2674572331625238941
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
@@ -324,7 +324,7 @@ MonoBehaviour:
   fogType:
     m_OverrideState: 1
     m_Value: 3
---- !u!114 &6885189589716220944
+--- !u!114 &5884707937319967090
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -339,10 +339,10 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   indirectSpecularIntensity:
-    m_OverrideState: 1
-    m_Value: 3.73
+    m_OverrideState: 0
+    m_Value: 5
     min: 0
   indirectDiffuseIntensity:
     m_OverrideState: 1
-    m_Value: 5.85
+    m_Value: 2
     min: 0
