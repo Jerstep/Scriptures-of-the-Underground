@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/_core/Scenes/MainMenu.unity
     guid: 0768e0917324d4b4b891e88ccf55c20d
-  - enabled: 1
+  - enabled: 0
     path: Assets/_core/Scenes/DemoScene-matt-V2.unity
     guid: 13f23415fb7a2c74ab73528612c41ad2
+  - enabled: 1
+    path: Assets/_core/Scenes/Demo_JeremyBuild.unity
+    guid: add76b1516b1faf49828339347fff147
   - enabled: 1
     path: Assets/_core/Scenes/EndScreen.unity
     guid: 0d63b5a1ba104e14c89d7315372d5267
