@@ -1,0 +1,76 @@
+{
+    "format": {
+        "version": "1.0"
+    },
+    "shaders": {
+        "Main shader": {
+            "displacementTessellation": {
+                "displacement": {
+                    "scale": 0,
+                    "source_channel": 0
+                },
+                "enable": true,
+                "tessellation": {
+                    "max_length": 64,
+                    "subdiv_count": 1,
+                    "subdiv_mode": 0
+                }
+            },
+            "materials": {
+                "detailMapSampler": "",
+                "difwarp": "//restored_from_cache0/6396a4f522c6aa2acb06aba072999191aca375fc.image"
+            },
+            "parameters": {
+                "Common Parameters": {
+                    "alpha_dither": false,
+                    "alpha_threshold": 0.33000001311302185,
+                    "ao_intensity": 0.75,
+                    "emissive_intensity": 1,
+                    "horizonFade": 1.2999999523162842,
+                    "nbSamples": 16
+                },
+                "bDoDiffuseWarp": false,
+                "bDoRimLighting": true,
+                "bHasAlpha": false,
+                "bUseIBL": false,
+                "fAmbientColor": [
+                    0,
+                    0,
+                    0
+                ],
+                "fAmbientScale": 1,
+                "fDetailScale": 1,
+                "fRimLightColor": [
+                    1,
+                    1,
+                    1
+                ],
+                "fRimLightScale": 2,
+                "fSpecularColor": [
+                    1,
+                    1,
+                    1
+                ],
+                "fSpecularExponent": 16,
+                "fSpecularScale": 4,
+                "lightColor_1": [
+                    1,
+                    1,
+                    1
+                ],
+                "lightPosition_1": [
+                    10,
+                    10,
+                    10
+                ]
+            },
+            "shader": "dota-2",
+            "shaderInstance": "Main shader"
+        }
+    },
+    "texturesets": {
+        "DefaultMaterial": {
+            "shader": "Main shader"
+        }
+    }
+}
