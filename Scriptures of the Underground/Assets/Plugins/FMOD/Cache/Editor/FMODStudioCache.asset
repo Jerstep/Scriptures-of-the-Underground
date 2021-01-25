@@ -133,6 +133,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2250
+--- !u!114 &-8092387552959849220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump landing/Ground Jump
+  m_EditorClassIdentifier: 
+  Name: Ground Jump
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7823346919443617533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +395,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3104
+--- !u!114 &-5279008424369252269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level Music/Distance to Shrine
+  m_EditorClassIdentifier: 
+  Name: Distance to Shrine
+  Min: 0
+  Max: 100
+  Default: 100
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-5082851846057446526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +604,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 8423915152416869764}
+  - {fileID: -788650312760505146}
   MinDistance: 0
   MaxDistance: 0
   Length: 582
@@ -840,6 +880,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-788650312760505146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Ground Footsteps
+  m_EditorClassIdentifier: 
+  Name: Ground Footsteps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-423427756385065985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,13 +1046,12 @@ MonoBehaviour:
   - {fileID: 7781379779402065158}
   - {fileID: -7620677469646061411}
   - {fileID: 2073599680756471849}
-  - {fileID: 2538506302843946781}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8429674869650196395}
   StringsBanks:
   - {fileID: 2653558052238638280}
-  stringsBankWriteTime: 637458076971577891
+  stringsBankWriteTime: 637456989244686540
   cacheVersion: 5
 --- !u!114 &128524691575732088
 MonoBehaviour:
@@ -1034,7 +1093,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -7613697666475420459}
+  - {fileID: -8092387552959849220}
   MinDistance: 0
   MaxDistance: 0
   Length: 518
@@ -1350,11 +1409,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FModProject/scriptures/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637458076971577891
+  lastModified: 637456989244686540
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2172
+    Value: 2130
   Exists: 1
 --- !u!114 &2920724695666931967
 MonoBehaviour:
@@ -1369,6 +1428,26 @@ MonoBehaviour:
   m_Name: parameter:/Jump/Ground Jump
   m_EditorClassIdentifier: 
   Name: Ground Jump
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &3273367221506510809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level Music/Danger
+  m_EditorClassIdentifier: 
+  Name: Danger
   Min: 0
   Max: 1
   Default: 0
@@ -1920,7 +1999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FModProject/scriptures/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637458076971245147
+  lastModified: 637456989244647030
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1944,8 +2023,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -4861776174635701722}
-  - {fileID: -3827315378194073878}
+  - {fileID: 3273367221506510809}
+  - {fileID: -5279008424369252269}
   MinDistance: 1
   MaxDistance: 20
   Length: 178723
