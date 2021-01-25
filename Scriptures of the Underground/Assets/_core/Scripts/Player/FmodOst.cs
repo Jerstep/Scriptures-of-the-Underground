@@ -20,6 +20,11 @@ public class FmodOst : MonoBehaviour
         ost.SetParameter("Distance to Shrine", 0f);
     }
 
+    public void NearPersefTheme()
+    {
+        ost.SetParameter("Distance to Shrine", 11f);
+    }
+
     public void LvlMainTheme()
     {
         ost.SetParameter("Distance to Shrine", 100);

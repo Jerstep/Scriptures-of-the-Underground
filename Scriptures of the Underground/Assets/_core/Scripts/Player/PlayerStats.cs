@@ -79,7 +79,12 @@ using UnityEngine;
                 ost.PersefTheme();
             }
 
-            if (other.tag == "EnemyZone")
+        if (other.tag == "NearPersefShrine")
+        {
+            ost.NearPersefTheme();
+        }
+
+        if (other.tag == "EnemyZone")
             {
                 ost.EnemyClose();
             }
@@ -93,7 +98,12 @@ using UnityEngine;
                 ost.LvlMainTheme();
             }
 
-            if (other.tag == "EnemyZone")
+        if (other.tag == "NearPersefShrine")
+        {
+            ost.LvlMainTheme();
+        }
+
+        if (other.tag == "EnemyZone")
             {
                 ost.EnemyFar();
             }

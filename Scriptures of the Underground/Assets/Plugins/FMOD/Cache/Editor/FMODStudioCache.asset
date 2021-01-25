@@ -216,6 +216,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-6973298211796975199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level Music/Danger
+  m_EditorClassIdentifier: 
+  Name: Danger
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1756436390
+    data2: 3121918999
+  Exists: 1
 --- !u!114 &-6917700044575945534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +415,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3104
+--- !u!114 &-5438375148625723045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump landing/Ground Jump
+  m_EditorClassIdentifier: 
+  Name: Ground Jump
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-5279008424369252269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,7 +644,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -788650312760505146}
+  - {fileID: 4213269713399798570}
   MinDistance: 0
   MaxDistance: 0
   Length: 582
@@ -1046,12 +1086,13 @@ MonoBehaviour:
   - {fileID: 7781379779402065158}
   - {fileID: -7620677469646061411}
   - {fileID: 2073599680756471849}
+  - {fileID: 1788758891847586004}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8429674869650196395}
   StringsBanks:
   - {fileID: 2653558052238638280}
-  stringsBankWriteTime: 637456989244686540
+  stringsBankWriteTime: 637471810154359037
   cacheVersion: 5
 --- !u!114 &128524691575732088
 MonoBehaviour:
@@ -1093,7 +1134,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -8092387552959849220}
+  - {fileID: -5438375148625723045}
   MinDistance: 0
   MaxDistance: 0
   Length: 518
@@ -1309,6 +1350,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &1788758891847586004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Title Theme
+  m_EditorClassIdentifier: 
+  Path: event:/Title Theme
+  guid: c528f17e70328b4eb64519ee12c49540
+  Banks:
+  - {fileID: 8429674869650196395}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 46607
 --- !u!114 &2044388553471569641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1409,11 +1473,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FModProject/scriptures/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637456989244686540
+  lastModified: 637471810154359037
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2130
+    Value: 2172
   Exists: 1
 --- !u!114 &2920724695666931967
 MonoBehaviour:
@@ -1524,6 +1588,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2298
+--- !u!114 &3574361953081514132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level Music/Distance to Shrine
+  m_EditorClassIdentifier: 
+  Name: Distance to Shrine
+  Min: 0
+  Max: 100
+  Default: 100
+  ID:
+    data1: 1070343734
+    data2: 2103506253
+  Exists: 1
 --- !u!114 &3766090120716565180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1591,6 +1675,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 90303
+--- !u!114 &4213269713399798570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Ground Footsteps
+  m_EditorClassIdentifier: 
+  Name: Ground Footsteps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &4348954312924095537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1999,7 +2103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FModProject/scriptures/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637456989244647030
+  lastModified: 637471810154269273
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -2023,8 +2127,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 3273367221506510809}
-  - {fileID: -5279008424369252269}
+  - {fileID: -6973298211796975199}
+  - {fileID: 3574361953081514132}
   MinDistance: 1
   MaxDistance: 20
   Length: 178723
