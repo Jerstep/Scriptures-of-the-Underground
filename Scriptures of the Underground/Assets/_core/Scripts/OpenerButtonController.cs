@@ -11,6 +11,8 @@ public class OpenerButtonController : MonoBehaviour
     public bool isTriggered;
     public GameplayUI UIScript;
 
+    public GameObject fmodobject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,7 @@ public class OpenerButtonController : MonoBehaviour
         if (!isTriggered)
         {
             isTriggered = true;
+            fmodobject.SetActive(false);
         }
     }
 
