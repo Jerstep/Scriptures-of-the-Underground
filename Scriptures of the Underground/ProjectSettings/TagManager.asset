@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - hallwayTrigger
+  - InteractableButton
+  - CancelClimb
+  - Distraction
+  - Enemy
+  - Enviorment
+  - PersefShrine
+  - Material:Concrete
+  - Material:Dirt
+  - EnemyZone
+  - PlayerStatsCol
+  - NearPersefShrine
   layers:
   - Default
   - TransparentFX
@@ -14,11 +26,11 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enviorment
+  - Climbable
+  - CurrentCheckSpot
+  - IgnoreBake
+  - Player
   - 
   - 
   - 

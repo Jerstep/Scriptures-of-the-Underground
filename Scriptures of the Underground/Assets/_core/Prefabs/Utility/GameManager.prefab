@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5919441482854018136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5919441482854018142}
+  - component: {fileID: 5919441482854018137}
+  - component: {fileID: 5919441483123940020}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5919441482854018142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5919441482854018136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 232.57895, y: 576.928, z: -1.3488283}
+  m_LocalScale: {x: 2.1157684, y: 2.1157684, z: 2.1157684}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5919441482854018137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5919441482854018136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65441da262626ab4b9b0fd27f1b36540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gotGirl: 0
+  space: 20
+  secret: []
+  infoHolder: {fileID: 0}
+  infoTextBox: {fileID: 0}
+  infoImageObject: {fileID: 0}
+  infoImage: {fileID: 0}
+--- !u!114 &5919441483123940020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5919441482854018136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa483bf99606f744ad507e65fab20fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pcMode: 0
+  collectiblesFound: 0
+  alertedEnemies: 0
+  deaths: 0
+  endlvl: EndScreen
